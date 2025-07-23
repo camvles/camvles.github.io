@@ -1,0 +1,18 @@
+# PowerShell script for generating storage planner
+Generate-StorageHtml.ps1
+
+# Optional: Also ignore the default config file if it contains sensitive data
+mc-storage-default-config.txt
+
+# Common editor and system files
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo 

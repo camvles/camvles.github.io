@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Storage Grid</title>
+    <link rel="stylesheet" href="css/mc-storage-planner.css">
+</head>
+<body>
+    <div class="header">
+        <div class="controls">
+            <button class="btn btn-primary" onclick="toggleEditMode()" id="editBtn">✏️ Edit Mode</button>
+            <button class="btn btn-success" onclick="saveConfiguration()">💾 Save</button>
+            <button class="btn btn-primary" onclick="resetToSaved()">🔄 Reset</button>
+            <input type="text" class="search-box" placeholder="🔍 Search..." onkeyup="searchItems(this.value)">
+        </div>
+    </div>
+    
+    <div class="sections-grid" id="grid"></div>
+    <div id="notification" class="notification"></div>
+    
+    <script src="js/mc-storage-planner.js"></script>
+</body>
+</html>
