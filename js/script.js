@@ -59,19 +59,33 @@ document.addEventListener('DOMContentLoaded', function() {
             // Remove existing layout classes
             mediaLayout.classList.remove('layout-main-only', 'layout-with-thumbnails');
             
+            // Remove active class from all thumbnails
+            summaryThumbnails.forEach(thumb => thumb.classList.remove('active'));
+            
+            // Add active class to clicked thumbnail
+            this.classList.add('active');
+            
             // Add the new layout class
             mediaLayout.classList.add(`layout-${layoutType}`);
             
-            console.log(`Switched to ${layoutType} layout`);
+            console.log(`Switching to ${layoutType} layout - animation starting`);
             
-            // Update scales after layout change
-            setTimeout(updateTitleScale, 0);
-            setTimeout(updateSummaryScale, 0);
+            // Update scales after layout change and animation completes
+            // Wait for the full animation duration (0.6s) plus a small buffer
+            setTimeout(() => {
+                updateTitleScale();
+                updateSummaryScale();
+                console.log(`${layoutType} layout animation completed`);
+            }, 700);
         });
     });
     
-    // Initialize with main-only layout (default)
+    // Initialize with main-only layout (default) and set first thumbnail as active
     mediaLayout.classList.add('layout-main-only');
+    const firstMainOnlyThumbnail = document.querySelector('.summary-thumbnail-1[data-layout="main-only"]');
+    if (firstMainOnlyThumbnail) {
+        firstMainOnlyThumbnail.classList.add('active');
+    }
     
     // Initial scale calculation
     updateTitleScale();
