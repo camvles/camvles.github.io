@@ -171,11 +171,11 @@
         {id: 'bamboo_sign', name: 'bamboo sign', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/bamboo_sign.png'},
         {id: 'bamboo_hanging_sign', name: 'bamboo hanging sign', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/bamboo_hanging_sign.png'},
         {id: 'bamboo_raft', name: 'bamboo raft', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/bamboo_raft.png'},
-        {id: 'bamboo_chest_raft', name: 'bamboo chest raft', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
+        {id: 'bamboo_chest_raft', name: 'bamboo chest raft', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/bamboo_chest_raft.png'},
         {id: 'block_of_bamboo', name: 'block of bamboo', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/block_of_bamboo.png'},
         {id: 'block_of_stripped_bamboo', name: 'block of stripped bamboo', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/block_of_stripped_bamboo.png'},
-        {id: 'stone', name: 'stone', category: 'Placable Stone Blocks and Items', module: 10, icon: ''},
-        {id: 'cobblestone', name: 'cobblestone', category: 'Placable Stone Blocks and Items', module: 10, icon: ''},
+        {id: 'stone', name: 'stone', category: 'Placable Stone Blocks and Items', module: 10, icon: 'assets/mc-invicons/stone.png'},
+        {id: 'cobblestone', name: 'cobblestone', category: 'Placable Stone Blocks and Items', module: 10, icon: 'assets/mc-invicons/cobblestone.png'},
         {id: 'cobblestone_slab', name: 'cobblestone slab', category: 'Placable Stone Blocks and Items', module: 10, icon: 'assets/mc-invicons/cobblestone_slab.png'},
         {id: 'cobblestone_stairs', name: 'cobblestone stairs', category: 'Placable Stone Blocks and Items', module: 10, icon: 'assets/mc-invicons/cobblestone_stairs.png'},
         {id: 'cobblestone_wall', name: 'cobblestone wall', category: 'Placable Stone Blocks and Items', module: 10, icon: 'assets/mc-invicons/cobblestone_wall.png'},
@@ -199,28 +199,28 @@
         {id: 'mossy_stone_brick_wall', name: 'mossy stone brick wall', category: 'Placable Stone Blocks and Items', module: 10, icon: 'assets/mc-invicons/mossy_stone_brick_wall.png'},
         {id: 'cracked_stone_bricks', name: 'cracked stone bricks', category: 'Placable Stone Blocks and Items', module: 10, icon: 'assets/mc-invicons/cracked_stone_bricks.png'},
         {id: 'chiseled_stone_bricks', name: 'chiseled stone bricks', category: 'Placable Stone Blocks and Items', module: 10, icon: 'assets/mc-invicons/chiseled_stone_bricks.png'},
-        {id: 'granite', name: 'granite', category: 'Placable Stone Blocks and Items', module: 11, icon: ''},
+        {id: 'granite', name: 'granite', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/granite.png'},
         {id: 'granite_slab', name: 'granite slab', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/granite_slab.png'},
         {id: 'granite_stairs', name: 'granite stairs', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/granite_stairs.png'},
         {id: 'granite_wall', name: 'granite wall', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/granite_wall.png'},
         {id: 'polished_granite', name: 'polished granite', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/polished_granite.png'},
         {id: 'polished_granite_slab', name: 'polished granite slab', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/polished_granite_slab.png'},
         {id: 'polished_granite_stairs', name: 'polished granite stairs', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/polished_granite_stairs.png'},
-        {id: 'diorite', name: 'diorite', category: 'Placable Stone Blocks and Items', module: 11, icon: ''},
+        {id: 'diorite', name: 'diorite', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/diorite.png'},
         {id: 'diorite_slab', name: 'diorite slab', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/diorite_slab.png'},
         {id: 'diorite_stairs', name: 'diorite stairs', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/diorite_stairs.png'},
         {id: 'diorite_wall', name: 'diorite wall', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/diorite_wall.png'},
         {id: 'polished_diorite', name: 'polished diorite', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/polished_diorite.png'},
         {id: 'polished_diorite_slab', name: 'polished diorite slab', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/polished_diorite_slab.png'},
         {id: 'polished_diorite_stairs', name: 'polished diorite stairs', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/polished_diorite_stairs.png'},
-        {id: 'andesite', name: 'andesite', category: 'Placable Stone Blocks and Items', module: 11, icon: ''},
+        {id: 'andesite', name: 'andesite', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/andesite.png'},
         {id: 'andesite_slab', name: 'andesite slab', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/andesite_slab.png'},
         {id: 'andesite_stairs', name: 'andesite stairs', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/andesite_stairs.png'},
         {id: 'andesite_wall', name: 'andesite wall', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/andesite_wall.png'},
         {id: 'polished_andesite', name: 'polished andesite', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/polished_andesite.png'},
         {id: 'polished_andesite_slab', name: 'polished andesite slab', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/polished_andesite_slab.png'},
         {id: 'polished_andesite_stairs', name: 'polished andesite stairs', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/polished_andesite_stairs.png'},
-        {id: 'deepslate', name: 'deepslate', category: 'Placable Stone Blocks and Items', module: 11, icon: ''},
+        {id: 'deepslate', name: 'deepslate', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/deepslate.png'},
         {id: 'cobbled_deepslate', name: 'cobbled deepslate', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/cobbled_deepslate.png'},
         {id: 'cobbled_deepslate_slab', name: 'cobbled deepslate slab', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/cobbled_deepslate_slab.png'},
         {id: 'cobbled_deepslate_stairs', name: 'cobbled deepslate stairs', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/cobbled_deepslate_stairs.png'},
@@ -241,7 +241,7 @@
         {id: 'cracked_deepslate_tiles', name: 'cracked deepslate tiles', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/cracked_deepslate_tiles.png'},
         {id: 'chiseled_deepslate', name: 'chiseled deepslate', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/chiseled_deepslate.png'},
         {id: 'reinforced_deepslate', name: 'reinforced deepslate', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/reinforced_deepslate.png'},
-        {id: 'tuff', name: 'tuff', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
+        {id: 'tuff', name: 'tuff', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/tuff.png'},
         {id: 'tuff_slab', name: 'tuff slab', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
         {id: 'tuff_stairs', name: 'tuff stairs', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
         {id: 'tuff_wall', name: 'tuff wall', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
@@ -255,7 +255,7 @@
         {id: 'tuff_brick_wall', name: 'tuff brick wall', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
         {id: 'chiseled_tuff', name: 'chiseled tuff', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
         {id: 'chiseled_tuff_bricks', name: 'chiseled tuff bricks', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
-        {id: 'blackstone', name: 'blackstone', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
+        {id: 'blackstone', name: 'blackstone', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/blackstone.png'},
         {id: 'blackstone_slab', name: 'blackstone slab', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/blackstone_slab.png'},
         {id: 'blackstone_stairs', name: 'blackstone stairs', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/blackstone_stairs.png'},
         {id: 'blackstone_wall', name: 'blackstone wall', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/blackstone_wall.png'},
@@ -272,11 +272,11 @@
         {id: 'polished_blackstone_button', name: 'polished blackstone button', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/polished_blackstone_button.png'},
         {id: 'polished_blackstone_pressure_plate', name: 'polished blackstone pressure plate', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/polished_blackstone_pressure_plate.png'},
         {id: 'gilded_blackstone', name: 'gilded blackstone', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/gilded_blackstone.png'},
-        {id: 'bricks', name: 'bricks', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
+        {id: 'bricks', name: 'bricks', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/bricks.png'},
         {id: 'brick_slab', name: 'brick slab', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/brick_slab.png'},
         {id: 'brick_stairs', name: 'brick stairs', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/brick_stairs.png'},
         {id: 'brick_wall', name: 'brick wall', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/brick_wall.png'},
-        {id: 'sandstone', name: 'sandstone', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
+        {id: 'sandstone', name: 'sandstone', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/sandstone.png'},
         {id: 'sandstone_slab', name: 'sandstone slab', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/sandstone_slab.png'},
         {id: 'sandstone_stairs', name: 'sandstone stairs', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/sandstone_stairs.png'},
         {id: 'sandstone_wall', name: 'sandstone wall', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/sandstone_wall.png'},
@@ -298,8 +298,8 @@
         {id: 'cut_red_sandstone_slab', name: 'cut red sandstone slab', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/cut_red_sandstone_slab.png'},
         {id: 'coal_ore', name: 'coal ore', category: 'Ores', module: 13, icon: 'assets/mc-invicons/coal_ore.png'},
         {id: 'deepslate_coal_ore', name: 'deepslate coal ore', category: 'Ores', module: 13, icon: 'assets/mc-invicons/deepslate_coal_ore.png'},
-        {id: 'coal', name: 'coal', category: 'Ores', module: 13, icon: ''},
-        {id: 'charcoal', name: 'charcoal', category: 'Ores', module: 13, icon: ''},
+        {id: 'coal', name: 'coal', category: 'Ores', module: 13, icon: 'assets/mc-invicons/coal.png'},
+        {id: 'charcoal', name: 'charcoal', category: 'Ores', module: 13, icon: 'assets/mc-invicons/charcoal.png'},
         {id: 'block_of_coal', name: 'block of coal', category: 'Ores', module: 13, icon: 'assets/mc-invicons/block_of_coal.png'},
         {id: 'iron_ore', name: 'iron ore', category: 'Ores', module: 13, icon: 'assets/mc-invicons/iron_ore.png'},
         {id: 'deepslate_iron_ore', name: 'deepslate iron ore', category: 'Ores', module: 13, icon: 'assets/mc-invicons/deepslate_iron_ore.png'},
@@ -399,11 +399,11 @@
         {id: 'block_of_lapis_lazuli', name: 'block of lapis lazuli', category: 'Ores', module: 15, icon: 'assets/mc-invicons/block_of_lapis_lazuli.png'},
         {id: 'diamond_ore', name: 'diamond ore', category: 'Ores', module: 15, icon: 'assets/mc-invicons/diamond_ore.png'},
         {id: 'deepslate_diamond_ore', name: 'deepslate diamond ore', category: 'Ores', module: 15, icon: 'assets/mc-invicons/deepslate_diamond_ore.png'},
-        {id: 'diamond', name: 'diamond', category: 'Ores', module: 15, icon: ''},
+        {id: 'diamond', name: 'diamond', category: 'Ores', module: 15, icon: 'assets/mc-invicons/diamond.png'},
         {id: 'block_of_diamond', name: 'block of diamond', category: 'Ores', module: 15, icon: 'assets/mc-invicons/block_of_diamond.png'},
         {id: 'emerald_ore', name: 'emerald ore', category: 'Ores', module: 15, icon: 'assets/mc-invicons/emerald_ore.png'},
         {id: 'deepslate_emerald_ore', name: 'deepslate emerald ore', category: 'Ores', module: 15, icon: 'assets/mc-invicons/deepslate_emerald_ore.png'},
-        {id: 'emerald', name: 'emerald', category: 'Ores', module: 15, icon: ''},
+        {id: 'emerald', name: 'emerald', category: 'Ores', module: 15, icon: 'assets/mc-invicons/emerald.png'},
         {id: 'block_of_emerald', name: 'block of emerald', category: 'Ores', module: 15, icon: 'assets/mc-invicons/block_of_emerald.png'},
         {id: 'redstone_ore', name: 'redstone ore', category: 'Redstone', module: 16, icon: 'assets/mc-invicons/redstone_ore.png'},
         {id: 'deepslate_redstone_ore', name: 'deepslate redstone ore', category: 'Redstone', module: 16, icon: 'assets/mc-invicons/deepslate_redstone_ore.png'},
@@ -413,58 +413,54 @@
         {id: 'redstone_lamp', name: 'redstone lamp', category: 'Redstone', module: 16, icon: 'assets/mc-invicons/redstone_lamp.png'},
         {id: 'redstone_comparator', name: 'redstone comparator', category: 'Redstone', module: 16, icon: 'assets/mc-invicons/redstone_comparator.png'},
         {id: 'redstone_repeater', name: 'redstone repeater', category: 'Redstone', module: 16, icon: 'assets/mc-invicons/redstone_repeater.png'},
-        {id: 'rail', name: 'rail', category: 'Redstone', module: 17, icon: ''},
+        {id: 'rail', name: 'rail', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/rail.png'},
         {id: 'powered_rail', name: 'powered rail', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/powered_rail.png'},
         {id: 'detector_rail', name: 'detector rail', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/detector_rail.png'},
         {id: 'activator_rail', name: 'activator rail', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/activator_rail.png'},
         {id: 'tripwire_hook', name: 'tripwire hook', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/tripwire_hook.png'},
-        {id: 'lever', name: 'lever', category: 'Redstone', module: 17, icon: ''},
-        {id: 'stone_button', name: 'stone button', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/stone_button.png'},
-        {id: 'polished_blackstone_button', name: 'polished blackstone button', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/polished_blackstone_button.png'},
-        {id: 'stone_pressure_plate', name: 'stone pressure plate', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/stone_pressure_plate.png'},
-        {id: 'polished_blackstone_pressure_plate', name: 'polished blackstone pressure plate', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/polished_blackstone_pressure_plate.png'},
+        {id: 'lever', name: 'lever', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/lever.png'},
         {id: 'heavy_weighted_pressure_plate', name: 'heavy weighted pressure plate', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/heavy_weighted_pressure_plate.png'},
         {id: 'light_weighted_pressure_plate', name: 'light weighted pressure plate', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/light_weighted_pressure_plate.png'},
         {id: 'daylight_detector', name: 'daylight detector', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/daylight_detector.png'},
-        {id: 'target', name: 'target', category: 'Redstone', module: 17, icon: ''},
-        {id: 'observer', name: 'observer', category: 'Redstone', module: 17, icon: ''},
-        {id: 'piston', name: 'piston', category: 'Redstone', module: 18, icon: ''},
+        {id: 'target', name: 'target', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/target.png'},
+        {id: 'observer', name: 'observer', category: 'Redstone', module: 17, icon: 'assets/mc-invicons/observer.png'},
+        {id: 'piston', name: 'piston', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/piston.png'},
         {id: 'sticky_piston', name: 'sticky piston', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/sticky_piston.png'},
-        {id: 'dispenser', name: 'dispenser', category: 'Redstone', module: 18, icon: ''},
-        {id: 'dropper', name: 'dropper', category: 'Redstone', module: 18, icon: ''},
-        {id: 'hopper', name: 'hopper', category: 'Redstone', module: 18, icon: ''},
+        {id: 'dispenser', name: 'dispenser', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/dispenser.png'},
+        {id: 'dropper', name: 'dropper', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/dropper.png'},
+        {id: 'hopper', name: 'hopper', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/hopper.png'},
         {id: 'note_block', name: 'note block', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/note_block.png'},
-        {id: 'jukebox', name: 'jukebox', category: 'Redstone', module: 18, icon: ''},
+        {id: 'jukebox', name: 'jukebox', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/jukebox.png'},
         {id: 'calibrated_sculk_sensor', name: 'calibrated sculk sensor', category: 'Redstone', module: 18, icon: ''},
         {id: 'sculk_sensor', name: 'sculk sensor', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/sculk_sensor.png'},
-        {id: 'tnt', name: 'tnt', category: 'Redstone', module: 18, icon: ''},
-        {id: 'dirt', name: 'dirt', category: 'Natural World A', module: 19, icon: ''},
+        {id: 'tnt', name: 'tnt', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/tnt.png'},
+        {id: 'dirt', name: 'dirt', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/dirt.png'},
         {id: 'coarse_dirt', name: 'coarse dirt', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/coarse_dirt.png'},
         {id: 'rooted_dirt', name: 'rooted dirt', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/rooted_dirt.png'},
         {id: 'grass_block', name: 'grass block', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/grass_block.png'},
-        {id: 'podzol', name: 'podzol', category: 'Natural World A', module: 19, icon: ''},
-        {id: 'mycelium', name: 'mycelium', category: 'Natural World A', module: 19, icon: ''},
-        {id: 'mud', name: 'mud', category: 'Natural World A', module: 19, icon: ''},
+        {id: 'podzol', name: 'podzol', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/podzol.png'},
+        {id: 'mycelium', name: 'mycelium', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/mycelium.png'},
+        {id: 'mud', name: 'mud', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/mud.png'},
         {id: 'packed_mud', name: 'packed mud', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/packed_mud.png'},
-        {id: 'clay', name: 'clay', category: 'Natural World A', module: 19, icon: ''},
-        {id: 'gravel', name: 'gravel', category: 'Natural World A', module: 20, icon: ''},
-        {id: 'sand', name: 'sand', category: 'Natural World A', module: 20, icon: ''},
+        {id: 'clay', name: 'clay', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/clay.png'},
+        {id: 'gravel', name: 'gravel', category: 'Natural World A', module: 20, icon: 'assets/mc-invicons/gravel.png'},
+        {id: 'sand', name: 'sand', category: 'Natural World A', module: 20, icon: 'assets/mc-invicons/sand.png'},
         {id: 'red_sand', name: 'red sand', category: 'Natural World A', module: 20, icon: 'assets/mc-invicons/red_sand.png'},
-        {id: 'snow', name: 'snow', category: 'Natural World A', module: 20, icon: ''},
+        {id: 'snow', name: 'snow', category: 'Natural World A', module: 20, icon: 'assets/mc-invicons/snow.png'},
         {id: 'snow_block', name: 'snow block', category: 'Natural World A', module: 20, icon: 'assets/mc-invicons/snow_block.png'},
-        {id: 'ice', name: 'ice', category: 'Natural World A', module: 20, icon: ''},
+        {id: 'ice', name: 'ice', category: 'Natural World A', module: 20, icon: 'assets/mc-invicons/ice.png'},
         {id: 'packed_ice', name: 'packed ice', category: 'Natural World A', module: 20, icon: 'assets/mc-invicons/packed_ice.png'},
         {id: 'blue_ice', name: 'blue ice', category: 'Natural World A', module: 20, icon: 'assets/mc-invicons/blue_ice.png'},
-        {id: 'calcite', name: 'calcite', category: 'Natural World A', module: 21, icon: ''},
+        {id: 'calcite', name: 'calcite', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/calcite.png'},
         {id: 'dripstone_block', name: 'dripstone block', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/dripstone_block.png'},
         {id: 'pointed_dripstone', name: 'pointed dripstone', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/pointed_dripstone.png'},
-        {id: 'basalt', name: 'basalt', category: 'Natural World A', module: 21, icon: ''},
+        {id: 'basalt', name: 'basalt', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/basalt.png'},
         {id: 'smooth_basalt', name: 'smooth basalt', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/smooth_basalt.png'},
         {id: 'polished_basalt', name: 'polished basalt', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/polished_basalt.png'},
-        {id: 'obsidian', name: 'obsidian', category: 'Natural World A', module: 21, icon: ''},
+        {id: 'obsidian', name: 'obsidian', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/obsidian.png'},
         {id: 'crying_obsidian', name: 'crying obsidian', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/crying_obsidian.png'},
         {id: 'magma_block', name: 'magma block', category: 'Natural World A', module: 21, icon: ''},
-        {id: 'netherrack', name: 'netherrack', category: 'Natural World B', module: 22, icon: ''},
+        {id: 'netherrack', name: 'netherrack', category: 'Natural World B', module: 22, icon: 'assets/mc-invicons/netherrack.png'},
         {id: 'soul_sand', name: 'soul sand', category: 'Natural World B', module: 22, icon: 'assets/mc-invicons/soul_sand.png'},
         {id: 'soul_soil', name: 'soul soil', category: 'Natural World B', module: 22, icon: 'assets/mc-invicons/soul_soil.png'},
         {id: 'end_stone', name: 'end stone', category: 'Natural World B', module: 22, icon: 'assets/mc-invicons/end_stone.png'},
@@ -478,7 +474,7 @@
         {id: 'medium_amethyst_bud', name: 'medium amethyst bud', category: 'Natural World B', module: 23, icon: 'assets/mc-invicons/medium_amethyst_bud.png'},
         {id: 'small_amethyst_bud', name: 'small amethyst bud', category: 'Natural World B', module: 23, icon: 'assets/mc-invicons/small_amethyst_bud.png'},
         {id: 'block_of_amethyst', name: 'block of amethyst', category: 'Natural World B', module: 23, icon: 'assets/mc-invicons/block_of_amethyst.png'},
-        {id: 'sculk', name: 'sculk', category: 'Natural World B', module: 24, icon: ''},
+        {id: 'sculk', name: 'sculk', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/sculk.png'},
         {id: 'sculk_vein', name: 'sculk vein', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/sculk_vein.png'},
         {id: 'sculk_catalyst', name: 'sculk catalyst', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/sculk_catalyst.png'},
         {id: 'sculk_shrieker', name: 'sculk shrieker', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/sculk_shrieker.png'},
@@ -486,15 +482,15 @@
         {id: 'moss_carpet', name: 'moss carpet', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/moss_carpet.png'},
         {id: 'pale_moss_block', name: 'pale moss block', category: 'Natural World B', module: 24, icon: ''},
         {id: 'pale_moss_carpet', name: 'pale moss carpet', category: 'Natural World B', module: 24, icon: ''},
-        {id: 'bone', name: 'bone', category: 'Mob Drops', module: 25, icon: ''},
+        {id: 'bone', name: 'bone', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/bone.png'},
         {id: 'bone_block', name: 'bone block', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/bone_block.png'},
         {id: 'bone_meal', name: 'bone meal', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/bone_meal.png'},
         {id: 'rotten_flesh', name: 'rotten flesh', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/rotten_flesh.png'},
         {id: 'spider_eye', name: 'spider eye', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/spider_eye.png'},
         {id: 'fermented_spider_eye', name: 'fermented spider eye', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/fermented_spider_eye.png'},
-        {id: 'string', name: 'string', category: 'Mob Drops', module: 25, icon: ''},
-        {id: 'cobweb', name: 'cobweb', category: 'Mob Drops', module: 25, icon: ''},
-        {id: 'gunpowder', name: 'gunpowder', category: 'Mob Drops', module: 25, icon: ''},
+        {id: 'string', name: 'string', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/string.png'},
+        {id: 'cobweb', name: 'cobweb', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/cobweb.png'},
+        {id: 'gunpowder', name: 'gunpowder', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/gunpowder.png'},
         {id: 'slime_ball', name: 'slime ball', category: 'Mob Drops', module: 25, icon: ''},
         {id: 'slime_block', name: 'slime block', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/slime_block.png'},
         {id: 'blaze_rod', name: 'blaze rod', category: 'Mob Drops', module: 26, icon: 'assets/mc-invicons/blaze_rod.png'},
@@ -512,8 +508,8 @@
         {id: 'heart_of_the_sea', name: 'heart of the sea', category: 'Mob Drops', module: 26, icon: 'assets/mc-invicons/heart_of_the_sea.png'},
         {id: 'ink_sac', name: 'ink sac', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/ink_sac.png'},
         {id: 'glow_ink_sac', name: 'glow ink sac', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/glow_ink_sac.png'},
-        {id: 'feather', name: 'feather', category: 'Mob Drops', module: 27, icon: ''},
-        {id: 'leather', name: 'leather', category: 'Mob Drops', module: 27, icon: ''},
+        {id: 'feather', name: 'feather', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/feather.png'},
+        {id: 'leather', name: 'leather', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/leather.png'},
         {id: 'rabbit_hide', name: 'rabbit hide', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/rabbit_hide.png'},
         {id: 'rabbit\'s_foot', name: 'rabbit\'s foot', category: 'Mob Drops', module: 27, icon: ''},
         {id: 'turtle_scute', name: 'turtle scute', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/turtle_scute.png'},
@@ -532,49 +528,49 @@
         {id: 'goat_horn_(seek)', name: 'goat horn (seek)', category: 'Mob Drops', module: 27, icon: ''},
         {id: 'goat_horn_(sing)', name: 'goat horn (sing)', category: 'Mob Drops', module: 27, icon: ''},
         {id: 'goat_horn_(yearn)', name: 'goat horn (yearn)', category: 'Mob Drops', module: 27, icon: ''},
-        {id: 'wheat', name: 'wheat', category: 'Crops & Food', module: 28, icon: ''},
+        {id: 'wheat', name: 'wheat', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/wheat.png'},
         {id: 'wheat_seeds', name: 'wheat seeds', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/wheat_seeds.png'},
-        {id: 'bread', name: 'bread', category: 'Crops & Food', module: 28, icon: ''},
-        {id: 'carrot', name: 'carrot', category: 'Crops & Food', module: 28, icon: ''},
-        {id: 'potato', name: 'potato', category: 'Crops & Food', module: 28, icon: ''},
+        {id: 'bread', name: 'bread', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/bread.png'},
+        {id: 'carrot', name: 'carrot', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/carrot.png'},
+        {id: 'potato', name: 'potato', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/potato.png'},
         {id: 'baked_potato', name: 'baked potato', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/baked_potato.png'},
         {id: 'poisonous_potato', name: 'poisonous potato', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/poisonous_potato.png'},
-        {id: 'beetroot', name: 'beetroot', category: 'Crops & Food', module: 28, icon: ''},
+        {id: 'beetroot', name: 'beetroot', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/beetroot.png'},
         {id: 'beetroot_seeds', name: 'beetroot seeds', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/beetroot_seeds.png'},
         {id: 'sugar_cane', name: 'sugar cane', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/sugar_cane.png'},
-        {id: 'sugar', name: 'sugar', category: 'Crops & Food', module: 28, icon: ''},
-        {id: 'pumpkin', name: 'pumpkin', category: 'Crops & Food', module: 28, icon: ''},
+        {id: 'sugar', name: 'sugar', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/sugar.png'},
+        {id: 'pumpkin', name: 'pumpkin', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/pumpkin.png'},
         {id: 'carved_pumpkin', name: 'carved pumpkin', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/carved_pumpkin.png'},
         {id: 'jack_o\'lantern', name: 'jack o\'lantern', category: 'Crops & Food', module: 28, icon: ''},
         {id: 'pumpkin_seeds', name: 'pumpkin seeds', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/pumpkin_seeds.png'},
         {id: 'pumpkin_pie', name: 'pumpkin pie', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/pumpkin_pie.png'},
-        {id: 'melon', name: 'melon', category: 'Crops & Food', module: 29, icon: ''},
+        {id: 'melon', name: 'melon', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/melon.png'},
         {id: 'melon_slice', name: 'melon slice', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/melon_slice.png'},
         {id: 'melon_seeds', name: 'melon seeds', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/melon_seeds.png'},
         {id: 'glistering_melon_slice', name: 'glistering melon slice', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/glistering_melon_slice.png'},
         {id: 'sweet_berries', name: 'sweet berries', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/sweet_berries.png'},
         {id: 'glow_berries', name: 'glow berries', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/glow_berries.png'},
-        {id: 'apple', name: 'apple', category: 'Crops & Food', module: 29, icon: ''},
+        {id: 'apple', name: 'apple', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/apple.png'},
         {id: 'golden_apple', name: 'golden apple', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/golden_apple.png'},
         {id: 'golden_carrot', name: 'golden carrot', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/golden_carrot.png'},
-        {id: 'cookie', name: 'cookie', category: 'Crops & Food', module: 29, icon: ''},
-        {id: 'cake', name: 'cake', category: 'Crops & Food', module: 29, icon: ''},
+        {id: 'cookie', name: 'cookie', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/cookie.png'},
+        {id: 'cake', name: 'cake', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/cake.png'},
         {id: 'cocoa_beans', name: 'cocoa beans', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/cocoa_beans.png'},
-        {id: 'bamboo', name: 'bamboo', category: 'Crops & Food', module: 29, icon: ''},
-        {id: 'cactus', name: 'cactus', category: 'Crops & Food', module: 29, icon: ''},
-        {id: 'kelp', name: 'kelp', category: 'Crops & Food', module: 30, icon: ''},
+        {id: 'bamboo', name: 'bamboo', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/bamboo.png'},
+        {id: 'cactus', name: 'cactus', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/cactus.png'},
+        {id: 'kelp', name: 'kelp', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/kelp.png'},
         {id: 'dried_kelp', name: 'dried kelp', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/dried_kelp.png'},
         {id: 'dried_kelp_block', name: 'dried kelp block', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/dried_kelp_block.png'},
         {id: 'sea_pickle', name: 'sea pickle', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/sea_pickle.png'},
-        {id: 'seagrass', name: 'seagrass', category: 'Crops & Food', module: 30, icon: ''},
+        {id: 'seagrass', name: 'seagrass', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/seagrass.png'},
         {id: 'raw_cod', name: 'raw cod', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/raw_cod.png'},
         {id: 'cooked_cod', name: 'cooked cod', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/cooked_cod.png'},
         {id: 'raw_salmon', name: 'raw salmon', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/raw_salmon.png'},
         {id: 'cooked_salmon', name: 'cooked salmon', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/cooked_salmon.png'},
         {id: 'tropical_fish', name: 'tropical fish', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/tropical_fish.png'},
-        {id: 'pufferfish', name: 'pufferfish', category: 'Crops & Food', module: 30, icon: ''},
+        {id: 'pufferfish', name: 'pufferfish', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/pufferfish.png'},
         {id: 'raw_beef', name: 'raw beef', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/raw_beef.png'},
-        {id: 'steak', name: 'steak', category: 'Crops & Food', module: 30, icon: ''},
+        {id: 'steak', name: 'steak', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/steak.png'},
         {id: 'raw_porkchop', name: 'raw porkchop', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/raw_porkchop.png'},
         {id: 'cooked_porkchop', name: 'cooked porkchop', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/cooked_porkchop.png'},
         {id: 'raw_mutton', name: 'raw mutton', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/raw_mutton.png'},
@@ -583,15 +579,15 @@
         {id: 'cooked_chicken', name: 'cooked chicken', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/cooked_chicken.png'},
         {id: 'raw_rabbit', name: 'raw rabbit', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/raw_rabbit.png'},
         {id: 'cooked_rabbit', name: 'cooked rabbit', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/cooked_rabbit.png'},
-        {id: 'egg', name: 'egg', category: 'Crops & Food', module: 30, icon: ''},
+        {id: 'egg', name: 'egg', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/egg.png'},
         {id: 'hay_bale', name: 'hay bale', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/hay_bale.png'},
-        {id: 'torchflower', name: 'torchflower', category: 'Crops & Food', module: 30, icon: ''},
+        {id: 'torchflower', name: 'torchflower', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/torchflower.png'},
         {id: 'torchflower_seeds', name: 'torchflower seeds', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/torchflower_seeds.png'},
         {id: 'pitcher_plant', name: 'pitcher plant', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/pitcher_plant.png'},
         {id: 'pitcher_pod', name: 'pitcher pod', category: 'Crops & Food', module: 30, icon: 'assets/mc-invicons/pitcher_pod.png'},
-        {id: 'stick', name: 'stick', category: 'Utility Items A', module: 31, icon: ''},
-        {id: 'bowl', name: 'bowl', category: 'Utility Items A', module: 31, icon: ''},
-        {id: 'bucket', name: 'bucket', category: 'Utility Items A', module: 31, icon: ''},
+        {id: 'stick', name: 'stick', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/stick.png'},
+        {id: 'bowl', name: 'bowl', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/bowl.png'},
+        {id: 'bucket', name: 'bucket', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/bucket.png'},
         {id: 'water_bottle', name: 'water bottle', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/water_bottle.png'},
         {id: 'glass_bottle', name: 'glass bottle', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/glass_bottle.png'},
         {id: 'bottle_o\'_enchanting', name: 'bottle o\' enchanting', category: 'Utility Items A', module: 31, icon: ''},
@@ -599,13 +595,13 @@
         {id: 'dragon_egg', name: 'dragon egg', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/dragon_egg.png'},
         {id: 'sniffer_egg', name: 'sniffer egg', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/sniffer_egg.png'},
         {id: 'turtle_egg', name: 'turtle egg', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/turtle_egg.png'},
-        {id: 'lead', name: 'lead', category: 'Utility Items A', module: 31, icon: ''},
+        {id: 'lead', name: 'lead', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/lead.png'},
         {id: 'name_tag', name: 'name tag', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/name_tag.png'},
-        {id: 'saddle', name: 'saddle', category: 'Utility Items A', module: 31, icon: ''},
-        {id: 'chest', name: 'chest', category: 'Utility Items A', module: 32, icon: ''},
+        {id: 'saddle', name: 'saddle', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/saddle.png'},
+        {id: 'chest', name: 'chest', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/chest.png'},
         {id: 'trapped_chest', name: 'trapped chest', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/trapped_chest.png'},
         {id: 'ender_chest', name: 'ender chest', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/ender_chest.png'},
-        {id: 'barrel', name: 'barrel', category: 'Utility Items A', module: 32, icon: ''},
+        {id: 'barrel', name: 'barrel', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/barrel.png'},
         {id: 'shulker_box', name: 'shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/shulker_box.png'},
         {id: 'white_shulker_box', name: 'white shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/white_shulker_box.png'},
         {id: 'orange_shulker_box', name: 'orange shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/orange_shulker_box.png'},
@@ -623,50 +619,50 @@
         {id: 'green_shulker_box', name: 'green shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/green_shulker_box.png'},
         {id: 'red_shulker_box', name: 'red shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/red_shulker_box.png'},
         {id: 'black_shulker_box', name: 'black shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/black_shulker_box.png'},
-        {id: 'furnace', name: 'furnace', category: 'Utility Items A', module: 33, icon: ''},
+        {id: 'furnace', name: 'furnace', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/furnace.png'},
         {id: 'blast_furnace', name: 'blast furnace', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/blast_furnace.png'},
-        {id: 'smoker', name: 'smoker', category: 'Utility Items A', module: 33, icon: ''},
+        {id: 'smoker', name: 'smoker', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/smoker.png'},
         {id: 'crafting_table', name: 'crafting table', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/crafting_table.png'},
         {id: 'stonecutter', name: 'stonecutter', category: 'Utility Items A', module: 33, icon: ''},
         {id: 'smithing_table', name: 'smithing table', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/smithing_table.png'},
         {id: 'fletching_table', name: 'fletching table', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/fletching_table.png'},
         {id: 'cartography_table', name: 'cartography table', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/cartography_table.png'},
-        {id: 'loom', name: 'loom', category: 'Utility Items A', module: 33, icon: ''},
-        {id: 'grindstone', name: 'grindstone', category: 'Utility Items A', module: 33, icon: ''},
-        {id: 'anvil', name: 'anvil', category: 'Utility Items A', module: 33, icon: ''},
+        {id: 'loom', name: 'loom', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/loom.png'},
+        {id: 'grindstone', name: 'grindstone', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/grindstone.png'},
+        {id: 'anvil', name: 'anvil', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/anvil.png'},
         {id: 'chipped_anvil', name: 'chipped anvil', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/chipped_anvil.png'},
         {id: 'damaged_anvil', name: 'damaged anvil', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/damaged_anvil.png'},
         {id: 'brewing_stand', name: 'brewing stand', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/brewing_stand.png'},
-        {id: 'cauldron', name: 'cauldron', category: 'Utility Items A', module: 33, icon: ''},
-        {id: 'composter', name: 'composter', category: 'Utility Items B', module: 34, icon: ''},
-        {id: 'lectern', name: 'lectern', category: 'Utility Items B', module: 34, icon: ''},
-        {id: 'bookshelf', name: 'bookshelf', category: 'Utility Items B', module: 34, icon: ''},
+        {id: 'cauldron', name: 'cauldron', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/cauldron.png'},
+        {id: 'composter', name: 'composter', category: 'Utility Items B', module: 34, icon: 'assets/mc-invicons/composter.png'},
+        {id: 'lectern', name: 'lectern', category: 'Utility Items B', module: 34, icon: 'assets/mc-invicons/lectern.png'},
+        {id: 'bookshelf', name: 'bookshelf', category: 'Utility Items B', module: 34, icon: 'assets/mc-invicons/bookshelf.png'},
         {id: 'chiseled_bookshelf', name: 'chiseled bookshelf', category: 'Utility Items B', module: 34, icon: 'assets/mc-invicons/chiseled_bookshelf.png'},
-        {id: 'ladder', name: 'ladder', category: 'Utility Items B', module: 34, icon: ''},
-        {id: 'scaffolding', name: 'scaffolding', category: 'Utility Items B', module: 34, icon: ''},
-        {id: 'chain', name: 'chain', category: 'Utility Items B', module: 34, icon: ''},
+        {id: 'ladder', name: 'ladder', category: 'Utility Items B', module: 34, icon: 'assets/mc-invicons/ladder.png'},
+        {id: 'scaffolding', name: 'scaffolding', category: 'Utility Items B', module: 34, icon: 'assets/mc-invicons/scaffolding.png'},
+        {id: 'chain', name: 'chain', category: 'Utility Items B', module: 34, icon: 'assets/mc-invicons/chain.png'},
         {id: 'iron_bars', name: 'iron bars', category: 'Utility Items B', module: 34, icon: 'assets/mc-invicons/iron_bars.png'},
         {id: 'iron_door', name: 'iron door', category: 'Utility Items B', module: 34, icon: 'assets/mc-invicons/iron_door.png'},
         {id: 'iron_trapdoor', name: 'iron trapdoor', category: 'Utility Items B', module: 34, icon: 'assets/mc-invicons/iron_trapdoor.png'},
-        {id: 'conduit', name: 'conduit', category: 'Utility Items B', module: 35, icon: ''},
-        {id: 'beacon', name: 'beacon', category: 'Utility Items B', module: 35, icon: ''},
+        {id: 'conduit', name: 'conduit', category: 'Utility Items B', module: 35, icon: 'assets/mc-invicons/conduit.png'},
+        {id: 'beacon', name: 'beacon', category: 'Utility Items B', module: 35, icon: 'assets/mc-invicons/beacon.png'},
         {id: 'respawn_anchor', name: 'respawn anchor', category: 'Utility Items B', module: 35, icon: 'assets/mc-invicons/respawn_anchor.png'},
-        {id: 'lodestone', name: 'lodestone', category: 'Utility Items B', module: 35, icon: ''},
+        {id: 'lodestone', name: 'lodestone', category: 'Utility Items B', module: 35, icon: 'assets/mc-invicons/lodestone.png'},
         {id: 'recovery_compass', name: 'recovery compass', category: 'Utility Items B', module: 35, icon: 'assets/mc-invicons/recovery_compass.png'},
-        {id: 'compass', name: 'compass', category: 'Utility Items B', module: 35, icon: ''},
-        {id: 'clock', name: 'clock', category: 'Utility Items B', module: 35, icon: ''},
+        {id: 'compass', name: 'compass', category: 'Utility Items B', module: 35, icon: 'assets/mc-invicons/compass.png'},
+        {id: 'clock', name: 'clock', category: 'Utility Items B', module: 35, icon: 'assets/mc-invicons/clock.png'},
         {id: 'empty_map', name: 'empty map', category: 'Utility Items B', module: 35, icon: 'assets/mc-invicons/empty_map.png'},
         {id: 'filled_map', name: 'filled map', category: 'Utility Items B', module: 35, icon: ''},
         {id: 'crafter', name: 'crafter', category: 'Utility Items B', module: 36, icon: ''},
-        {id: 'bell', name: 'bell', category: 'Utility Items B', module: 36, icon: ''},
-        {id: 'campfire', name: 'campfire', category: 'Utility Items B', module: 36, icon: ''},
+        {id: 'bell', name: 'bell', category: 'Utility Items B', module: 36, icon: 'assets/mc-invicons/bell.png'},
+        {id: 'campfire', name: 'campfire', category: 'Utility Items B', module: 36, icon: 'assets/mc-invicons/campfire.png'},
         {id: 'soul_campfire', name: 'soul campfire', category: 'Utility Items B', module: 36, icon: 'assets/mc-invicons/soul_campfire.png'},
-        {id: 'torch', name: 'torch', category: 'Utility Items B', module: 36, icon: ''},
+        {id: 'torch', name: 'torch', category: 'Utility Items B', module: 36, icon: 'assets/mc-invicons/torch.png'},
         {id: 'soul_torch', name: 'soul torch', category: 'Utility Items B', module: 36, icon: 'assets/mc-invicons/soul_torch.png'},
-        {id: 'lantern', name: 'lantern', category: 'Utility Items B', module: 36, icon: ''},
+        {id: 'lantern', name: 'lantern', category: 'Utility Items B', module: 36, icon: 'assets/mc-invicons/lantern.png'},
         {id: 'soul_lantern', name: 'soul lantern', category: 'Utility Items B', module: 36, icon: 'assets/mc-invicons/soul_lantern.png'},
         {id: 'lightning_rod', name: 'lightning rod', category: 'Utility Items B', module: 36, icon: 'assets/mc-invicons/lightning_rod.png'},
-        {id: 'candle', name: 'candle', category: 'Decoration', module: 37, icon: ''},
+        {id: 'candle', name: 'candle', category: 'Decoration', module: 37, icon: 'assets/mc-invicons/candle.png'},
         {id: 'white_candle', name: 'white candle', category: 'Decoration', module: 37, icon: 'assets/mc-invicons/white_candle.png'},
         {id: 'orange_candle', name: 'orange candle', category: 'Decoration', module: 37, icon: 'assets/mc-invicons/orange_candle.png'},
         {id: 'magenta_candle', name: 'magenta candle', category: 'Decoration', module: 37, icon: 'assets/mc-invicons/magenta_candle.png'},
@@ -684,15 +680,15 @@
         {id: 'red_candle', name: 'red candle', category: 'Decoration', module: 37, icon: 'assets/mc-invicons/red_candle.png'},
         {id: 'black_candle', name: 'black candle', category: 'Decoration', module: 37, icon: 'assets/mc-invicons/black_candle.png'},
         {id: 'flower_pot', name: 'flower pot', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/flower_pot.png'},
-        {id: 'painting', name: 'painting', category: 'Decoration', module: 38, icon: ''},
+        {id: 'painting', name: 'painting', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/painting.png'},
         {id: 'item_frame', name: 'item frame', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/item_frame.png'},
         {id: 'glow_item_frame', name: 'glow item frame', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/glow_item_frame.png'},
         {id: 'armor_stand', name: 'armor stand', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/armor_stand.png'},
         {id: 'end_rod', name: 'end rod', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/end_rod.png'},
         {id: 'end_crystal', name: 'end crystal', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/end_crystal.png'},
         {id: 'sea_lantern', name: 'sea lantern', category: 'Decoration', module: 38, icon: ''},
-        {id: 'glowstone', name: 'glowstone', category: 'Decoration', module: 38, icon: ''},
-        {id: 'shroomlight', name: 'shroomlight', category: 'Decoration', module: 38, icon: ''},
+        {id: 'glowstone', name: 'glowstone', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/glowstone.png'},
+        {id: 'shroomlight', name: 'shroomlight', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/shroomlight.png'},
         {id: 'ochre_froglight', name: 'ochre froglight', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/ochre_froglight.png'},
         {id: 'pearlescent_froglight', name: 'pearlescent froglight', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/pearlescent_froglight.png'},
         {id: 'verdant_froglight', name: 'verdant froglight', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/verdant_froglight.png'},
@@ -763,17 +759,17 @@
         {id: 'red_banner', name: 'red banner', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/red_banner.png'},
         {id: 'black_banner', name: 'black banner', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/black_banner.png'},
         {id: 'brute_banner_pattern', name: 'brute banner pattern', category: 'Decoration', module: 39, icon: ''},
-        {id: 'paper', name: 'paper', category: 'Tools & Gear', module: 40, icon: ''},
-        {id: 'book', name: 'book', category: 'Tools & Gear', module: 40, icon: ''},
+        {id: 'paper', name: 'paper', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/paper.png'},
+        {id: 'book', name: 'book', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/book.png'},
         {id: 'written_book', name: 'written book', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/written_book.png'},
         {id: 'firework_rocket', name: 'firework rocket', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/firework_rocket.png'},
         {id: 'firework_star', name: 'firework star', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/firework_star.png'},
         {id: 'fishing_rod', name: 'fishing rod', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/fishing_rod.png'},
         {id: 'flint_and_steel', name: 'flint and steel', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/flint_and_steel.png'},
-        {id: 'shears', name: 'shears', category: 'Tools & Gear', module: 40, icon: ''},
-        {id: 'spyglass', name: 'spyglass', category: 'Tools & Gear', module: 40, icon: ''},
-        {id: 'brush', name: 'brush', category: 'Tools & Gear', module: 40, icon: ''},
-        {id: 'elytra', name: 'elytra', category: 'Tools & Gear', module: 41, icon: ''},
+        {id: 'shears', name: 'shears', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/shears.png'},
+        {id: 'spyglass', name: 'spyglass', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/spyglass.png'},
+        {id: 'brush', name: 'brush', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/brush.png'},
+        {id: 'elytra', name: 'elytra', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/elytra.png'},
         {id: 'leather_helmet', name: 'leather helmet', category: 'Tools & Gear', module: 41, icon: ''},
         {id: 'leather_chestplate', name: 'leather chestplate', category: 'Tools & Gear', module: 41, icon: ''},
         {id: 'leather_leggings', name: 'leather leggings', category: 'Tools & Gear', module: 41, icon: ''},
@@ -829,13 +825,13 @@
         {id: 'golden_hoe', name: 'golden hoe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/golden_hoe.png'},
         {id: 'diamond_hoe', name: 'diamond hoe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/diamond_hoe.png'},
         {id: 'netherite_hoe', name: 'netherite hoe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/netherite_hoe.png'},
-        {id: 'bow', name: 'bow', category: 'Tools & Gear', module: 42, icon: ''},
-        {id: 'crossbow', name: 'crossbow', category: 'Tools & Gear', module: 42, icon: ''},
-        {id: 'arrow', name: 'arrow', category: 'Tools & Gear', module: 42, icon: ''},
+        {id: 'bow', name: 'bow', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/bow.png'},
+        {id: 'crossbow', name: 'crossbow', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/crossbow.png'},
+        {id: 'arrow', name: 'arrow', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/arrow.png'},
         {id: 'spectral_arrow', name: 'spectral arrow', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/spectral_arrow.png'},
         {id: 'tipped_arrow', name: 'tipped arrow', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/tipped_arrow.png'},
-        {id: 'shield', name: 'shield', category: 'Tools & Gear', module: 42, icon: ''},
-        {id: 'trident', name: 'trident', category: 'Tools & Gear', module: 42, icon: ''},
+        {id: 'shield', name: 'shield', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/shield.png'},
+        {id: 'trident', name: 'trident', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/trident.png'},
         {id: 'mace', name: 'mace', category: 'Tools & Gear', module: 42, icon: ''},
         {id: 'wind_charge', name: 'wind charge', category: 'Tools & Gear', module: 42, icon: ''},
         {id: 'trial_key', name: 'trial key', category: 'Rare Items', module: 43, icon: ''},
@@ -865,10 +861,6 @@
         {id: 'music_disc_precipice', name: 'music disc precipice', category: 'Rare Items', module: 43, icon: ''},
         {id: 'totem_of_undying', name: 'totem of undying', category: 'Rare Items', module: 44, icon: 'assets/mc-invicons/totem_of_undying.png'},
         {id: 'nether_star', name: 'nether star', category: 'Rare Items', module: 44, icon: 'assets/mc-invicons/nether_star.png'},
-        {id: 'beacon', name: 'beacon', category: 'Rare Items', module: 44, icon: ''},
-        {id: 'conduit', name: 'conduit', category: 'Rare Items', module: 44, icon: ''},
-        {id: 'dragon_egg', name: 'dragon egg', category: 'Rare Items', module: 44, icon: 'assets/mc-invicons/dragon_egg.png'},
-        {id: 'elytra', name: 'elytra', category: 'Rare Items', module: 44, icon: ''},
         {id: 'white_bundle', name: 'white bundle', category: 'Rare Items', module: 45, icon: ''},
         {id: 'orange_bundle', name: 'orange bundle', category: 'Rare Items', module: 45, icon: ''},
         {id: 'magenta_bundle', name: 'magenta bundle', category: 'Rare Items', module: 45, icon: ''},
@@ -913,11 +905,7 @@
         {id: 'snort_pottery_sherd', name: 'snort pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/snort_pottery_sherd.png'},
         {id: 'experience_bottle', name: 'experience bottle', category: 'Enchanting', module: 46, icon: ''},
         {id: 'enchanting_table', name: 'enchanting table', category: 'Enchanting', module: 46, icon: 'assets/mc-invicons/enchanting_table.png'},
-        {id: 'bookshelf', name: 'bookshelf', category: 'Enchanting', module: 46, icon: ''},
         {id: 'enchanted_book', name: 'enchanted book', category: 'Enchanting', module: 46, icon: 'assets/mc-invicons/enchanted_book.png'},
-        {id: 'lapis_lazuli', name: 'lapis lazuli', category: 'Enchanting', module: 46, icon: 'assets/mc-invicons/lapis_lazuli.png'},
-        {id: 'anvil', name: 'anvil', category: 'Enchanting', module: 47, icon: ''},
-        {id: 'grindstone', name: 'grindstone', category: 'Enchanting', module: 47, icon: ''},
         {id: 'netherite_upgrade_smithing_template', name: 'netherite upgrade smithing template', category: 'Enchanting', module: 47, icon: 'assets/mc-invicons/netherite_upgrade_smithing_template.png'},
         {id: 'bolt_armor_trim_smithing_template', name: 'bolt armor trim smithing template', category: 'Enchanting', module: 47, icon: ''},
         {id: 'coast_armor_trim_smithing_template', name: 'coast armor trim smithing template', category: 'Enchanting', module: 47, icon: 'assets/mc-invicons/coast_armor_trim_smithing_template.png'},
@@ -951,7 +939,6 @@
         {id: 'mundane_lingering_potion', name: 'mundane lingering potion', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/mundane_lingering_potion.png'},
         {id: 'mundane_potion', name: 'mundane potion', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/mundane_potion.png'},
         {id: 'mundane_splash_potion', name: 'mundane splash potion', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/mundane_splash_potion.png'},
-        {id: 'netherrack', name: 'netherrack', category: 'Nether Items', module: 49, icon: ''},
         {id: 'nether_bricks', name: 'nether bricks', category: 'Nether Items', module: 49, icon: 'assets/mc-invicons/nether_bricks.png'},
         {id: 'nether_brick_fence', name: 'nether brick fence', category: 'Nether Items', module: 49, icon: 'assets/mc-invicons/nether_brick_fence.png'},
         {id: 'nether_brick_slab', name: 'nether brick slab', category: 'Nether Items', module: 49, icon: 'assets/mc-invicons/nether_brick_slab.png'},
@@ -1021,11 +1008,6 @@
         {id: 'netherite_scrap', name: 'netherite scrap', category: 'Nether Items', module: 51, icon: 'assets/mc-invicons/netherite_scrap.png'},
         {id: 'netherite_ingot', name: 'netherite ingot', category: 'Nether Items', module: 51, icon: 'assets/mc-invicons/netherite_ingot.png'},
         {id: 'block_of_netherite', name: 'block of netherite', category: 'Nether Items', module: 51, icon: 'assets/mc-invicons/block_of_netherite.png'},
-        {id: 'end_stone', name: 'end stone', category: 'End Items', module: 52, icon: 'assets/mc-invicons/end_stone.png'},
-        {id: 'end_stone_bricks', name: 'end stone bricks', category: 'End Items', module: 52, icon: 'assets/mc-invicons/end_stone_bricks.png'},
-        {id: 'end_stone_brick_slab', name: 'end stone brick slab', category: 'End Items', module: 52, icon: 'assets/mc-invicons/end_stone_brick_slab.png'},
-        {id: 'end_stone_brick_stairs', name: 'end stone brick stairs', category: 'End Items', module: 52, icon: 'assets/mc-invicons/end_stone_brick_stairs.png'},
-        {id: 'end_stone_brick_wall', name: 'end stone brick wall', category: 'End Items', module: 52, icon: 'assets/mc-invicons/end_stone_brick_wall.png'},
         {id: 'purpur_block', name: 'purpur block', category: 'End Items', module: 52, icon: 'assets/mc-invicons/purpur_block.png'},
         {id: 'purpur_pillar', name: 'purpur pillar', category: 'End Items', module: 52, icon: 'assets/mc-invicons/purpur_pillar.png'},
         {id: 'purpur_slab', name: 'purpur slab', category: 'End Items', module: 52, icon: 'assets/mc-invicons/purpur_slab.png'},
@@ -1034,15 +1016,8 @@
         {id: 'chorus_flower', name: 'chorus flower', category: 'End Items', module: 53, icon: 'assets/mc-invicons/chorus_flower.png'},
         {id: 'chorus_fruit', name: 'chorus fruit', category: 'End Items', module: 53, icon: 'assets/mc-invicons/chorus_fruit.png'},
         {id: 'popped_chorus_fruit', name: 'popped chorus fruit', category: 'End Items', module: 53, icon: 'assets/mc-invicons/popped_chorus_fruit.png'},
-        {id: 'end_rod', name: 'end rod', category: 'End Items', module: 53, icon: 'assets/mc-invicons/end_rod.png'},
-        {id: 'dragon_head', name: 'dragon head', category: 'End Items', module: 53, icon: 'assets/mc-invicons/dragon_head.png'},
-        {id: 'shulker_shell', name: 'shulker shell', category: 'End Items', module: 54, icon: 'assets/mc-invicons/shulker_shell.png'},
-        {id: 'elytra', name: 'elytra', category: 'End Items', module: 54, icon: ''},
-        {id: 'dragon_egg', name: 'dragon egg', category: 'End Items', module: 54, icon: 'assets/mc-invicons/dragon_egg.png'},
-        {id: 'end_crystal', name: 'end crystal', category: 'End Items', module: 54, icon: 'assets/mc-invicons/end_crystal.png'},
-        {id: 'ender_chest', name: 'ender chest', category: 'End Items', module: 54, icon: 'assets/mc-invicons/ender_chest.png'},
         {id: 'tinted_glass', name: 'tinted glass', category: 'Building Blocks A', module: 1, icon: 'assets/mc-invicons/tinted_glass.png'},
-        {id: 'glass', name: 'glass', category: 'Building Blocks A', module: 1, icon: ''},
+        {id: 'glass', name: 'glass', category: 'Building Blocks A', module: 1, icon: 'assets/mc-invicons/glass.png'},
         {id: 'glass_pane', name: 'glass pane', category: 'Building Blocks A', module: 1, icon: 'assets/mc-invicons/glass_pane.png'},
         {id: 'white_stained_glass', name: 'white stained glass', category: 'Building Blocks A', module: 1, icon: 'assets/mc-invicons/white_stained_glass.png'},
         {id: 'orange_stained_glass', name: 'orange stained glass', category: 'Building Blocks A', module: 1, icon: 'assets/mc-invicons/orange_stained_glass.png'},
@@ -1076,7 +1051,7 @@
         {id: 'green_stained_glass_pane', name: 'green stained glass pane', category: 'Building Blocks A', module: 2, icon: 'assets/mc-invicons/green_stained_glass_pane.png'},
         {id: 'red_stained_glass_pane', name: 'red stained glass pane', category: 'Building Blocks A', module: 2, icon: 'assets/mc-invicons/red_stained_glass_pane.png'},
         {id: 'black_stained_glass_pane', name: 'black stained glass pane', category: 'Building Blocks A', module: 2, icon: 'assets/mc-invicons/black_stained_glass_pane.png'},
-        {id: 'terracotta', name: 'terracotta', category: 'Building Blocks A', module: 3, icon: ''},
+        {id: 'terracotta', name: 'terracotta', category: 'Building Blocks A', module: 3, icon: 'assets/mc-invicons/terracotta.png'},
         {id: 'white_terracotta', name: 'white terracotta', category: 'Building Blocks A', module: 3, icon: 'assets/mc-invicons/white_terracotta.png'},
         {id: 'orange_terracotta', name: 'orange terracotta', category: 'Building Blocks A', module: 3, icon: 'assets/mc-invicons/orange_terracotta.png'},
         {id: 'magenta_terracotta', name: 'magenta terracotta', category: 'Building Blocks A', module: 3, icon: 'assets/mc-invicons/magenta_terracotta.png'},
@@ -1163,26 +1138,26 @@
         {id: 'dark_prismarine', name: 'dark prismarine', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/dark_prismarine.png'},
         {id: 'dark_prismarine_slab', name: 'dark prismarine slab', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/dark_prismarine_slab.png'},
         {id: 'dark_prismarine_stairs', name: 'dark prismarine stairs', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/dark_prismarine_stairs.png'},
-        {id: 'dandelion', name: 'dandelion', category: 'Natural World A', module: 19, icon: ''},
-        {id: 'poppy', name: 'poppy', category: 'Natural World A', module: 19, icon: ''},
+        {id: 'dandelion', name: 'dandelion', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/dandelion.png'},
+        {id: 'poppy', name: 'poppy', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/poppy.png'},
         {id: 'blue_orchid', name: 'blue orchid', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/blue_orchid.png'},
-        {id: 'allium', name: 'allium', category: 'Natural World A', module: 19, icon: ''},
+        {id: 'allium', name: 'allium', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/allium.png'},
         {id: 'azure_bluet', name: 'azure bluet', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/azure_bluet.png'},
         {id: 'red_tulip', name: 'red tulip', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/red_tulip.png'},
         {id: 'orange_tulip', name: 'orange tulip', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/orange_tulip.png'},
         {id: 'white_tulip', name: 'white tulip', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/white_tulip.png'},
         {id: 'pink_tulip', name: 'pink tulip', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/pink_tulip.png'},
         {id: 'oxeye_daisy', name: 'oxeye daisy', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/oxeye_daisy.png'},
-        {id: 'cornflower', name: 'cornflower', category: 'Natural World A', module: 19, icon: ''},
+        {id: 'cornflower', name: 'cornflower', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/cornflower.png'},
         {id: 'lily_of_the_valley', name: 'lily of the valley', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/lily_of_the_valley.png'},
         {id: 'wither_rose', name: 'wither rose', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/wither_rose.png'},
-        {id: 'sunflower', name: 'sunflower', category: 'Natural World A', module: 19, icon: ''},
-        {id: 'lilac', name: 'lilac', category: 'Natural World A', module: 19, icon: ''},
+        {id: 'sunflower', name: 'sunflower', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/sunflower.png'},
+        {id: 'lilac', name: 'lilac', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/lilac.png'},
         {id: 'rose_bush', name: 'rose bush', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/rose_bush.png'},
-        {id: 'peony', name: 'peony', category: 'Natural World A', module: 19, icon: ''},
+        {id: 'peony', name: 'peony', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/peony.png'},
         {id: 'pink_petals', name: 'pink petals', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/pink_petals.png'},
         {id: 'spore_blossom', name: 'spore blossom', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/spore_blossom.png'},
-        {id: 'azalea', name: 'azalea', category: 'Natural World A', module: 19, icon: ''},
+        {id: 'azalea', name: 'azalea', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/azalea.png'},
         {id: 'azalea_leaves', name: 'azalea leaves', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/azalea_leaves.png'},
         {id: 'flowering_azalea', name: 'flowering azalea', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/flowering_azalea.png'},
         {id: 'flowering_azalea_leaves', name: 'flowering azalea leaves', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/flowering_azalea_leaves.png'},
@@ -1192,7 +1167,7 @@
         {id: 'cave_vines', name: 'cave vines', category: 'Natural World A', module: 19, icon: ''},
         {id: 'glow_lichen', name: 'glow lichen', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/glow_lichen.png'},
         {id: 'dead_bush', name: 'dead bush', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/dead_bush.png'},
-        {id: 'fern', name: 'fern', category: 'Natural World A', module: 19, icon: ''},
+        {id: 'fern', name: 'fern', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/fern.png'},
         {id: 'large_fern', name: 'large fern', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/large_fern.png'},
         {id: 'short_grass', name: 'short grass', category: 'Natural World A', module: 19, icon: ''},
         {id: 'tall_grass', name: 'tall grass', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/tall_grass.png'},
@@ -1233,23 +1208,21 @@
         {id: 'dead_fire_coral_fan', name: 'dead fire coral fan', category: 'Natural World A', module: 20, icon: 'assets/mc-invicons/dead_fire_coral_fan.png'},
         {id: 'dead_horn_coral_fan', name: 'dead horn coral fan', category: 'Natural World A', module: 20, icon: 'assets/mc-invicons/dead_horn_coral_fan.png'},
         {id: 'dead_tube_coral_fan', name: 'dead tube coral fan', category: 'Natural World A', module: 20, icon: 'assets/mc-invicons/dead_tube_coral_fan.png'},
-        {id: 'sponge', name: 'sponge', category: 'Natural World A', module: 21, icon: ''},
+        {id: 'sponge', name: 'sponge', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/sponge.png'},
         {id: 'wet_sponge', name: 'wet sponge', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/wet_sponge.png'},
         {id: 'bee_nest', name: 'bee nest', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/bee_nest.png'},
-        {id: 'beehive', name: 'beehive', category: 'Natural World A', module: 21, icon: ''},
-        {id: 'honeycomb', name: 'honeycomb', category: 'Natural World A', module: 21, icon: ''},
+        {id: 'beehive', name: 'beehive', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/beehive.png'},
+        {id: 'honeycomb', name: 'honeycomb', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/honeycomb.png'},
         {id: 'pale_hanging_moss', name: 'pale hanging moss', category: 'Natural World B', module: 24, icon: ''},
         {id: 'creaking_heart', name: 'creaking heart', category: 'Natural World B', module: 24, icon: ''},
         {id: 'closed_eyeblossom', name: 'closed eyeblossom', category: 'Natural World B', module: 24, icon: ''},
         {id: 'open_eyeblossom', name: 'open eyeblossom', category: 'Natural World B', module: 24, icon: ''},
         {id: 'clay_ball', name: 'clay ball', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/clay_ball.png'},
-        {id: 'brick', name: 'brick', category: 'Utility Items A', module: 31, icon: ''},
-        {id: 'nether_brick', name: 'nether brick', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/nether_brick.png'},
-        {id: 'flint', name: 'flint', category: 'Utility Items A', module: 31, icon: ''},
-        {id: 'snowball', name: 'snowball', category: 'Utility Items A', module: 31, icon: ''},
+        {id: 'brick', name: 'brick', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/brick.png'},
+        {id: 'flint', name: 'flint', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/flint.png'},
+        {id: 'snowball', name: 'snowball', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/snowball.png'},
         {id: 'fire_charge', name: 'fire charge', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/fire_charge.png'},
         {id: 'glowstone_dust', name: 'glowstone dust', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/glowstone_dust.png'},
-        {id: 'gunpowder', name: 'gunpowder', category: 'Utility Items A', module: 31, icon: ''},
         {id: 'white_dye', name: 'white dye', category: 'Decoration', module: 37, icon: 'assets/mc-invicons/white_dye.png'},
         {id: 'orange_dye', name: 'orange dye', category: 'Decoration', module: 37, icon: 'assets/mc-invicons/orange_dye.png'},
         {id: 'magenta_dye', name: 'magenta dye', category: 'Decoration', module: 37, icon: 'assets/mc-invicons/magenta_dye.png'},
@@ -1294,6 +1267,7 @@ let draggedElement = null;
 let draggedType = null; // 'item', 'module', or 'section'
 let selectedItems = new Set(); // Track selected items
 let lastClickedItem = null; // For shift-click range selection
+let hasUnsavedChanges = false; // Track if there are unsaved changes
 
 function initializeStorage() {
     // Load saved configuration if exists
@@ -1324,8 +1298,12 @@ function initializeStorage() {
             showNotification('Reset to initial configuration.');
         }
     }
+    
+
+    
     renderGrid();
     updateStats();
+    updateSaveButtonState();
 }
 
 function renderGrid() {
@@ -1354,13 +1332,13 @@ function renderGrid() {
     sectionsToRender.forEach((category, categoryIndex) => {
         const sectionDiv = document.createElement('div');
         sectionDiv.className = 'section';
-        sectionDiv.draggable = true;
         sectionDiv.dataset.categoryName = category.name;
         sectionDiv.dataset.categoryIndex = categoryIndex;
         
         const titleDiv = document.createElement('div');
         titleDiv.className = 'section-title';
         titleDiv.textContent = category.name;
+        titleDiv.draggable = true;
         titleDiv.onclick = () => editSectionName(titleDiv);
         sectionDiv.appendChild(titleDiv);
         
@@ -1377,7 +1355,6 @@ function renderGrid() {
             category.modules.forEach((moduleNum, moduleIndex) => {
             const moduleDiv = document.createElement('div');
             moduleDiv.className = 'module';
-            moduleDiv.draggable = true;
             moduleDiv.dataset.module = moduleNum;
             moduleDiv.dataset.category = category.name;
             
@@ -1387,13 +1364,32 @@ function renderGrid() {
             
             const moduleTitle = document.createElement('div');
             moduleTitle.className = 'module-title';
+            moduleTitle.draggable = true;
             
-            // Check for custom module name
+            // Check for custom module name and count items
             const moduleItems = storageData.items.filter(item => 
                 item.category === category.name && item.module === moduleNum
             );
             const customName = moduleItems.length > 0 ? moduleItems[0].moduleName : null;
-            moduleTitle.textContent = customName || 'M' + moduleNum;
+            const itemCount = moduleItems.length;
+            
+            // Create title with item count
+            const titleText = customName || 'Module ' + moduleNum;
+            const countSpan = document.createElement('span');
+            countSpan.className = 'item-count';
+            countSpan.textContent = ' (' + itemCount + ')';
+            
+            // Apply color coding based on item count
+            if (itemCount > 54) {
+                countSpan.style.color = '#ff4444'; // Red
+            } else if (itemCount === 54) {
+                countSpan.style.color = '#ffaa00'; // Yellow
+            } else {
+                countSpan.style.color = 'white'; // Default
+            }
+            
+            moduleTitle.textContent = titleText;
+            moduleTitle.appendChild(countSpan);
             moduleTitle.onclick = () => editModuleName(moduleTitle);
             moduleDiv.appendChild(moduleTitle);
             
@@ -1413,8 +1409,49 @@ function renderGrid() {
             moduleDiv.appendChild(itemsContainer);
             modulesContainer.appendChild(moduleDiv);
             
-            // Setup module drag and drop
-            setupModuleDragAndDrop(moduleDiv);
+                // Setup module drag and drop
+    setupModuleDragAndDrop(moduleDiv);
+    
+    // Add individual module drop handling for precise swapping
+    moduleDiv.addEventListener('dragover', function(e) {
+        if (draggedType === 'module' && draggedElement !== this) {
+            e.preventDefault();
+            e.stopPropagation(); // Prevent section-level drag handling
+        }
+    });
+    
+    moduleDiv.addEventListener('dragenter', function(e) {
+        if (draggedType === 'module' && draggedElement !== this) {
+            this.classList.add('drag-over');
+            e.stopPropagation();
+        }
+    });
+    
+    moduleDiv.addEventListener('dragleave', function(e) {
+        if (draggedType === 'module' && !this.contains(e.relatedTarget)) {
+            this.classList.remove('drag-over');
+        }
+    });
+    
+    moduleDiv.addEventListener('drop', function(e) {
+        if (draggedType === 'module' && draggedElement !== this) {
+            e.preventDefault();
+            e.stopPropagation(); // Prevent section-level drop handling
+            this.classList.remove('drag-over');
+            
+            const targetModuleNum = parseInt(this.dataset.module);
+            const targetCategory = this.dataset.category;
+            const [sourceModuleNum, sourceCategory] = e.dataTransfer.getData('text/plain').split('|');
+            
+            if (sourceCategory !== targetCategory) {
+                // Cross-section module swap
+                moveModuleToSection(parseInt(sourceModuleNum), sourceCategory, targetCategory, targetModuleNum);
+            } else {
+                // Same section module swap
+                swapModulesWithinSection(parseInt(sourceModuleNum), targetModuleNum, sourceCategory);
+            }
+        }
+    });
         });
         }
         
@@ -1445,11 +1482,15 @@ function createItemElement(item) {
     // Item click events for selection
     itemDiv.addEventListener('click', function(e) {
         e.stopPropagation();
-        handleItemSelection(this, e.ctrlKey || e.metaKey, e.shiftKey);
+        if (this && this.dataset && this.dataset.itemId) {
+            handleItemSelection(this, e.ctrlKey || e.metaKey, e.shiftKey);
+        }
     });
     
     // Item drag events
     itemDiv.addEventListener('dragstart', function(e) {
+        if (!this || !this.dataset || !this.dataset.itemId) return;
+        
         // If this item isn't selected, clear selection and select only this item
         if (!selectedItems.has(this.dataset.itemId)) {
             clearSelection();
@@ -1528,10 +1569,11 @@ function setupModuleDragAndDrop(moduleDiv) {
                     renderGrid();
                     updateStats();
                     clearSelection();
+                    markAsChanged();
                     
                     const message = movedItems.length === 1 
-                        ? 'Moved ' + movedItems[0] + ' to ' + targetCategory + ' M' + targetModule
-                        : 'Moved ' + movedItems.length + ' items to ' + targetCategory + ' M' + targetModule;
+                        ? 'Moved ' + movedItems[0] + ' to ' + targetCategory + ' Module ' + targetModule
+                        : 'Moved ' + movedItems.length + ' items to ' + targetCategory + ' Module ' + targetModule;
                     showNotification(message);
                 }
             } catch (e) {
@@ -1543,29 +1585,33 @@ function setupModuleDragAndDrop(moduleDiv) {
                     renderGrid();
                     updateStats();
                     clearSelection();
-                    showNotification('Moved ' + item.name + ' to ' + targetCategory + ' M' + targetModule);
+                    markAsChanged();
+                    showNotification('Moved ' + item.name + ' to ' + targetCategory + ' Module ' + targetModule);
                 }
             }
         }
     });
     
-    // Module drag events
-    moduleDiv.addEventListener('dragstart', function(e) {
-        if (e.target === moduleDiv) {
-            draggedElement = this;
+    // Module drag events (on title only)
+    const moduleTitle = moduleDiv.querySelector('.module-title');
+    if (moduleTitle) {
+        moduleTitle.addEventListener('dragstart', function(e) {
+            if (!moduleDiv || !moduleDiv.dataset) return;
+            
+            draggedElement = moduleDiv;
             draggedType = 'module';
-            this.classList.add('dragging');
-            e.dataTransfer.setData('text/plain', this.dataset.module + '|' + this.dataset.category);
-        }
-    });
-    
-    moduleDiv.addEventListener('dragend', function() {
-        this.classList.remove('dragging');
-        if (draggedType === 'module') {
-            draggedElement = null;
-            draggedType = null;
-        }
-    });
+            moduleDiv.classList.add('dragging');
+            e.dataTransfer.setData('text/plain', moduleDiv.dataset.module + '|' + moduleDiv.dataset.category);
+        });
+        
+        moduleTitle.addEventListener('dragend', function() {
+            if (moduleDiv) moduleDiv.classList.remove('dragging');
+            if (draggedType === 'module') {
+                draggedElement = null;
+                draggedType = null;
+            }
+        });
+    }
 }
 
 function setupSectionDragAndDrop(sectionDiv) {
@@ -1595,6 +1641,14 @@ function setupSectionDragAndDrop(sectionDiv) {
             const [moduleNum, sourceCategory] = e.dataTransfer.getData('text/plain').split('|');
             
             if (sourceCategory !== targetCategory) {
+                // Find the specific target module being dropped on
+                const targetModule = e.target.closest('.module');
+                let targetModuleNum = null;
+                
+                if (targetModule && targetModule.dataset.module) {
+                    targetModuleNum = parseInt(targetModule.dataset.module);
+                }
+                
                 // Handle moving module to empty section
                 const targetCategoryData = storageData.categories.find(c => c.name === targetCategory);
                 if (!targetCategoryData) {
@@ -1605,28 +1659,31 @@ function setupSectionDragAndDrop(sectionDiv) {
                     };
                     storageData.categories.push(newCategory);
                 }
-                moveModuleToSection(parseInt(moduleNum), sourceCategory, targetCategory);
+                moveModuleToSection(parseInt(moduleNum), sourceCategory, targetCategory, targetModuleNum);
             }
         }
     });
     
-    // Section drag events
-    sectionDiv.addEventListener('dragstart', function(e) {
-        if (e.target === sectionDiv) {
-            draggedElement = this;
+    // Section drag events (on title only)
+    const sectionTitle = sectionDiv.querySelector('.section-title');
+    if (sectionTitle) {
+        sectionTitle.addEventListener('dragstart', function(e) {
+            if (!sectionDiv || !sectionDiv.dataset) return;
+            
+            draggedElement = sectionDiv;
             draggedType = 'section';
-            this.classList.add('dragging');
-            e.dataTransfer.setData('text/plain', this.dataset.categoryName);
-        }
-    });
-    
-    sectionDiv.addEventListener('dragend', function() {
-        this.classList.remove('dragging');
-        if (draggedType === 'section') {
-            draggedElement = null;
-            draggedType = null;
-        }
-    });
+            sectionDiv.classList.add('dragging');
+            e.dataTransfer.setData('text/plain', sectionDiv.dataset.categoryName);
+        });
+        
+        sectionTitle.addEventListener('dragend', function() {
+            if (sectionDiv) sectionDiv.classList.remove('dragging');
+            if (draggedType === 'section') {
+                draggedElement = null;
+                draggedType = null;
+            }
+        });
+    }
     
     // Section drop events (for reordering sections)
     sectionDiv.addEventListener('dragover', function(e) {
@@ -1642,7 +1699,7 @@ function setupSectionDragAndDrop(sectionDiv) {
     });
 }
 
-function moveModuleToSection(moduleNum, sourceCategory, targetCategory) {
+function moveModuleToSection(moduleNum, sourceCategory, targetCategory, specificTargetModuleNum = null) {
     const moduleItems = storageData.items.filter(item => 
         item.category === sourceCategory && item.module === moduleNum
     );
@@ -1650,32 +1707,90 @@ function moveModuleToSection(moduleNum, sourceCategory, targetCategory) {
     if (moduleItems.length === 0) return;
     
     const targetCategoryData = storageData.categories.find(c => c.name === targetCategory);
-    
-    // Check if target section already has 3 modules (max allowed)
-    if (targetCategoryData.modules.length >= 3) {
-        showNotification('Cannot move: Target section already has maximum 3 modules');
-        return;
-    }
-    
-    const nextModuleNum = Math.max(...targetCategoryData.modules) + 1;
-    
-    // Move all items to target category
-    moduleItems.forEach(item => {
-        item.category = targetCategory;
-        item.module = nextModuleNum;
-    });
-    
-    // Update category modules
     const sourceCategoryData = storageData.categories.find(c => c.name === sourceCategory);
-    sourceCategoryData.modules = sourceCategoryData.modules.filter(m => m !== moduleNum);
-    targetCategoryData.modules.push(nextModuleNum);
+    
+    // If target section already has 3 modules, perform a swap
+    if (targetCategoryData.modules.length >= 3) {
+        // Use specific target module if provided, otherwise use first module
+        const targetModuleNum = specificTargetModuleNum || targetCategoryData.modules[0];
+        
+        // Verify the target module exists in the target category
+        if (!targetCategoryData.modules.includes(targetModuleNum)) {
+            showNotification('Error: Target module not found for swap');
+            return;
+        }
+        
+        const targetModuleItems = storageData.items.filter(item => 
+            item.category === targetCategory && item.module === targetModuleNum
+        );
+        
+        // Move source module items to target
+        moduleItems.forEach(item => {
+            item.category = targetCategory;
+            item.module = targetModuleNum;
+        });
+        
+        // Move target module items to source
+        targetModuleItems.forEach(item => {
+            item.category = sourceCategory;
+            item.module = moduleNum;
+        });
+        
+        showNotification('Swapped Module ' + moduleNum + ' (' + sourceCategory + ') with Module ' + targetModuleNum + ' (' + targetCategory + ')');
+    } else {
+        // Normal move - target has space
+        const nextModuleNum = targetCategoryData.modules.length > 0 ? 
+            Math.max(...targetCategoryData.modules) + 1 : 1;
+        
+        // Move all items to target category
+        moduleItems.forEach(item => {
+            item.category = targetCategory;
+            item.module = nextModuleNum;
+        });
+        
+        // Update category modules
+        sourceCategoryData.modules = sourceCategoryData.modules.filter(m => m !== moduleNum);
+        targetCategoryData.modules.push(nextModuleNum);
+        
+        showNotification('Moved module from ' + sourceCategory + ' to ' + targetCategory);
+    }
     
     renderGrid();
     updateStats();
-    showNotification('Moved module from ' + sourceCategory + ' to ' + targetCategory);
+    markAsChanged();
+}
+
+function swapModulesWithinSection(sourceModuleNum, targetModuleNum, categoryName) {
+    if (sourceModuleNum === targetModuleNum) return;
+    
+    const sourceItems = storageData.items.filter(item => 
+        item.category === categoryName && item.module === sourceModuleNum
+    );
+    
+    const targetItems = storageData.items.filter(item => 
+        item.category === categoryName && item.module === targetModuleNum
+    );
+    
+    // Swap the module numbers
+    sourceItems.forEach(item => {
+        item.module = targetModuleNum;
+    });
+    
+    targetItems.forEach(item => {
+        item.module = sourceModuleNum;
+    });
+    
+    renderGrid();
+    updateStats();
+    markAsChanged();
+    showNotification('Swapped Module ' + sourceModuleNum + ' with Module ' + targetModuleNum + ' within ' + categoryName);
 }
 
 function selectItem(itemElement) {
+    if (!itemElement || !itemElement.dataset || !itemElement.dataset.itemId) {
+        return;
+    }
+    
     const itemId = itemElement.dataset.itemId;
     selectedItems.add(itemId);
     itemElement.classList.add('selected');
@@ -1683,27 +1798,70 @@ function selectItem(itemElement) {
 }
 
 function deselectItem(itemElement) {
+    if (!itemElement || !itemElement.dataset || !itemElement.dataset.itemId) return;
+    
     const itemId = itemElement.dataset.itemId;
     selectedItems.delete(itemId);
     itemElement.classList.remove('selected');
+    
+    // Double-check: ensure the item is visually deselected
+    if (itemElement.classList.contains('selected')) {
+        itemElement.classList.remove('selected');
+    }
+}
+
+function syncSelectionState() {
+    // Utility function to ensure visual and internal selection states match
+    // Remove selected class from items not in the selectedItems set
+    document.querySelectorAll('.item.selected').forEach(item => {
+        if (item.dataset.itemId && !selectedItems.has(item.dataset.itemId)) {
+            item.classList.remove('selected');
+        }
+    });
+    
+    // Add selected class to items that are in the selectedItems set
+    selectedItems.forEach(itemId => {
+        const element = document.querySelector('[data-item-id="' + itemId + '"]');
+        if (element && !element.classList.contains('selected')) {
+            element.classList.add('selected');
+        }
+    });
 }
 
 function clearSelection() {
+    // Remove visual selection from all items (belt and suspenders approach)
+    document.querySelectorAll('.item.selected').forEach(item => {
+        item.classList.remove('selected');
+    });
+    
+    // Also clear from tracked set
     selectedItems.forEach(itemId => {
         const element = document.querySelector('[data-item-id="' + itemId + '"]');
         if (element) element.classList.remove('selected');
     });
+    
     selectedItems.clear();
     lastClickedItem = null;
 }
 
+
+
 function handleItemSelection(itemElement, ctrlKey, shiftKey) {
+    if (!itemElement || !itemElement.dataset || !itemElement.dataset.itemId) return;
+    
     const itemId = itemElement.dataset.itemId;
     
     if (shiftKey && lastClickedItem) {
         // Shift+click: select range
+        const rangeStart = lastClickedItem; // Store before clearing!
         clearSelection();
-        selectRange(lastClickedItem, itemElement);
+        selectRange(rangeStart, itemElement);
+        
+        // Show notification about range selection
+        const selectedCount = selectedItems.size;
+        if (selectedCount > 1) {
+            showNotification('Selected range: ' + selectedCount + ' items');
+        }
     } else if (ctrlKey) {
         // Ctrl+click: toggle individual item
         if (selectedItems.has(itemId)) {
@@ -1716,32 +1874,80 @@ function handleItemSelection(itemElement, ctrlKey, shiftKey) {
         clearSelection();
         selectItem(itemElement);
     }
+    
+    // Ensure visual and internal selection states are synchronized
+    syncSelectionState();
 }
 
 function selectRange(startElement, endElement) {
-    const allItems = Array.from(document.querySelectorAll('.item'));
-    const startIndex = allItems.indexOf(startElement);
-    const endIndex = allItems.indexOf(endElement);
+    if (!startElement || !endElement || !startElement.dataset || !endElement.dataset) {
+        return;
+    }
     
-    const minIndex = Math.min(startIndex, endIndex);
-    const maxIndex = Math.max(startIndex, endIndex);
+    // Check if both items are in the same module
+    const startModule = startElement.closest('.module');
+    const endModule = endElement.closest('.module');
     
-    for (let i = minIndex; i <= maxIndex; i++) {
-        selectItem(allItems[i]);
+    // Only allow range selection within the same module
+    if (startModule === endModule && startModule) {
+        // Same module - determine selection type
+        const moduleItems = Array.from(startModule.querySelectorAll('.item'));
+        const startIndex = moduleItems.indexOf(startElement);
+        const endIndex = moduleItems.indexOf(endElement);
+        
+        if (startIndex !== -1 && endIndex !== -1) {
+            // Check if items are in the same visual column (items are arranged in 2 columns)
+            const startColumn = startIndex % 2;
+            const endColumn = endIndex % 2;
+            
+            if (startColumn === endColumn) {
+                // Same column - select only items in this column between start and end
+                selectColumnRange(moduleItems, startIndex, endIndex, startColumn);
+            } else {
+                // Different columns - select all items between start and end (horizontal range)
+                const minIndex = Math.min(startIndex, endIndex);
+                const maxIndex = Math.max(startIndex, endIndex);
+                
+                for (let i = minIndex; i <= maxIndex; i++) {
+                    selectItem(moduleItems[i]);
+                }
+            }
+        }
+    } else {
+        // Different modules - don't allow range selection, just select the clicked item
+        selectItem(endElement);
+        showNotification('Range selection only works within the same module');
     }
 }
 
+function selectColumnRange(moduleItems, startIndex, endIndex, column) {
+    const minIndex = Math.min(startIndex, endIndex);
+    const maxIndex = Math.max(startIndex, endIndex);
+    
+    // Select all items in the same column between start and end
+    for (let i = minIndex; i <= maxIndex; i++) {
+        // Only select items that are in the target column
+        if (i % 2 === column) {
+            selectItem(moduleItems[i]);
+        }
+    }
+}
+
+
+
 function restoreSelection() {
-    // Restore selection state after grid re-render
+    // Remove non-existent items from selection set first
+    const itemsToRemove = [];
     selectedItems.forEach(itemId => {
         const element = document.querySelector('[data-item-id="' + itemId + '"]');
-        if (element) {
-            element.classList.add('selected');
-        } else {
-            // Item no longer exists, remove from selection
-            selectedItems.delete(itemId);
+        if (!element) {
+            itemsToRemove.push(itemId);
         }
     });
+    itemsToRemove.forEach(itemId => selectedItems.delete(itemId));
+    
+    // Then synchronize the visual state with the internal state
+    syncSelectionState();
 }
 
 function updateModuleColors() {
@@ -1775,12 +1981,13 @@ function reorderSections(sourceCategoryName, targetCategoryName) {
         
         renderGrid();
         showNotification('Reordered sections');
+        markAsChanged();
     }
 }
 
 function editSectionName(element) {
     if (!editMode) {
-        showNotification('Enable Edit Mode first to rename');
+        showNotification('Enable Rename Mode first to rename');
         return;
     }
     
@@ -1810,6 +2017,7 @@ function editSectionName(element) {
         if (newName !== currentName) {
             showNotification('Renamed section to: ' + newName);
             renderGrid();
+            markAsChanged();
         }
     }
     
@@ -1829,7 +2037,7 @@ function editSectionName(element) {
 
 function editModuleName(element) {
     if (!editMode) {
-        showNotification('Enable Edit Mode first to rename');
+        showNotification('Enable Rename Mode first to rename');
         return;
     }
     
@@ -1848,7 +2056,7 @@ function editModuleName(element) {
         // Update module name for all items in this module
         storageData.items.forEach(item => {
             if (item.category === categoryName && item.module === moduleNum) {
-                item.moduleName = newName !== ('M' + moduleNum) ? newName : undefined;
+                item.moduleName = newName !== ('Module ' + moduleNum) ? newName : undefined;
             }
         });
         
@@ -1857,6 +2065,7 @@ function editModuleName(element) {
         
         if (newName !== currentName) {
             showNotification('Renamed module to: ' + newName);
+            markAsChanged();
         }
     }
     
@@ -1877,15 +2086,64 @@ function editModuleName(element) {
 function toggleEditMode() {
     editMode = !editMode;
     const btn = document.getElementById('editBtn');
-    btn.textContent = editMode ? '🔒 Exit Edit' : '✏️ Edit Mode';
+    btn.textContent = editMode ? '🔒 Exit Rename Mode' : '✏️ Rename Modules/Sections';
     btn.className = editMode ? 'btn btn-danger' : 'btn btn-primary';
-    showNotification(editMode ? 'Edit Mode ON - Click names to rename' : 'Edit Mode OFF');
+    showNotification(editMode ? 'Rename Mode ON - Click names to rename' : 'Rename Mode OFF');
 }
 
 function saveConfiguration() {
+    // Check if there are unsaved changes and show confirmation dialog
+    if (hasUnsavedChanges) {
+        showSaveConfirmationDialog();
+    } else {
+        performSave();
+    }
+}
+
+function showSaveConfirmationDialog() {
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 2000; display: flex; align-items: center; justify-content: center;';
+    
+    const dialog = document.createElement('div');
+    dialog.style.cssText = 'background: #333; color: white; padding: 20px; border-radius: 8px; max-width: 400px; text-align: center; border: 2px solid #8B4513;';
+    
+    dialog.innerHTML = '<h3 style="margin-top: 0; color: #CD853F;">⚠️ Save Configuration</h3>' +
+        '<p>This will override your last saved configuration. Are you sure?</p>' +
+        '<div style="margin-top: 15px;">' +
+            '<button onclick="performSave(); closeSaveDialog()" ' +
+                    'style="background: #4CAF50; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
+                'Override' +
+            '</button>' +
+            '<button onclick="resetToSaved(); closeSaveDialog()" ' +
+                    'style="background: #ff9800; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
+                'Reset to Last Save' +
+            '</button>' +
+            '<button onclick="closeSaveDialog()" ' +
+                    'style="background: #f44336; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
+                'Cancel' +
+            '</button>' +
+        '</div>';
+    
+    overlay.appendChild(dialog);
+    document.body.appendChild(overlay);
+    
+    // Store reference for closing
+    window.currentSaveDialog = overlay;
+}
+
+function closeSaveDialog() {
+    if (window.currentSaveDialog) {
+        document.body.removeChild(window.currentSaveDialog);
+        window.currentSaveDialog = null;
+    }
+}
+
+function performSave() {
     localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
     const timestamp = new Date().toLocaleTimeString();
     showNotification('Configuration saved at ' + timestamp + '!');
+    hasUnsavedChanges = false;
+    updateSaveButtonState();
 }
 
 function resetToSaved() {
@@ -1896,6 +2154,8 @@ function resetToSaved() {
             Object.assign(storageData, savedData);
             renderGrid();
             updateStats();
+            hasUnsavedChanges = false;
+            updateSaveButtonState();
             showNotification('Reset to saved configuration!');
         } catch (e) {
             showNotification('Error loading saved configuration');
@@ -1959,8 +2219,34 @@ function showNotification(message) {
     setTimeout(() => notification.classList.remove('show'), 3000);
 }
 
+function markAsChanged() {
+    hasUnsavedChanges = true;
+    updateSaveButtonState();
+}
+
+function updateSaveButtonState() {
+    const saveBtn = document.querySelector('.btn-success');
+    if (hasUnsavedChanges) {
+        saveBtn.textContent = '💾 Save Current Configuration*';
+        saveBtn.style.background = '#ff6b35'; // Orange to indicate unsaved changes
+    } else {
+        saveBtn.textContent = '💾 Save Current Configuration';
+        saveBtn.style.background = '#4CAF50'; // Green when saved
+    }
+}
+
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', initializeStorage);
+
+// Handle page unload with unsaved changes warning
+window.addEventListener('beforeunload', function(e) {
+    if (hasUnsavedChanges) {
+        const message = 'You have unsaved changes. Are you sure you want to leave?';
+        e.preventDefault();
+        e.returnValue = message;
+        return message;
+    }
+});
 
 // Clear selection when clicking empty areas
 document.addEventListener('click', function(e) {
