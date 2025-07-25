@@ -10,14 +10,18 @@
     <div class="header">
         <div class="controls">
             <button class="btn btn-success" onclick="saveConfiguration()">💾 Save Current Configuration</button>
-            <button class="btn btn-info" onclick="shareConfiguration()">🔗 Share Current Configuration</button>
             <button class="btn btn-primary" onclick="resetToDefault()">🔄 Reset to Default Configuration</button>
+            <button class="btn btn-file" onclick="exportConfigFile()">📁 Export Configuration</button>
+            <button class="btn btn-file-import" onclick="importConfigFile()">📤 Import Configuration</button>
             <input type="text" class="search-box" placeholder="🔍 Search..." onkeyup="searchItems(this.value)">
         </div>
     </div>
     
     <div class="sections-grid" id="grid"></div>
     <div id="notification" class="notification"></div>
+    
+    <!-- Hidden file input for drag and drop support -->
+    <input type="file" id="hiddenFileInput" accept=".mcb,.mcconfig,.json" style="display: none;">
     
     <!-- Context Menu Overlay -->
     <div class="context-menu-overlay" id="contextMenuOverlay">
@@ -28,6 +32,8 @@
             <div class="context-menu-item" data-action="action4"></div>
         </div>
     </div>
+    
+
     
     <script src="js/mc-storage-planner.js"></script>
 </body>

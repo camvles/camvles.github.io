@@ -70,10 +70,18 @@ body {
     color: white; 
 }
 
-.btn-info { 
-    font-family: 'macs Extended Minecraft', Arial, sans-serif;  
-    background: #2196F3; 
-    color: white; 
+
+
+.btn-file {
+    font-family: 'macs Extended Minecraft', Arial, sans-serif;
+    background: #FF9800;
+    color: white;
+}
+
+.btn-file-import {
+    font-family: 'macs Extended Minecraft', Arial, sans-serif;
+    background: #795548;
+    color: white;
 }
 
 .btn:hover { 
@@ -441,3 +449,5 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+

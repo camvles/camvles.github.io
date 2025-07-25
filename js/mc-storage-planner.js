@@ -1,407 +1,5 @@
-﻿// LZString compression library
-var LZString = (function() {
-    var f = String.fromCharCode;
-    var keyStrBase64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-    var keyStrUriSafe = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-$";
-    
-    var baseReverseDic = {};
-    
-    function getBaseValue(alphabet, character) {
-        if (!baseReverseDic[alphabet]) {
-            baseReverseDic[alphabet] = {};
-            for (var i = 0; i < alphabet.length; i++) {
-                baseReverseDic[alphabet][alphabet.charAt(i)] = i;
-            }
-        }
-        return baseReverseDic[alphabet][character];
-    }
-    
-    var LZString = {
-        compressToEncodedURIComponent: function(input) {
-            if (input == null) return "";
-            return LZString._compress(input, 6, function(a) { return keyStrUriSafe.charAt(a); });
-        },
-        
-        decompressFromEncodedURIComponent: function(input) {
-            if (input == null) return "";
-            if (input == "") return null;
-            input = input.replace(/ /g, "+");
-            return LZString._decompress(input.length, 32, function(index) { return getBaseValue(keyStrUriSafe, input.charAt(index)); });
-        },
-        
-        _compress: function(uncompressed, bitsPerChar, getCharFromInt) {
-            if (uncompressed == null) return "";
-            var i, value,
-                context_dictionary = {},
-                context_dictionaryToCreate = {},
-                context_c = "",
-                context_wc = "",
-                context_w = "",
-                context_enlargeIn = 2,
-                context_dictSize = 3,
-                context_numBits = 2,
-                context_data = [],
-                context_data_val = 0,
-                context_data_position = 0,
-                ii;
-            
-            for (ii = 0; ii < uncompressed.length; ii += 1) {
-                context_c = uncompressed.charAt(ii);
-                if (!Object.prototype.hasOwnProperty.call(context_dictionary, context_c)) {
-                    context_dictionary[context_c] = context_dictSize++;
-                    context_dictionaryToCreate[context_c] = true;
-                }
-                
-                context_wc = context_w + context_c;
-                if (Object.prototype.hasOwnProperty.call(context_dictionary, context_wc)) {
-                    context_w = context_wc;
-                } else {
-                    if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate, context_w)) {
-                        if (context_w.charCodeAt(0) < 256) {
-                            for (i = 0; i < context_numBits; i++) {
-                                context_data_val = (context_data_val << 1);
-                                if (context_data_position == bitsPerChar - 1) {
-                                    context_data_position = 0;
-                                    context_data.push(getCharFromInt(context_data_val));
-                                    context_data_val = 0;
-                                } else {
-                                    context_data_position++;
-                                }
-                            }
-                            value = context_w.charCodeAt(0);
-                            for (i = 0; i < 8; i++) {
-                                context_data_val = (context_data_val << 1) | (value & 1);
-                                if (context_data_position == bitsPerChar - 1) {
-                                    context_data_position = 0;
-                                    context_data.push(getCharFromInt(context_data_val));
-                                    context_data_val = 0;
-                                } else {
-                                    context_data_position++;
-                                }
-                                value = value >> 1;
-                            }
-                        } else {
-                            value = 1;
-                            for (i = 0; i < context_numBits; i++) {
-                                context_data_val = (context_data_val << 1) | value;
-                                if (context_data_position == bitsPerChar - 1) {
-                                    context_data_position = 0;
-                                    context_data.push(getCharFromInt(context_data_val));
-                                    context_data_val = 0;
-                                } else {
-                                    context_data_position++;
-                                }
-                                value = 0;
-                            }
-                            value = context_w.charCodeAt(0);
-                            for (i = 0; i < 16; i++) {
-                                context_data_val = (context_data_val << 1) | (value & 1);
-                                if (context_data_position == bitsPerChar - 1) {
-                                    context_data_position = 0;
-                                    context_data.push(getCharFromInt(context_data_val));
-                                    context_data_val = 0;
-                                } else {
-                                    context_data_position++;
-                                }
-                                value = value >> 1;
-                            }
-                        }
-                        context_enlargeIn--;
-                        if (context_enlargeIn == 0) {
-                            context_enlargeIn = Math.pow(2, context_numBits);
-                            context_numBits++;
-                        }
-                        delete context_dictionaryToCreate[context_w];
-                    } else {
-                        value = context_dictionary[context_w];
-                        for (i = 0; i < context_numBits; i++) {
-                            context_data_val = (context_data_val << 1) | (value & 1);
-                            if (context_data_position == bitsPerChar - 1) {
-                                context_data_position = 0;
-                                context_data.push(getCharFromInt(context_data_val));
-                                context_data_val = 0;
-                            } else {
-                                context_data_position++;
-                            }
-                            value = value >> 1;
-                        }
-                    }
-                    context_enlargeIn--;
-                    if (context_enlargeIn == 0) {
-                        context_enlargeIn = Math.pow(2, context_numBits);
-                        context_numBits++;
-                    }
-                    context_dictionary[context_wc] = context_dictSize++;
-                    context_w = String(context_c);
-                }
-            }
-            
-            if (context_w !== "") {
-                if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate, context_w)) {
-                    if (context_w.charCodeAt(0) < 256) {
-                        for (i = 0; i < context_numBits; i++) {
-                            context_data_val = (context_data_val << 1);
-                            if (context_data_position == bitsPerChar - 1) {
-                                context_data_position = 0;
-                                context_data.push(getCharFromInt(context_data_val));
-                                context_data_val = 0;
-                            } else {
-                                context_data_position++;
-                            }
-                        }
-                        value = context_w.charCodeAt(0);
-                        for (i = 0; i < 8; i++) {
-                            context_data_val = (context_data_val << 1) | (value & 1);
-                            if (context_data_position == bitsPerChar - 1) {
-                                context_data_position = 0;
-                                context_data.push(getCharFromInt(context_data_val));
-                                context_data_val = 0;
-                            } else {
-                                context_data_position++;
-                            }
-                            value = value >> 1;
-                        }
-                    } else {
-                        value = 1;
-                        for (i = 0; i < context_numBits; i++) {
-                            context_data_val = (context_data_val << 1) | value;
-                            if (context_data_position == bitsPerChar - 1) {
-                                context_data_position = 0;
-                                context_data.push(getCharFromInt(context_data_val));
-                                context_data_val = 0;
-                            } else {
-                                context_data_position++;
-                            }
-                            value = 0;
-                        }
-                        value = context_w.charCodeAt(0);
-                        for (i = 0; i < 16; i++) {
-                            context_data_val = (context_data_val << 1) | (value & 1);
-                            if (context_data_position == bitsPerChar - 1) {
-                                context_data_position = 0;
-                                context_data.push(getCharFromInt(context_data_val));
-                                context_data_val = 0;
-                            } else {
-                                context_data_position++;
-                            }
-                            value = value >> 1;
-                        }
-                    }
-                    context_enlargeIn--;
-                    if (context_enlargeIn == 0) {
-                        context_enlargeIn = Math.pow(2, context_numBits);
-                        context_numBits++;
-                    }
-                    delete context_dictionaryToCreate[context_w];
-                } else {
-                    value = context_dictionary[context_w];
-                    for (i = 0; i < context_numBits; i++) {
-                        context_data_val = (context_data_val << 1) | (value & 1);
-                        if (context_data_position == bitsPerChar - 1) {
-                            context_data_position = 0;
-                            context_data.push(getCharFromInt(context_data_val));
-                            context_data_val = 0;
-                        } else {
-                            context_data_position++;
-                        }
-                        value = value >> 1;
-                    }
-                }
-                context_enlargeIn--;
-                if (context_enlargeIn == 0) {
-                    context_enlargeIn = Math.pow(2, context_numBits);
-                    context_numBits++;
-                }
-            }
-            
-            value = 2;
-            for (i = 0; i < context_numBits; i++) {
-                context_data_val = (context_data_val << 1) | (value & 1);
-                if (context_data_position == bitsPerChar - 1) {
-                    context_data_position = 0;
-                    context_data.push(getCharFromInt(context_data_val));
-                    context_data_val = 0;
-                } else {
-                    context_data_position++;
-                }
-                value = value >> 1;
-            }
-            
-            while (true) {
-                context_data_val = (context_data_val << 1);
-                if (context_data_position == bitsPerChar - 1) {
-                    context_data.push(getCharFromInt(context_data_val));
-                    break;
-                } else context_data_position++;
-            }
-            return context_data.join('');
-        },
-        
-        _decompress: function(length, resetValue, getNextValue) {
-            var dictionary = [],
-                next,
-                enlargeIn = 4,
-                dictSize = 4,
-                numBits = 3,
-                entry = "",
-                result = [],
-                i,
-                w,
-                bits, resb, maxpower, power,
-                c,
-                data = { val: getNextValue(0), position: resetValue, index: 1 };
-            
-            for (i = 0; i < 3; i += 1) {
-                dictionary[i] = i;
-            }
-            
-            bits = 0;
-            maxpower = Math.pow(2, 2);
-            power = 1;
-            while (power != maxpower) {
-                resb = data.val & data.position;
-                data.position >>= 1;
-                if (data.position == 0) {
-                    data.position = resetValue;
-                    data.val = getNextValue(data.index++);
-                }
-                bits |= (resb > 0 ? 1 : 0) * power;
-                power <<= 1;
-            }
-            
-            switch (next = bits) {
-                case 0:
-                    bits = 0;
-                    maxpower = Math.pow(2, 8);
-                    power = 1;
-                    while (power != maxpower) {
-                        resb = data.val & data.position;
-                        data.position >>= 1;
-                        if (data.position == 0) {
-                            data.position = resetValue;
-                            data.val = getNextValue(data.index++);
-                        }
-                        bits |= (resb > 0 ? 1 : 0) * power;
-                        power <<= 1;
-                    }
-                    c = f(bits);
-                    break;
-                case 1:
-                    bits = 0;
-                    maxpower = Math.pow(2, 16);
-                    power = 1;
-                    while (power != maxpower) {
-                        resb = data.val & data.position;
-                        data.position >>= 1;
-                        if (data.position == 0) {
-                            data.position = resetValue;
-                            data.val = getNextValue(data.index++);
-                        }
-                        bits |= (resb > 0 ? 1 : 0) * power;
-                        power <<= 1;
-                    }
-                    c = f(bits);
-                    break;
-                case 2:
-                    return "";
-            }
-            dictionary[3] = c;
-            w = c;
-            result.push(c);
-            while (true) {
-                if (data.index > length) {
-                    return "";
-                }
-                
-                bits = 0;
-                maxpower = Math.pow(2, numBits);
-                power = 1;
-                while (power != maxpower) {
-                    resb = data.val & data.position;
-                    data.position >>= 1;
-                    if (data.position == 0) {
-                        data.position = resetValue;
-                        data.val = getNextValue(data.index++);
-                    }
-                    bits |= (resb > 0 ? 1 : 0) * power;
-                    power <<= 1;
-                }
-                
-                switch (c = bits) {
-                    case 0:
-                        bits = 0;
-                        maxpower = Math.pow(2, 8);
-                        power = 1;
-                        while (power != maxpower) {
-                            resb = data.val & data.position;
-                            data.position >>= 1;
-                            if (data.position == 0) {
-                                data.position = resetValue;
-                                data.val = getNextValue(data.index++);
-                            }
-                            bits |= (resb > 0 ? 1 : 0) * power;
-                            power <<= 1;
-                        }
-                        
-                        dictionary[dictSize++] = f(bits);
-                        c = dictSize - 1;
-                        enlargeIn--;
-                        break;
-                    case 1:
-                        bits = 0;
-                        maxpower = Math.pow(2, 16);
-                        power = 1;
-                        while (power != maxpower) {
-                            resb = data.val & data.position;
-                            data.position >>= 1;
-                            if (data.position == 0) {
-                                data.position = resetValue;
-                                data.val = getNextValue(data.index++);
-                            }
-                            bits |= (resb > 0 ? 1 : 0) * power;
-                            power <<= 1;
-                        }
-                        dictionary[dictSize++] = f(bits);
-                        c = dictSize - 1;
-                        enlargeIn--;
-                        break;
-                    case 2:
-                        return result.join('');
-                }
-                
-                if (enlargeIn == 0) {
-                    enlargeIn = Math.pow(2, numBits);
-                    numBits++;
-                }
-                
-                if (dictionary[c]) {
-                    entry = dictionary[c];
-                } else {
-                    if (c === dictSize) {
-                        entry = w + w.charAt(0);
-                    } else {
-                        return null;
-                    }
-                }
-                result.push(entry);
-                
-                dictionary[dictSize++] = w + entry.charAt(0);
-                enlargeIn--;
-                
-                w = entry;
-                
-                if (enlargeIn == 0) {
-                    enlargeIn = Math.pow(2, numBits);
-                    numBits++;
-                }
-            }
-        }
-    };
-    return LZString;
-})();
-
-const storageData = {
-    version: 10,
+﻿const storageData = {
+    version: 2,
     items: [
         {id: 'acacia_planks', name: 'acacia planks', category: 'Placable Wood Blocks and Items', module: 7, icon: 'assets/mc-invicons/acacia_planks.png'},
         {id: 'acacia_log', name: 'acacia log', category: 'Placable Wood Blocks and Items', module: 7, icon: 'assets/mc-invicons/acacia_log.png'},
@@ -2699,254 +2297,145 @@ function handleItemRightClick(e, itemElement) {
     showContextMenu(e.clientX, e.clientY, targetItemIds);
 }
 
-// Configuration sharing functions
-function encodeConfiguration() {
-    try {
-        // Create a compact representation of the current configuration
-        const config = {
-            v: storageData.version, // version
-            c: [], // categories
-            i: []  // items
+// Simple compression function using safe dictionary encoding
+function compressString(str) {
+    // Create a safer dictionary with escape sequences to avoid JSON conflicts
+    const dictionary = {
+        '"category":': '§C:',
+        '"module":': '§M:',
+        '"name":': '§N:',
+        '"id":': '§I:',
+        '"icon":': '§X:',
+        '"color":': '§L:',
+        '"modules":': '§MS:',
+        '"items":': '§IT:',
+        '"categories":': '§CT:',
+        '"version":': '§V:',
+        '"order":': '§O:',
+        '"moduleName":': '§MN:',
+        '"timestamp":': '§T:',
+        'assets/mc-invicons/': '§AI/',
+        '.png': '§P'
+    };
+    
+    let compressed = str;
+    
+    // Apply dictionary compression in order of longest first to avoid conflicts
+    const sortedEntries = Object.entries(dictionary).sort((a, b) => b[0].length - a[0].length);
+    for (const [key, value] of sortedEntries) {
+        compressed = compressed.split(key).join(value);
+    }
+    
+    return compressed;
+}
+
+function decompressString(str) {
+    // Reverse dictionary for decompression
+    const dictionary = {
+        '§C:': '"category":',
+        '§M:': '"module":',
+        '§N:': '"name":',
+        '§I:': '"id":',
+        '§X:': '"icon":',
+        '§L:': '"color":',
+        '§MS:': '"modules":',
+        '§IT:': '"items":',
+        '§CT:': '"categories":',
+        '§V:': '"version":',
+        '§O:': '"order":',
+        '§MN:': '"moduleName":',
+        '§T:': '"timestamp":',
+        '§AI/': 'assets/mc-invicons/',
+        '§P': '.png'
+    };
+    
+    let decompressed = str;
+    
+    // Apply dictionary decompression in reverse order
+    const sortedEntries = Object.entries(dictionary).sort((a, b) => b[0].length - a[0].length);
+    for (const [key, value] of sortedEntries) {
+        decompressed = decompressed.split(key).join(value);
+    }
+    
+    return decompressed;
+}
+
+// Generate a short unique ID for configurations (based only on content, not metadata)
+function generateShortConfigId(configData) {
+    // Only hash the actual configuration content, not metadata like timestamps
+    const contentToHash = {
+        categories: configData.categories,
+        items: configData.items
+    };
+    
+    const str = JSON.stringify(contentToHash);
+    let hash = 0;
+    
+    // Create a hash
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convert to 32-bit integer
+    }
+    
+    // Convert to a short base36 string (6-8 characters) - lowercase
+    let shortId = Math.abs(hash).toString(36);
+    
+    // Ensure minimum length of 6 characters
+    while (shortId.length < 6) {
+        shortId = '0' + shortId;
+    }
+    
+    // Limit to 8 characters max for readability
+    if (shortId.length > 8) {
+        shortId = shortId.substring(0, 8);
+    }
+    
+    return shortId;
+}
+
+// Extract complete configuration data
+function extractConfigurationData() {
+    const configData = {
+        version: storageData.version || 3,
+        timestamp: Date.now(),
+        categories: [],
+        items: []
+    };
+    
+    // Extract category/section data with order
+    storageData.categories.forEach((category, index) => {
+        const categoryData = {
+            name: category.name,
+            order: category.order !== undefined ? category.order : index,
+            modules: [...category.modules] // Copy module numbers
+        };
+        configData.categories.push(categoryData);
+    });
+    
+    // Extract item data with all properties
+    storageData.items.forEach(item => {
+        const itemData = {
+            id: item.id,
+            name: item.name,
+            category: item.category,
+            module: item.module,
+            icon: item.icon
         };
         
-        // Encode categories with their order and custom names
-        storageData.categories.forEach((category, index) => {
-            const categoryData = {
-                n: category.name, // name
-                o: category.order || index, // order
-                m: category.modules || [] // modules
-            };
-            config.c.push(categoryData);
-        });
+        // Include optional properties
+        if (item.color) itemData.color = item.color;
+        if (item.moduleName) itemData.moduleName = item.moduleName;
         
-        // Encode items with their positions, colors, and custom module names
-        storageData.items.forEach(item => {
-            const itemData = {
-                id: item.id,
-                c: item.category, // category
-                m: item.module // module
-            };
-            
-            // Only include optional properties if they exist
-            if (item.color) itemData.cl = item.color;
-            if (item.moduleName) itemData.mn = item.moduleName;
-            
-            config.i.push(itemData);
-        });
-        
-        // Convert to JSON and compress
-        const jsonString = JSON.stringify(config);
-        const compressed = LZString.compressToEncodedURIComponent(jsonString);
-        
-        return compressed;
-    } catch (error) {
-        console.error('Error encoding configuration:', error);
-        return null;
-    }
-}
-
-function decodeConfiguration(encodedData) {
-    try {
-        // Decompress the data
-        const jsonString = LZString.decompressFromEncodedURIComponent(encodedData);
-        if (!jsonString) {
-            throw new Error('Failed to decompress data');
-        }
-        
-        const config = JSON.parse(jsonString);
-        
-        // Validate basic structure
-        if (!config.v || !config.c || !config.i) {
-            throw new Error('Invalid configuration format');
-        }
-        
-        // Create new storage data from decoded config
-        const newStorageData = {
-            version: config.v,
-            categories: [],
-            items: []
-        };
-        
-        // Reconstruct categories
-        config.c.forEach(catData => {
-            const category = {
-                name: catData.n,
-                modules: catData.m || [],
-                order: catData.o
-            };
-            newStorageData.categories.push(category);
-        });
-        
-        // Sort categories by order
-        newStorageData.categories.sort((a, b) => (a.order || 0) - (b.order || 0));
-        
-        // Reconstruct items
-        config.i.forEach(itemData => {
-            // Find the original item data by ID to get name and icon
-            const originalItem = originalDefaultConfig.items.find(item => item.id === itemData.id);
-            if (originalItem) {
-                const item = {
-                    id: itemData.id,
-                    name: originalItem.name,
-                    category: itemData.c,
-                    module: itemData.m,
-                    icon: originalItem.icon
-                };
-                
-                // Add optional properties
-                if (itemData.cl) item.color = itemData.cl;
-                if (itemData.mn) item.moduleName = itemData.mn;
-                
-                newStorageData.items.push(item);
-            }
-        });
-        
-        return newStorageData;
-    } catch (error) {
-        console.error('Error decoding configuration:', error);
-        return null;
-    }
-}
-
-function shareConfiguration() {
-    try {
-        const encodedData = encodeConfiguration();
-        if (!encodedData) {
-            showNotification('Error creating shareable link');
-            return;
-        }
-        
-        // Create the shareable URL
-        const baseUrl = window.location.origin + window.location.pathname;
-        const shareUrl = baseUrl + '?config=' + encodedData;
-        
-        // Copy to clipboard
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(shareUrl).then(() => {
-                showNotification('✅ Shareable link copied to clipboard!');
-            }).catch(() => {
-                // Fallback for clipboard API failure
-                showShareDialog(shareUrl);
-            });
-        } else {
-            // Fallback for browsers without clipboard API
-            showShareDialog(shareUrl);
-        }
-        
-        // Also show the URL in console for debugging
-        console.log('Shareable URL:', shareUrl);
-        console.log('Encoded data length:', encodedData.length);
-        
-    } catch (error) {
-        console.error('Error sharing configuration:', error);
-        showNotification('Error creating shareable link');
-    }
-}
-
-function showShareDialog(shareUrl) {
-    const overlay = document.createElement('div');
-    overlay.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 2000; display: flex; align-items: center; justify-content: center;';
+        configData.items.push(itemData);
+    });
     
-    const dialog = document.createElement('div');
-    dialog.style.cssText = 'background: #333; color: white; padding: 20px; border-radius: 8px; max-width: 600px; text-align: center; border: 2px solid #8B4513;';
-    
-    const textArea = document.createElement('textarea');
-    textArea.value = shareUrl;
-    textArea.style.cssText = 'width: 100%; height: 100px; background: #222; color: white; border: 1px solid #555; border-radius: 4px; padding: 8px; font-family: monospace; font-size: 12px; resize: none;';
-    textArea.readOnly = true;
-    
-    dialog.innerHTML = '<h3 style="margin-top: 0; color: #CD853F;">🔗 Shareable Configuration Link</h3>' +
-        '<p>Copy this link to share your configuration:</p>';
-    
-    dialog.appendChild(textArea);
-    
-    const buttonContainer = document.createElement('div');
-    buttonContainer.style.cssText = 'margin-top: 15px;';
-    buttonContainer.innerHTML = 
-        '<button onclick="copyShareUrl(); closeShareDialog()" ' +
-                'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #4CAF50; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
-            'Copy Link' +
-        '</button>' +
-        '<button onclick="closeShareDialog()" ' +
-                'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #f44336; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
-            'Close' +
-        '</button>';
-    
-    dialog.appendChild(buttonContainer);
-    overlay.appendChild(dialog);
-    document.body.appendChild(overlay);
-    
-    // Store reference and select text
-    window.currentShareDialog = overlay;
-    window.shareUrlTextArea = textArea;
-    textArea.select();
-    textArea.focus();
-}
-
-function copyShareUrl() {
-    if (window.shareUrlTextArea) {
-        window.shareUrlTextArea.select();
-        try {
-            document.execCommand('copy');
-            showNotification('✅ Link copied to clipboard!');
-        } catch (e) {
-            console.error('Copy failed:', e);
-            showNotification('Please copy the link manually');
-        }
-    }
-}
-
-function closeShareDialog() {
-    if (window.currentShareDialog) {
-        document.body.removeChild(window.currentShareDialog);
-        window.currentShareDialog = null;
-        window.shareUrlTextArea = null;
-    }
-}
-
-function loadConfigurationFromUrl() {
-    try {
-        const urlParams = new URLSearchParams(window.location.search);
-        const configParam = urlParams.get('config');
-        
-        if (configParam) {
-            const decodedConfig = decodeConfiguration(configParam);
-            if (decodedConfig) {
-                // Replace current configuration with decoded one
-                Object.assign(storageData, decodedConfig);
-                renderGrid();
-                updateStats();
-                clearSelection();
-                hasUnsavedChanges = true; // Mark as changed since it's different from saved config
-                updateSaveButtonState();
-                showNotification('🔗 Loaded shared configuration!');
-                
-                // Remove config parameter from URL without refreshing page
-                const newUrl = window.location.origin + window.location.pathname;
-                window.history.replaceState({}, document.title, newUrl);
-                
-                return true;
-            } else {
-                showNotification('❌ Invalid shared configuration link');
-                return false;
-            }
-        }
-        return false;
-    } catch (error) {
-        console.error('Error loading configuration from URL:', error);
-        showNotification('❌ Error loading shared configuration');
-        return false;
-    }
+    return configData;
 }
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
     initializeStorage();
-    
-    // Check for shared configuration in URL
-    if (!loadConfigurationFromUrl()) {
-        // Only proceed with normal initialization if no shared config was loaded
-    }
     
     // Set up context menu event listeners after DOM is ready
     setupContextMenuEventListeners();
@@ -3041,5 +2530,275 @@ document.addEventListener('contextmenu', function(e) {
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && contextMenuVisible) {
         hideContextMenu();
+    }
+});
+
+// Binary compression utilities
+function stringToBytes(str) {
+    const bytes = new Uint8Array(str.length);
+    for (let i = 0; i < str.length; i++) {
+        bytes[i] = str.charCodeAt(i);
+    }
+    return bytes;
+}
+
+function bytesToString(bytes) {
+    let str = '';
+    for (let i = 0; i < bytes.length; i++) {
+        str += String.fromCharCode(bytes[i]);
+    }
+    return str;
+}
+
+// Simple LZ-style compression for better results than dictionary alone
+function compressBinary(jsonStr) {
+    // First apply our existing dictionary compression
+    const dictCompressed = compressString(jsonStr);
+    
+    // Then apply simple run-length encoding for repeated patterns
+    let result = '';
+    let i = 0;
+    
+    while (i < dictCompressed.length) {
+        let char = dictCompressed[i];
+        let count = 1;
+        
+        // Count consecutive identical characters
+        while (i + count < dictCompressed.length && dictCompressed[i + count] === char && count < 255) {
+            count++;
+        }
+        
+        if (count > 3) {
+            // Use run-length encoding for runs of 4+ characters
+            result += '∞' + String.fromCharCode(count) + char;
+        } else {
+            // Just copy the characters
+            result += dictCompressed.substr(i, count);
+        }
+        
+        i += count;
+    }
+    
+    return result;
+}
+
+function decompressBinary(compressedStr) {
+    // First decompress run-length encoding
+    let rleDecompressed = '';
+    let i = 0;
+    
+    while (i < compressedStr.length) {
+        if (compressedStr[i] === '∞' && i + 2 < compressedStr.length) {
+            // Run-length encoded sequence
+            const count = compressedStr.charCodeAt(i + 1);
+            const char = compressedStr[i + 2];
+            rleDecompressed += char.repeat(count);
+            i += 3;
+        } else {
+            rleDecompressed += compressedStr[i];
+            i++;
+        }
+    }
+    
+    // Then apply our existing dictionary decompression
+    return decompressString(rleDecompressed);
+}
+
+// File export functionality
+function exportConfigFile() {
+    try {
+        const configData = extractConfigurationData();
+        const configId = generateShortConfigId(configData);
+        
+        // Prompt for custom name
+        const customName = prompt('Configuration name (optional, leave blank for auto-generated name):');
+        const configName = customName && customName.trim() ? customName.trim() : null;
+        
+        // Add metadata
+        const fileData = {
+            version: 3,
+            format: 'MCStorageBinary',
+            created: new Date().toISOString(),
+            id: configId,
+            name: configName || ('MSP Configuration ' + configId),
+            data: configData
+        };
+        
+        // Convert to JSON and compress
+        const jsonStr = JSON.stringify(fileData);
+        const compressed = compressBinary(jsonStr);
+        
+        console.log('Configuration ID:', configId);
+        console.log('Original size:', jsonStr.length, 'Compressed size:', compressed.length, 'Ratio:', (compressed.length / jsonStr.length * 100).toFixed(1) + '%');
+        
+        // Convert to bytes and create file
+        const bytes = stringToBytes(compressed);
+        const blob = new Blob([bytes], { type: 'application/octet-stream' });
+        
+        // Generate filename using the unique ID
+        let filename;
+        if (configName) {
+            // Use custom name + ID
+            const safeName = configName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_');
+            filename = safeName + '_' + configId + '.mcb';
+        } else {
+            // Use MSP_ prefix + ID
+            filename = 'MSP_' + configId + '.mcb';
+        }
+        
+        // Create download link
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        link.style.display = 'none';
+        
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+        
+        showNotification('Configuration exported as ' + filename + ' (ID: ' + configId + ', ' + bytes.length + ' bytes)');
+        
+    } catch (error) {
+        console.error('Error exporting configuration:', error);
+        showNotification('Error exporting configuration: ' + error.message);
+    }
+}
+
+// File import functionality
+function importConfigFile() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.mcb,.mcconfig,.json';
+    input.style.display = 'none';
+    
+    input.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            try {
+                importConfigFromFile(event.target.result, file.name);
+            } catch (error) {
+                console.error('Error reading file:', error);
+                showNotification('Error reading file: ' + error.message);
+            }
+        };
+        
+        // Read as array buffer for binary files, text for JSON files
+        if (file.name.endsWith('.mcb')) {
+            reader.readAsArrayBuffer(event.target.result);
+        } else {
+            reader.readAsText(file);
+        }
+    });
+    
+    document.body.appendChild(input);
+    input.click();
+    document.body.removeChild(input);
+}
+
+function importConfigFromFile(fileData, fileName) {
+    try {
+        let configData;
+        
+        if (fileName.endsWith('.mcb')) {
+            // Binary compressed format
+            const bytes = new Uint8Array(fileData);
+            const compressed = bytesToString(bytes);
+            const jsonStr = decompressBinary(compressed);
+            const fileStructure = JSON.parse(jsonStr);
+            
+                         console.log('Imported binary file:', fileName, 'Original size:', bytes.length);
+             
+             if (fileStructure.format !== 'MCStorageBinary' || !fileStructure.data) {
+                 throw new Error('Invalid .mcb file format');
+             }
+             
+             configData = fileStructure.data;
+             
+             const idInfo = fileStructure.id ? ' (ID: ' + fileStructure.id + ')' : '';
+             const dateInfo = fileStructure.created ? ' (created: ' + new Date(fileStructure.created).toLocaleDateString() + ')' : '';
+             showNotification('Imported: ' + (fileStructure.name || fileName) + idInfo + dateInfo);
+            
+        } else {
+            // JSON format (.mcconfig, .json)
+            const fileStructure = JSON.parse(typeof fileData === 'string' ? fileData : new TextDecoder().decode(fileData));
+            
+            if (fileStructure.data) {
+                // Wrapped format
+                configData = fileStructure.data;
+                showNotification('Imported: ' + (fileStructure.name || fileName));
+            } else {
+                // Direct config format
+                configData = fileStructure;
+                showNotification('Imported: ' + fileName);
+            }
+        }
+        
+        // Validate basic structure
+        if (!configData.categories || !configData.items) {
+            throw new Error('Invalid configuration format - missing categories or items');
+        }
+        
+        // Version compatibility check
+        if (!configData.version || configData.version < 2) {
+            if (!confirm('This configuration is from an older version. Import anyway? Some features may not work correctly.')) {
+                return;
+            }
+        }
+        
+        // Confirm import
+        if (!confirm('Import this configuration? This will overwrite your current settings.\\n\\nSections: ' + configData.categories.length + '\\nItems: ' + configData.items.length)) {
+            return;
+        }
+        
+        // Apply configuration
+        storageData.version = configData.version;
+        storageData.categories = configData.categories;
+        storageData.items = configData.items;
+        
+        // Re-render everything
+        renderGrid();
+        updateStats();
+        clearSelection();
+        hasUnsavedChanges = true;
+        updateSaveButtonState();
+        
+        showNotification('Configuration imported successfully!');
+        
+    } catch (error) {
+        console.error('Error importing configuration:', error);
+        showNotification('Error importing configuration: ' + error.message);
+    }
+}
+
+// Add drag and drop support for the entire page
+document.addEventListener('dragover', function(e) {
+    e.preventDefault();
+});
+
+document.addEventListener('drop', function(e) {
+    e.preventDefault();
+    
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+        const file = files[0];
+        if (file.name.endsWith('.mcb') || file.name.endsWith('.mcconfig') || file.name.endsWith('.json')) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                importConfigFromFile(event.target.result, file.name);
+            };
+            
+            if (file.name.endsWith('.mcb')) {
+                reader.readAsArrayBuffer(file);
+            } else {
+                reader.readAsText(file);
+            }
+        } else {
+            showNotification('Please drop a .mcb, .mcconfig, or .json file');
+        }
     }
 });
