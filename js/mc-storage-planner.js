@@ -2751,7 +2751,7 @@ function importConfigFromFile(fileData, fileName) {
         }
         
         // Confirm import
-        if (!confirm('Import this configuration? This will overwrite your current settings.\\n\\nSections: ' + configData.categories.length + '\\nItems: ' + configData.items.length)) {
+        if (!confirm('Import this configuration? This will overwrite the current one!')) {
             return;
         }
         
