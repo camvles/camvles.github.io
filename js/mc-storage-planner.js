@@ -1,5 +1,5 @@
 ﻿const storageData = {
-    version: 2,
+    version: 3,
     items: [
         {id: 'acacia_planks', name: 'acacia planks', category: 'Placable Wood Blocks and Items', module: 7, icon: 'assets/mc-invicons/acacia_planks.png'},
         {id: 'acacia_log', name: 'acacia log', category: 'Placable Wood Blocks and Items', module: 7, icon: 'assets/mc-invicons/acacia_log.png'},
@@ -122,23 +122,23 @@
         {id: 'oak_pressure_plate', name: 'oak pressure plate', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/oak_pressure_plate.png'},
         {id: 'oak_sign', name: 'oak sign', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/oak_sign.png'},
         {id: 'oak_hanging_sign', name: 'oak hanging sign', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/oak_hanging_sign.png'},
-        {id: 'pale_oak_planks', name: 'pale oak planks', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_log', name: 'pale oak log', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_wood', name: 'pale oak wood', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'stripped_pale_oak_log', name: 'stripped pale oak log', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'stripped_pale_oak_wood', name: 'stripped pale oak wood', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_leaves', name: 'pale oak leaves', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_sapling', name: 'pale oak sapling', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_slab', name: 'pale oak slab', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_stairs', name: 'pale oak stairs', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_fence', name: 'pale oak fence', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_fence_gate', name: 'pale oak fence gate', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_door', name: 'pale oak door', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_trapdoor', name: 'pale oak trapdoor', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_button', name: 'pale oak button', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_pressure_plate', name: 'pale oak pressure plate', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_sign', name: 'pale oak sign', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
-        {id: 'pale_oak_hanging_sign', name: 'pale oak hanging sign', category: 'Placable Wood Blocks and Items', module: 9, icon: ''},
+        {id: 'pale_oak_planks', name: 'pale oak planks', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_planks.png'},
+        {id: 'pale_oak_log', name: 'pale oak log', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_log.png'},
+        {id: 'pale_oak_wood', name: 'pale oak wood', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_wood.png'},
+        {id: 'stripped_pale_oak_log', name: 'stripped pale oak log', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/stripped_pale_oak_log.png'},
+        {id: 'stripped_pale_oak_wood', name: 'stripped pale oak wood', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/stripped_pale_oak_wood.png'},
+        {id: 'pale_oak_leaves', name: 'pale oak leaves', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_leaves.png'},
+        {id: 'pale_oak_sapling', name: 'pale oak sapling', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_sapling.png'},
+        {id: 'pale_oak_slab', name: 'pale oak slab', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_slab.png'},
+        {id: 'pale_oak_stairs', name: 'pale oak stairs', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_stairs.png'},
+        {id: 'pale_oak_fence', name: 'pale oak fence', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_fence.png'},
+        {id: 'pale_oak_fence_gate', name: 'pale oak fence gate', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_fence_gate.png'},
+        {id: 'pale_oak_door', name: 'pale oak door', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_door.png'},
+        {id: 'pale_oak_trapdoor', name: 'pale oak trapdoor', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_trapdoor.png'},
+        {id: 'pale_oak_button', name: 'pale oak button', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_button.png'},
+        {id: 'pale_oak_pressure_plate', name: 'pale oak pressure plate', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_pressure_plate.png'},
+        {id: 'pale_oak_sign', name: 'pale oak sign', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_sign.png'},
+        {id: 'pale_oak_hanging_sign', name: 'pale oak hanging sign', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/pale_oak_hanging_sign.png'},
         {id: 'spruce_planks', name: 'spruce planks', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/spruce_planks.png'},
         {id: 'spruce_log', name: 'spruce log', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/spruce_log.png'},
         {id: 'spruce_wood', name: 'spruce wood', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/spruce_wood.png'},
@@ -171,7 +171,6 @@
         {id: 'bamboo_sign', name: 'bamboo sign', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/bamboo_sign.png'},
         {id: 'bamboo_hanging_sign', name: 'bamboo hanging sign', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/bamboo_hanging_sign.png'},
         {id: 'bamboo_raft', name: 'bamboo raft', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/bamboo_raft.png'},
-        {id: 'bamboo_chest_raft', name: 'bamboo chest raft', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/bamboo_chest_raft.png'},
         {id: 'block_of_bamboo', name: 'block of bamboo', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/block_of_bamboo.png'},
         {id: 'block_of_stripped_bamboo', name: 'block of stripped bamboo', category: 'Placable Wood Blocks and Items', module: 9, icon: 'assets/mc-invicons/block_of_stripped_bamboo.png'},
         {id: 'stone', name: 'stone', category: 'Placable Stone Blocks and Items', module: 10, icon: 'assets/mc-invicons/stone.png'},
@@ -242,19 +241,19 @@
         {id: 'chiseled_deepslate', name: 'chiseled deepslate', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/chiseled_deepslate.png'},
         {id: 'reinforced_deepslate', name: 'reinforced deepslate', category: 'Placable Stone Blocks and Items', module: 11, icon: 'assets/mc-invicons/reinforced_deepslate.png'},
         {id: 'tuff', name: 'tuff', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/tuff.png'},
-        {id: 'tuff_slab', name: 'tuff slab', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
-        {id: 'tuff_stairs', name: 'tuff stairs', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
-        {id: 'tuff_wall', name: 'tuff wall', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
-        {id: 'polished_tuff', name: 'polished tuff', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
-        {id: 'polished_tuff_slab', name: 'polished tuff slab', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
-        {id: 'polished_tuff_stairs', name: 'polished tuff stairs', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
-        {id: 'polished_tuff_wall', name: 'polished tuff wall', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
-        {id: 'tuff_bricks', name: 'tuff bricks', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
-        {id: 'tuff_brick_slab', name: 'tuff brick slab', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
-        {id: 'tuff_brick_stairs', name: 'tuff brick stairs', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
-        {id: 'tuff_brick_wall', name: 'tuff brick wall', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
-        {id: 'chiseled_tuff', name: 'chiseled tuff', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
-        {id: 'chiseled_tuff_bricks', name: 'chiseled tuff bricks', category: 'Placable Stone Blocks and Items', module: 12, icon: ''},
+        {id: 'tuff_slab', name: 'tuff slab', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/tuff_slab.png'},
+        {id: 'tuff_stairs', name: 'tuff stairs', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/tuff_stairs.png'},
+        {id: 'tuff_wall', name: 'tuff wall', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/tuff_wall.png'},
+        {id: 'polished_tuff', name: 'polished tuff', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/polished_tuff.png'},
+        {id: 'polished_tuff_slab', name: 'polished tuff slab', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/polished_tuff_slab.png'},
+        {id: 'polished_tuff_stairs', name: 'polished tuff stairs', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/polished_tuff_stairs.png'},
+        {id: 'polished_tuff_wall', name: 'polished tuff wall', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/polished_tuff_wall.png'},
+        {id: 'tuff_bricks', name: 'tuff bricks', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/tuff_bricks.png'},
+        {id: 'tuff_brick_slab', name: 'tuff brick slab', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/tuff_brick_slab.png'},
+        {id: 'tuff_brick_stairs', name: 'tuff brick stairs', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/tuff_brick_stairs.png'},
+        {id: 'tuff_brick_wall', name: 'tuff brick wall', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/tuff_brick_wall.png'},
+        {id: 'chiseled_tuff', name: 'chiseled tuff', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/chiseled_tuff.png'},
+        {id: 'chiseled_tuff_bricks', name: 'chiseled tuff bricks', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/chiseled_tuff_bricks.png'},
         {id: 'blackstone', name: 'blackstone', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/blackstone.png'},
         {id: 'blackstone_slab', name: 'blackstone slab', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/blackstone_slab.png'},
         {id: 'blackstone_stairs', name: 'blackstone stairs', category: 'Placable Stone Blocks and Items', module: 12, icon: 'assets/mc-invicons/blackstone_stairs.png'},
@@ -313,26 +312,26 @@
         {id: 'raw_copper', name: 'raw copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/raw_copper.png'},
         {id: 'copper_ingot', name: 'copper ingot', category: 'Ores', module: 14, icon: 'assets/mc-invicons/copper_ingot.png'},
         {id: 'block_of_raw_copper', name: 'block of raw copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/block_of_raw_copper.png'},
-        {id: 'unwaxed_block_of_copper', name: 'unwaxed block of copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_exposed_copper', name: 'unwaxed exposed copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_weathered_copper', name: 'unwaxed weathered copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_oxidized_copper', name: 'unwaxed oxidized copper', category: 'Ores', module: 14, icon: ''},
+        {id: 'block_of_copper', name: 'block of copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/block_of_copper.png'},
+        {id: 'exposed_copper', name: 'exposed copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/exposed_copper.png'},
+        {id: 'weathered_copper', name: 'weathered copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/weathered_copper.png'},
+        {id: 'oxidized_copper', name: 'oxidized copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/oxidized_copper.png'},
         {id: 'waxed_block_of_copper', name: 'waxed block of copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_block_of_copper.png'},
         {id: 'waxed_exposed_copper', name: 'waxed exposed copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_exposed_copper.png'},
         {id: 'waxed_weathered_copper', name: 'waxed weathered copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_weathered_copper.png'},
         {id: 'waxed_oxidized_copper', name: 'waxed oxidized copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_oxidized_copper.png'},
-        {id: 'unwaxed_cut_copper', name: 'unwaxed cut copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_cut_copper_slab', name: 'unwaxed cut copper slab', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_cut_copper_stairs', name: 'unwaxed cut copper stairs', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_exposed_cut_copper', name: 'unwaxed exposed cut copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_exposed_cut_copper_slab', name: 'unwaxed exposed cut copper slab', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_exposed_cut_copper_stairs', name: 'unwaxed exposed cut copper stairs', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_weathered_cut_copper', name: 'unwaxed weathered cut copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_weathered_cut_copper_slab', name: 'unwaxed weathered cut copper slab', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_weathered_cut_copper_stairs', name: 'unwaxed weathered cut copper stairs', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_oxidized_cut_copper', name: 'unwaxed oxidized cut copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_oxidized_cut_copper_slab', name: 'unwaxed oxidized cut copper slab', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_oxidized_cut_copper_stairs', name: 'unwaxed oxidized cut copper stairs', category: 'Ores', module: 14, icon: ''},
+        {id: 'cut_copper', name: 'cut copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/cut_copper.png'},
+        {id: 'cut_copper_slab', name: 'cut copper slab', category: 'Ores', module: 14, icon: 'assets/mc-invicons/cut_copper_slab.png'},
+        {id: 'cut_copper_stairs', name: 'cut copper stairs', category: 'Ores', module: 14, icon: 'assets/mc-invicons/cut_copper_stairs.png'},
+        {id: 'exposed_cut_copper', name: 'exposed cut copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/exposed_cut_copper.png'},
+        {id: 'exposed_cut_copper_slab', name: 'exposed cut copper slab', category: 'Ores', module: 14, icon: 'assets/mc-invicons/exposed_cut_copper_slab.png'},
+        {id: 'exposed_cut_copper_stairs', name: 'exposed cut copper stairs', category: 'Ores', module: 14, icon: 'assets/mc-invicons/exposed_cut_copper_stairs.png'},
+        {id: 'weathered_cut_copper', name: 'weathered cut copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/weathered_cut_copper.png'},
+        {id: 'weathered_cut_copper_slab', name: 'weathered cut copper slab', category: 'Ores', module: 14, icon: 'assets/mc-invicons/weathered_cut_copper_slab.png'},
+        {id: 'weathered_cut_copper_stairs', name: 'weathered cut copper stairs', category: 'Ores', module: 14, icon: 'assets/mc-invicons/weathered_cut_copper_stairs.png'},
+        {id: 'oxidized_cut_copper', name: 'oxidized cut copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/oxidized_cut_copper.png'},
+        {id: 'oxidized_cut_copper_slab', name: 'oxidized cut copper slab', category: 'Ores', module: 14, icon: 'assets/mc-invicons/oxidized_cut_copper_slab.png'},
+        {id: 'oxidized_cut_copper_stairs', name: 'oxidized cut copper stairs', category: 'Ores', module: 14, icon: 'assets/mc-invicons/oxidized_cut_copper_stairs.png'},
         {id: 'waxed_cut_copper', name: 'waxed cut copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_cut_copper.png'},
         {id: 'waxed_cut_copper_slab', name: 'waxed cut copper slab', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_cut_copper_slab.png'},
         {id: 'waxed_cut_copper_stairs', name: 'waxed cut copper stairs', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_cut_copper_stairs.png'},
@@ -345,46 +344,46 @@
         {id: 'waxed_oxidized_cut_copper', name: 'waxed oxidized cut copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_oxidized_cut_copper.png'},
         {id: 'waxed_oxidized_cut_copper_slab', name: 'waxed oxidized cut copper slab', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_oxidized_cut_copper_slab.png'},
         {id: 'waxed_oxidized_cut_copper_stairs', name: 'waxed oxidized cut copper stairs', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_oxidized_cut_copper_stairs.png'},
-        {id: 'unwaxed_chiseled_copper', name: 'unwaxed chiseled copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_exposed_chiseled_copper', name: 'unwaxed exposed chiseled copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_weathered_chiseled_copper', name: 'unwaxed weathered chiseled copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_oxidized_chiseled_copper', name: 'unwaxed oxidized chiseled copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_chiseled_copper', name: 'waxed chiseled copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_exposed_chiseled_copper', name: 'waxed exposed chiseled copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_weathered_chiseled_copper', name: 'waxed weathered chiseled copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_oxidized_chiseled_copper', name: 'waxed oxidized chiseled copper', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_copper_door', name: 'unwaxed copper door', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_exposed_copper_door', name: 'unwaxed exposed copper door', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_weathered_copper_door', name: 'unwaxed weathered copper door', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_oxidized_copper_door', name: 'unwaxed oxidized copper door', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_copper_door', name: 'waxed copper door', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_exposed_copper_door', name: 'waxed exposed copper door', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_weathered_copper_door', name: 'waxed weathered copper door', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_oxidized_copper_door', name: 'waxed oxidized copper door', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_copper_trapdoor', name: 'unwaxed copper trapdoor', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_exposed_copper_trapdoor', name: 'unwaxed exposed copper trapdoor', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_weathered_copper_trapdoor', name: 'unwaxed weathered copper trapdoor', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_oxidized_copper_trapdoor', name: 'unwaxed oxidized copper trapdoor', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_copper_trapdoor', name: 'waxed copper trapdoor', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_exposed_copper_trapdoor', name: 'waxed exposed copper trapdoor', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_weathered_copper_trapdoor', name: 'waxed weathered copper trapdoor', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_oxidized_copper_trapdoor', name: 'waxed oxidized copper trapdoor', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_copper_bulb', name: 'unwaxed copper bulb', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_exposed_copper_bulb', name: 'unwaxed exposed copper bulb', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_weathered_copper_bulb', name: 'unwaxed weathered copper bulb', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_oxidized_copper_bulb', name: 'unwaxed oxidized copper bulb', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_copper_bulb', name: 'waxed copper bulb', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_exposed_copper_bulb', name: 'waxed exposed copper bulb', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_weathered_copper_bulb', name: 'waxed weathered copper bulb', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_oxidized_copper_bulb', name: 'waxed oxidized copper bulb', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_copper_grate', name: 'unwaxed copper grate', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_exposed_copper_grate', name: 'unwaxed exposed copper grate', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_weathered_copper_grate', name: 'unwaxed weathered copper grate', category: 'Ores', module: 14, icon: ''},
-        {id: 'unwaxed_oxidized_copper_grate', name: 'unwaxed oxidized copper grate', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_copper_grate', name: 'waxed copper grate', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_exposed_copper_grate', name: 'waxed exposed copper grate', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_weathered_copper_grate', name: 'waxed weathered copper grate', category: 'Ores', module: 14, icon: ''},
-        {id: 'waxed_oxidized_copper_grate', name: 'waxed oxidized copper grate', category: 'Ores', module: 14, icon: ''},
+        {id: 'chiseled_copper', name: 'chiseled copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/chiseled_copper.png'},
+        {id: 'exposed_chiseled_copper', name: 'exposed chiseled copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/exposed_chiseled_copper.png'},
+        {id: 'weathered_chiseled_copper', name: 'weathered chiseled copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/weathered_chiseled_copper.png'},
+        {id: 'oxidized_chiseled_copper', name: 'oxidized chiseled copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/oxidized_chiseled_copper.png'},
+        {id: 'waxed_chiseled_copper', name: 'waxed chiseled copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_chiseled_copper.png'},
+        {id: 'waxed_exposed_chiseled_copper', name: 'waxed exposed chiseled copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_exposed_chiseled_copper.png'},
+        {id: 'waxed_weathered_chiseled_copper', name: 'waxed weathered chiseled copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_weathered_chiseled_copper.png'},
+        {id: 'waxed_oxidized_chiseled_copper', name: 'waxed oxidized chiseled copper', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_oxidized_chiseled_copper.png'},
+        {id: 'copper_door', name: 'copper door', category: 'Ores', module: 14, icon: 'assets/mc-invicons/copper_door.png'},
+        {id: 'exposed_copper_door', name: 'exposed copper door', category: 'Ores', module: 14, icon: 'assets/mc-invicons/exposed_copper_door.png'},
+        {id: 'weathered_copper_door', name: 'weathered copper door', category: 'Ores', module: 14, icon: 'assets/mc-invicons/weathered_copper_door.png'},
+        {id: 'oxidized_copper_door', name: 'oxidized copper door', category: 'Ores', module: 14, icon: 'assets/mc-invicons/oxidized_copper_door.png'},
+        {id: 'waxed_copper_door', name: 'waxed copper door', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_copper_door.png'},
+        {id: 'waxed_exposed_copper_door', name: 'waxed exposed copper door', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_exposed_copper_door.png'},
+        {id: 'waxed_weathered_copper_door', name: 'waxed weathered copper door', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_weathered_copper_door.png'},
+        {id: 'waxed_oxidized_copper_door', name: 'waxed oxidized copper door', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_oxidized_copper_door.png'},
+        {id: 'copper_trapdoor', name: 'copper trapdoor', category: 'Ores', module: 14, icon: 'assets/mc-invicons/copper_trapdoor.png'},
+        {id: 'exposed_copper_trapdoor', name: 'exposed copper trapdoor', category: 'Ores', module: 14, icon: 'assets/mc-invicons/exposed_copper_trapdoor.png'},
+        {id: 'weathered_copper_trapdoor', name: 'weathered copper trapdoor', category: 'Ores', module: 14, icon: 'assets/mc-invicons/weathered_copper_trapdoor.png'},
+        {id: 'oxidized_copper_trapdoor', name: 'oxidized copper trapdoor', category: 'Ores', module: 14, icon: 'assets/mc-invicons/oxidized_copper_trapdoor.png'},
+        {id: 'waxed_copper_trapdoor', name: 'waxed copper trapdoor', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_copper_trapdoor.png'},
+        {id: 'waxed_exposed_copper_trapdoor', name: 'waxed exposed copper trapdoor', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_exposed_copper_trapdoor.png'},
+        {id: 'waxed_weathered_copper_trapdoor', name: 'waxed weathered copper trapdoor', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_weathered_copper_trapdoor.png'},
+        {id: 'waxed_oxidized_copper_trapdoor', name: 'waxed oxidized copper trapdoor', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_oxidized_copper_trapdoor.png'},
+        {id: 'copper_bulb', name: 'copper bulb', category: 'Ores', module: 14, icon: 'assets/mc-invicons/copper_bulb.png'},
+        {id: 'exposed_copper_bulb', name: 'exposed copper bulb', category: 'Ores', module: 14, icon: 'assets/mc-invicons/exposed_copper_bulb.png'},
+        {id: 'weathered_copper_bulb', name: 'weathered copper bulb', category: 'Ores', module: 14, icon: 'assets/mc-invicons/weathered_copper_bulb.png'},
+        {id: 'oxidized_copper_bulb', name: 'oxidized copper bulb', category: 'Ores', module: 14, icon: 'assets/mc-invicons/oxidized_copper_bulb.png'},
+        {id: 'waxed_copper_bulb', name: 'waxed copper bulb', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_copper_bulb.png'},
+        {id: 'waxed_exposed_copper_bulb', name: 'waxed exposed copper bulb', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_exposed_copper_bulb.png'},
+        {id: 'waxed_weathered_copper_bulb', name: 'waxed weathered copper bulb', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_weathered_copper_bulb.png'},
+        {id: 'waxed_oxidized_copper_bulb', name: 'waxed oxidized copper bulb', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_oxidized_copper_bulb.png'},
+        {id: 'copper_grate', name: 'copper grate', category: 'Ores', module: 14, icon: 'assets/mc-invicons/copper_grate.png'},
+        {id: 'exposed_copper_grate', name: 'exposed copper grate', category: 'Ores', module: 14, icon: 'assets/mc-invicons/exposed_copper_grate.png'},
+        {id: 'weathered_copper_grate', name: 'weathered copper grate', category: 'Ores', module: 14, icon: 'assets/mc-invicons/weathered_copper_grate.png'},
+        {id: 'oxidized_copper_grate', name: 'oxidized copper grate', category: 'Ores', module: 14, icon: 'assets/mc-invicons/oxidized_copper_grate.png'},
+        {id: 'waxed_copper_grate', name: 'waxed copper grate', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_copper_grate.png'},
+        {id: 'waxed_exposed_copper_grate', name: 'waxed exposed copper grate', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_exposed_copper_grate.png'},
+        {id: 'waxed_weathered_copper_grate', name: 'waxed weathered copper grate', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_weathered_copper_grate.png'},
+        {id: 'waxed_oxidized_copper_grate', name: 'waxed oxidized copper grate', category: 'Ores', module: 14, icon: 'assets/mc-invicons/waxed_oxidized_copper_grate.png'},
         {id: 'gold_ore', name: 'gold ore', category: 'Ores', module: 15, icon: 'assets/mc-invicons/gold_ore.png'},
         {id: 'deepslate_gold_ore', name: 'deepslate gold ore', category: 'Ores', module: 15, icon: 'assets/mc-invicons/deepslate_gold_ore.png'},
         {id: 'nether_gold_ore', name: 'nether gold ore', category: 'Ores', module: 15, icon: 'assets/mc-invicons/nether_gold_ore.png'},
@@ -393,8 +392,8 @@
         {id: 'gold_nugget', name: 'gold nugget', category: 'Ores', module: 15, icon: 'assets/mc-invicons/gold_nugget.png'},
         {id: 'block_of_gold', name: 'block of gold', category: 'Ores', module: 15, icon: 'assets/mc-invicons/block_of_gold.png'},
         {id: 'block_of_raw_gold', name: 'block of raw gold', category: 'Ores', module: 15, icon: 'assets/mc-invicons/block_of_raw_gold.png'},
-        {id: 'lapis_ore', name: 'lapis ore', category: 'Ores', module: 15, icon: ''},
-        {id: 'deepslate_lapis_ore', name: 'deepslate lapis ore', category: 'Ores', module: 15, icon: ''},
+        {id: 'lapis_ore', name: 'lapis ore', category: 'Ores', module: 15, icon: 'assets/mc-invicons/lapis_ore.png'},
+        {id: 'deepslate_lapis_ore', name: 'deepslate lapis ore', category: 'Ores', module: 15, icon: 'assets/mc-invicons/deepslate_lapis_ore.png'},
         {id: 'lapis_lazuli', name: 'lapis lazuli', category: 'Ores', module: 15, icon: 'assets/mc-invicons/lapis_lazuli.png'},
         {id: 'block_of_lapis_lazuli', name: 'block of lapis lazuli', category: 'Ores', module: 15, icon: 'assets/mc-invicons/block_of_lapis_lazuli.png'},
         {id: 'diamond_ore', name: 'diamond ore', category: 'Ores', module: 15, icon: 'assets/mc-invicons/diamond_ore.png'},
@@ -431,7 +430,7 @@
         {id: 'hopper', name: 'hopper', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/hopper.png'},
         {id: 'note_block', name: 'note block', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/note_block.png'},
         {id: 'jukebox', name: 'jukebox', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/jukebox.png'},
-        {id: 'calibrated_sculk_sensor', name: 'calibrated sculk sensor', category: 'Redstone', module: 18, icon: ''},
+        {id: 'calibrated_sculk_sensor', name: 'calibrated sculk sensor', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/calibrated_sculk_sensor.png'},
         {id: 'sculk_sensor', name: 'sculk sensor', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/sculk_sensor.png'},
         {id: 'tnt', name: 'tnt', category: 'Redstone', module: 18, icon: 'assets/mc-invicons/tnt.png'},
         {id: 'dirt', name: 'dirt', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/dirt.png'},
@@ -459,7 +458,7 @@
         {id: 'polished_basalt', name: 'polished basalt', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/polished_basalt.png'},
         {id: 'obsidian', name: 'obsidian', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/obsidian.png'},
         {id: 'crying_obsidian', name: 'crying obsidian', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/crying_obsidian.png'},
-        {id: 'magma_block', name: 'magma block', category: 'Natural World A', module: 21, icon: ''},
+        {id: 'magma_block', name: 'magma block', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/magma_block.png'},
         {id: 'netherrack', name: 'netherrack', category: 'Natural World B', module: 22, icon: 'assets/mc-invicons/netherrack.png'},
         {id: 'soul_sand', name: 'soul sand', category: 'Natural World B', module: 22, icon: 'assets/mc-invicons/soul_sand.png'},
         {id: 'soul_soil', name: 'soul soil', category: 'Natural World B', module: 22, icon: 'assets/mc-invicons/soul_soil.png'},
@@ -480,8 +479,8 @@
         {id: 'sculk_shrieker', name: 'sculk shrieker', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/sculk_shrieker.png'},
         {id: 'moss_block', name: 'moss block', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/moss_block.png'},
         {id: 'moss_carpet', name: 'moss carpet', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/moss_carpet.png'},
-        {id: 'pale_moss_block', name: 'pale moss block', category: 'Natural World B', module: 24, icon: ''},
-        {id: 'pale_moss_carpet', name: 'pale moss carpet', category: 'Natural World B', module: 24, icon: ''},
+        {id: 'pale_moss_block', name: 'pale moss block', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/pale_moss_block.png'},
+        {id: 'pale_moss_carpet', name: 'pale moss carpet', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/pale_moss_carpet.png'},
         {id: 'bone', name: 'bone', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/bone.png'},
         {id: 'bone_block', name: 'bone block', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/bone_block.png'},
         {id: 'bone_meal', name: 'bone meal', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/bone_meal.png'},
@@ -491,7 +490,7 @@
         {id: 'string', name: 'string', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/string.png'},
         {id: 'cobweb', name: 'cobweb', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/cobweb.png'},
         {id: 'gunpowder', name: 'gunpowder', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/gunpowder.png'},
-        {id: 'slime_ball', name: 'slime ball', category: 'Mob Drops', module: 25, icon: ''},
+        {id: 'slime_ball', name: 'slime ball', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/slime_ball.png'},
         {id: 'slime_block', name: 'slime block', category: 'Mob Drops', module: 25, icon: 'assets/mc-invicons/slime_block.png'},
         {id: 'blaze_rod', name: 'blaze rod', category: 'Mob Drops', module: 26, icon: 'assets/mc-invicons/blaze_rod.png'},
         {id: 'blaze_powder', name: 'blaze powder', category: 'Mob Drops', module: 26, icon: 'assets/mc-invicons/blaze_powder.png'},
@@ -499,7 +498,7 @@
         {id: 'magma_cream', name: 'magma cream', category: 'Mob Drops', module: 26, icon: 'assets/mc-invicons/magma_cream.png'},
         {id: 'ender_pearl', name: 'ender pearl', category: 'Mob Drops', module: 26, icon: 'assets/mc-invicons/ender_pearl.png'},
         {id: 'eye_of_ender', name: 'eye of ender', category: 'Mob Drops', module: 26, icon: 'assets/mc-invicons/eye_of_ender.png'},
-        {id: 'dragon\'s_breath', name: 'dragon\'s breath', category: 'Mob Drops', module: 26, icon: ''},
+        {id: 'dragons_breath', name: 'dragons breath', category: 'Mob Drops', module: 26, icon: 'assets/mc-invicons/dragons_breath.png'},
         {id: 'phantom_membrane', name: 'phantom membrane', category: 'Mob Drops', module: 26, icon: 'assets/mc-invicons/phantom_membrane.png'},
         {id: 'shulker_shell', name: 'shulker shell', category: 'Mob Drops', module: 26, icon: 'assets/mc-invicons/shulker_shell.png'},
         {id: 'prismarine_shard', name: 'prismarine shard', category: 'Mob Drops', module: 26, icon: 'assets/mc-invicons/prismarine_shard.png'},
@@ -511,23 +510,15 @@
         {id: 'feather', name: 'feather', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/feather.png'},
         {id: 'leather', name: 'leather', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/leather.png'},
         {id: 'rabbit_hide', name: 'rabbit hide', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/rabbit_hide.png'},
-        {id: 'rabbit\'s_foot', name: 'rabbit\'s foot', category: 'Mob Drops', module: 27, icon: ''},
+        {id: 'rabbits_foot', name: 'rabbits foot', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/rabbits_foot.png'},
         {id: 'turtle_scute', name: 'turtle scute', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/turtle_scute.png'},
-        {id: 'armadillo_scute', name: 'armadillo scute', category: 'Mob Drops', module: 27, icon: ''},
+        {id: 'armadillo_scute', name: 'armadillo scute', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/armadillo_scute.png'},
         {id: 'creeper_head', name: 'creeper head', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/creeper_head.png'},
         {id: 'zombie_head', name: 'zombie head', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/zombie_head.png'},
         {id: 'skeleton_skull', name: 'skeleton skull', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/skeleton_skull.png'},
         {id: 'wither_skeleton_skull', name: 'wither skeleton skull', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/wither_skeleton_skull.png'},
         {id: 'dragon_head', name: 'dragon head', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/dragon_head.png'},
         {id: 'piglin_head', name: 'piglin head', category: 'Mob Drops', module: 27, icon: 'assets/mc-invicons/piglin_head.png'},
-        {id: 'goat_horn_(admire)', name: 'goat horn (admire)', category: 'Mob Drops', module: 27, icon: ''},
-        {id: 'goat_horn_(call)', name: 'goat horn (call)', category: 'Mob Drops', module: 27, icon: ''},
-        {id: 'goat_horn_(dream)', name: 'goat horn (dream)', category: 'Mob Drops', module: 27, icon: ''},
-        {id: 'goat_horn_(feel)', name: 'goat horn (feel)', category: 'Mob Drops', module: 27, icon: ''},
-        {id: 'goat_horn_(ponder)', name: 'goat horn (ponder)', category: 'Mob Drops', module: 27, icon: ''},
-        {id: 'goat_horn_(seek)', name: 'goat horn (seek)', category: 'Mob Drops', module: 27, icon: ''},
-        {id: 'goat_horn_(sing)', name: 'goat horn (sing)', category: 'Mob Drops', module: 27, icon: ''},
-        {id: 'goat_horn_(yearn)', name: 'goat horn (yearn)', category: 'Mob Drops', module: 27, icon: ''},
         {id: 'wheat', name: 'wheat', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/wheat.png'},
         {id: 'wheat_seeds', name: 'wheat seeds', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/wheat_seeds.png'},
         {id: 'bread', name: 'bread', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/bread.png'},
@@ -541,7 +532,7 @@
         {id: 'sugar', name: 'sugar', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/sugar.png'},
         {id: 'pumpkin', name: 'pumpkin', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/pumpkin.png'},
         {id: 'carved_pumpkin', name: 'carved pumpkin', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/carved_pumpkin.png'},
-        {id: 'jack_o\'lantern', name: 'jack o\'lantern', category: 'Crops & Food', module: 28, icon: ''},
+        {id: 'jack_o_lantern', name: 'jack o lantern', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/jack_o_lantern.png'},
         {id: 'pumpkin_seeds', name: 'pumpkin seeds', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/pumpkin_seeds.png'},
         {id: 'pumpkin_pie', name: 'pumpkin pie', category: 'Crops & Food', module: 28, icon: 'assets/mc-invicons/pumpkin_pie.png'},
         {id: 'melon', name: 'melon', category: 'Crops & Food', module: 29, icon: 'assets/mc-invicons/melon.png'},
@@ -590,40 +581,22 @@
         {id: 'bucket', name: 'bucket', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/bucket.png'},
         {id: 'water_bottle', name: 'water bottle', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/water_bottle.png'},
         {id: 'glass_bottle', name: 'glass bottle', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/glass_bottle.png'},
-        {id: 'bottle_o\'_enchanting', name: 'bottle o\' enchanting', category: 'Utility Items A', module: 31, icon: ''},
+        {id: 'bottle_o_enchanting', name: 'bottle o enchanting', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/bottle_o_enchanting.png'},
         {id: 'honey_bottle', name: 'honey bottle', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/honey_bottle.png'},
         {id: 'dragon_egg', name: 'dragon egg', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/dragon_egg.png'},
         {id: 'sniffer_egg', name: 'sniffer egg', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/sniffer_egg.png'},
         {id: 'turtle_egg', name: 'turtle egg', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/turtle_egg.png'},
         {id: 'lead', name: 'lead', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/lead.png'},
         {id: 'name_tag', name: 'name tag', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/name_tag.png'},
-        {id: 'saddle', name: 'saddle', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/saddle.png'},
         {id: 'chest', name: 'chest', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/chest.png'},
         {id: 'trapped_chest', name: 'trapped chest', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/trapped_chest.png'},
         {id: 'ender_chest', name: 'ender chest', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/ender_chest.png'},
         {id: 'barrel', name: 'barrel', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/barrel.png'},
-        {id: 'shulker_box', name: 'shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/shulker_box.png'},
-        {id: 'white_shulker_box', name: 'white shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/white_shulker_box.png'},
-        {id: 'orange_shulker_box', name: 'orange shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/orange_shulker_box.png'},
-        {id: 'magenta_shulker_box', name: 'magenta shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/magenta_shulker_box.png'},
-        {id: 'light_blue_shulker_box', name: 'light blue shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/light_blue_shulker_box.png'},
-        {id: 'yellow_shulker_box', name: 'yellow shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/yellow_shulker_box.png'},
-        {id: 'lime_shulker_box', name: 'lime shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/lime_shulker_box.png'},
-        {id: 'pink_shulker_box', name: 'pink shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/pink_shulker_box.png'},
-        {id: 'gray_shulker_box', name: 'gray shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/gray_shulker_box.png'},
-        {id: 'light_gray_shulker_box', name: 'light gray shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/light_gray_shulker_box.png'},
-        {id: 'cyan_shulker_box', name: 'cyan shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/cyan_shulker_box.png'},
-        {id: 'purple_shulker_box', name: 'purple shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/purple_shulker_box.png'},
-        {id: 'blue_shulker_box', name: 'blue shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/blue_shulker_box.png'},
-        {id: 'brown_shulker_box', name: 'brown shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/brown_shulker_box.png'},
-        {id: 'green_shulker_box', name: 'green shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/green_shulker_box.png'},
-        {id: 'red_shulker_box', name: 'red shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/red_shulker_box.png'},
-        {id: 'black_shulker_box', name: 'black shulker box', category: 'Utility Items A', module: 32, icon: 'assets/mc-invicons/black_shulker_box.png'},
         {id: 'furnace', name: 'furnace', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/furnace.png'},
         {id: 'blast_furnace', name: 'blast furnace', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/blast_furnace.png'},
         {id: 'smoker', name: 'smoker', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/smoker.png'},
         {id: 'crafting_table', name: 'crafting table', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/crafting_table.png'},
-        {id: 'stonecutter', name: 'stonecutter', category: 'Utility Items A', module: 33, icon: ''},
+        {id: 'stonecutter', name: 'stonecutter', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/stonecutter.png'},
         {id: 'smithing_table', name: 'smithing table', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/smithing_table.png'},
         {id: 'fletching_table', name: 'fletching table', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/fletching_table.png'},
         {id: 'cartography_table', name: 'cartography table', category: 'Utility Items A', module: 33, icon: 'assets/mc-invicons/cartography_table.png'},
@@ -652,8 +625,8 @@
         {id: 'compass', name: 'compass', category: 'Utility Items B', module: 35, icon: 'assets/mc-invicons/compass.png'},
         {id: 'clock', name: 'clock', category: 'Utility Items B', module: 35, icon: 'assets/mc-invicons/clock.png'},
         {id: 'empty_map', name: 'empty map', category: 'Utility Items B', module: 35, icon: 'assets/mc-invicons/empty_map.png'},
-        {id: 'filled_map', name: 'filled map', category: 'Utility Items B', module: 35, icon: ''},
-        {id: 'crafter', name: 'crafter', category: 'Utility Items B', module: 36, icon: ''},
+        {id: 'filled_map', name: 'filled map', category: 'Utility Items B', module: 35, icon: 'assets/mc-invicons/filled_map.png'},
+        {id: 'crafter', name: 'crafter', category: 'Utility Items B', module: 36, icon: 'assets/mc-invicons/crafter.png'},
         {id: 'bell', name: 'bell', category: 'Utility Items B', module: 36, icon: 'assets/mc-invicons/bell.png'},
         {id: 'campfire', name: 'campfire', category: 'Utility Items B', module: 36, icon: 'assets/mc-invicons/campfire.png'},
         {id: 'soul_campfire', name: 'soul campfire', category: 'Utility Items B', module: 36, icon: 'assets/mc-invicons/soul_campfire.png'},
@@ -686,7 +659,7 @@
         {id: 'armor_stand', name: 'armor stand', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/armor_stand.png'},
         {id: 'end_rod', name: 'end rod', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/end_rod.png'},
         {id: 'end_crystal', name: 'end crystal', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/end_crystal.png'},
-        {id: 'sea_lantern', name: 'sea lantern', category: 'Decoration', module: 38, icon: ''},
+        {id: 'sea_lantern', name: 'sea lantern', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/sea_lantern.png'},
         {id: 'glowstone', name: 'glowstone', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/glowstone.png'},
         {id: 'shroomlight', name: 'shroomlight', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/shroomlight.png'},
         {id: 'ochre_froglight', name: 'ochre froglight', category: 'Decoration', module: 38, icon: 'assets/mc-invicons/ochre_froglight.png'},
@@ -726,22 +699,6 @@
         {id: 'green_carpet', name: 'green carpet', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/green_carpet.png'},
         {id: 'red_carpet', name: 'red carpet', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/red_carpet.png'},
         {id: 'black_carpet', name: 'black carpet', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/black_carpet.png'},
-        {id: 'white_bed', name: 'white bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/white_bed.png'},
-        {id: 'orange_bed', name: 'orange bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/orange_bed.png'},
-        {id: 'magenta_bed', name: 'magenta bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/magenta_bed.png'},
-        {id: 'light_blue_bed', name: 'light blue bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/light_blue_bed.png'},
-        {id: 'yellow_bed', name: 'yellow bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/yellow_bed.png'},
-        {id: 'lime_bed', name: 'lime bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/lime_bed.png'},
-        {id: 'pink_bed', name: 'pink bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/pink_bed.png'},
-        {id: 'gray_bed', name: 'gray bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/gray_bed.png'},
-        {id: 'light_gray_bed', name: 'light gray bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/light_gray_bed.png'},
-        {id: 'cyan_bed', name: 'cyan bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/cyan_bed.png'},
-        {id: 'purple_bed', name: 'purple bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/purple_bed.png'},
-        {id: 'blue_bed', name: 'blue bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/blue_bed.png'},
-        {id: 'brown_bed', name: 'brown bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/brown_bed.png'},
-        {id: 'green_bed', name: 'green bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/green_bed.png'},
-        {id: 'red_bed', name: 'red bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/red_bed.png'},
-        {id: 'black_bed', name: 'black bed', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/black_bed.png'},
         {id: 'white_banner', name: 'white banner', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/white_banner.png'},
         {id: 'orange_banner', name: 'orange banner', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/orange_banner.png'},
         {id: 'magenta_banner', name: 'magenta banner', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/magenta_banner.png'},
@@ -758,125 +715,22 @@
         {id: 'green_banner', name: 'green banner', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/green_banner.png'},
         {id: 'red_banner', name: 'red banner', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/red_banner.png'},
         {id: 'black_banner', name: 'black banner', category: 'Decoration', module: 39, icon: 'assets/mc-invicons/black_banner.png'},
-        {id: 'brute_banner_pattern', name: 'brute banner pattern', category: 'Decoration', module: 39, icon: ''},
         {id: 'paper', name: 'paper', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/paper.png'},
         {id: 'book', name: 'book', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/book.png'},
-        {id: 'written_book', name: 'written book', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/written_book.png'},
         {id: 'firework_rocket', name: 'firework rocket', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/firework_rocket.png'},
         {id: 'firework_star', name: 'firework star', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/firework_star.png'},
-        {id: 'fishing_rod', name: 'fishing rod', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/fishing_rod.png'},
-        {id: 'flint_and_steel', name: 'flint and steel', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/flint_and_steel.png'},
-        {id: 'shears', name: 'shears', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/shears.png'},
-        {id: 'spyglass', name: 'spyglass', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/spyglass.png'},
-        {id: 'brush', name: 'brush', category: 'Tools & Gear', module: 40, icon: 'assets/mc-invicons/brush.png'},
-        {id: 'elytra', name: 'elytra', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/elytra.png'},
-        {id: 'leather_helmet', name: 'leather helmet', category: 'Tools & Gear', module: 41, icon: ''},
-        {id: 'leather_chestplate', name: 'leather chestplate', category: 'Tools & Gear', module: 41, icon: ''},
-        {id: 'leather_leggings', name: 'leather leggings', category: 'Tools & Gear', module: 41, icon: ''},
-        {id: 'leather_boots', name: 'leather boots', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/leather_boots.png'},
-        {id: 'chainmail_helmet', name: 'chainmail helmet', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/chainmail_helmet.png'},
-        {id: 'chainmail_chestplate', name: 'chainmail chestplate', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/chainmail_chestplate.png'},
-        {id: 'chainmail_leggings', name: 'chainmail leggings', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/chainmail_leggings.png'},
-        {id: 'chainmail_boots', name: 'chainmail boots', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/chainmail_boots.png'},
-        {id: 'iron_helmet', name: 'iron helmet', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/iron_helmet.png'},
-        {id: 'iron_chestplate', name: 'iron chestplate', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/iron_chestplate.png'},
-        {id: 'iron_leggings', name: 'iron leggings', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/iron_leggings.png'},
-        {id: 'iron_boots', name: 'iron boots', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/iron_boots.png'},
-        {id: 'golden_helmet', name: 'golden helmet', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/golden_helmet.png'},
-        {id: 'golden_chestplate', name: 'golden chestplate', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/golden_chestplate.png'},
-        {id: 'golden_leggings', name: 'golden leggings', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/golden_leggings.png'},
-        {id: 'golden_boots', name: 'golden boots', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/golden_boots.png'},
-        {id: 'diamond_helmet', name: 'diamond helmet', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/diamond_helmet.png'},
-        {id: 'diamond_chestplate', name: 'diamond chestplate', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/diamond_chestplate.png'},
-        {id: 'diamond_leggings', name: 'diamond leggings', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/diamond_leggings.png'},
-        {id: 'diamond_boots', name: 'diamond boots', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/diamond_boots.png'},
-        {id: 'netherite_helmet', name: 'netherite helmet', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/netherite_helmet.png'},
-        {id: 'netherite_chestplate', name: 'netherite chestplate', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/netherite_chestplate.png'},
-        {id: 'netherite_leggings', name: 'netherite leggings', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/netherite_leggings.png'},
-        {id: 'netherite_boots', name: 'netherite boots', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/netherite_boots.png'},
-        {id: 'turtle_helmet', name: 'turtle helmet', category: 'Tools & Gear', module: 41, icon: 'assets/mc-invicons/turtle_helmet.png'},
-        {id: 'wooden_sword', name: 'wooden sword', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/wooden_sword.png'},
-        {id: 'stone_sword', name: 'stone sword', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/stone_sword.png'},
-        {id: 'iron_sword', name: 'iron sword', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/iron_sword.png'},
-        {id: 'golden_sword', name: 'golden sword', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/golden_sword.png'},
-        {id: 'diamond_sword', name: 'diamond sword', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/diamond_sword.png'},
-        {id: 'netherite_sword', name: 'netherite sword', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/netherite_sword.png'},
-        {id: 'wooden_pickaxe', name: 'wooden pickaxe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/wooden_pickaxe.png'},
-        {id: 'stone_pickaxe', name: 'stone pickaxe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/stone_pickaxe.png'},
-        {id: 'iron_pickaxe', name: 'iron pickaxe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/iron_pickaxe.png'},
-        {id: 'golden_pickaxe', name: 'golden pickaxe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/golden_pickaxe.png'},
-        {id: 'diamond_pickaxe', name: 'diamond pickaxe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/diamond_pickaxe.png'},
-        {id: 'netherite_pickaxe', name: 'netherite pickaxe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/netherite_pickaxe.png'},
-        {id: 'wooden_axe', name: 'wooden axe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/wooden_axe.png'},
-        {id: 'stone_axe', name: 'stone axe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/stone_axe.png'},
-        {id: 'iron_axe', name: 'iron axe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/iron_axe.png'},
-        {id: 'golden_axe', name: 'golden axe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/golden_axe.png'},
-        {id: 'diamond_axe', name: 'diamond axe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/diamond_axe.png'},
-        {id: 'netherite_axe', name: 'netherite axe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/netherite_axe.png'},
-        {id: 'wooden_shovel', name: 'wooden shovel', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/wooden_shovel.png'},
-        {id: 'stone_shovel', name: 'stone shovel', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/stone_shovel.png'},
-        {id: 'iron_shovel', name: 'iron shovel', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/iron_shovel.png'},
-        {id: 'golden_shovel', name: 'golden shovel', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/golden_shovel.png'},
-        {id: 'diamond_shovel', name: 'diamond shovel', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/diamond_shovel.png'},
-        {id: 'netherite_shovel', name: 'netherite shovel', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/netherite_shovel.png'},
-        {id: 'wooden_hoe', name: 'wooden hoe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/wooden_hoe.png'},
-        {id: 'stone_hoe', name: 'stone hoe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/stone_hoe.png'},
-        {id: 'iron_hoe', name: 'iron hoe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/iron_hoe.png'},
-        {id: 'golden_hoe', name: 'golden hoe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/golden_hoe.png'},
-        {id: 'diamond_hoe', name: 'diamond hoe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/diamond_hoe.png'},
-        {id: 'netherite_hoe', name: 'netherite hoe', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/netherite_hoe.png'},
-        {id: 'bow', name: 'bow', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/bow.png'},
-        {id: 'crossbow', name: 'crossbow', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/crossbow.png'},
         {id: 'arrow', name: 'arrow', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/arrow.png'},
         {id: 'spectral_arrow', name: 'spectral arrow', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/spectral_arrow.png'},
         {id: 'tipped_arrow', name: 'tipped arrow', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/tipped_arrow.png'},
-        {id: 'shield', name: 'shield', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/shield.png'},
-        {id: 'trident', name: 'trident', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/trident.png'},
-        {id: 'mace', name: 'mace', category: 'Tools & Gear', module: 42, icon: ''},
-        {id: 'wind_charge', name: 'wind charge', category: 'Tools & Gear', module: 42, icon: ''},
-        {id: 'trial_key', name: 'trial key', category: 'Rare Items', module: 43, icon: ''},
-        {id: 'ominous_trial_key', name: 'ominous trial key', category: 'Rare Items', module: 43, icon: ''},
-        {id: 'heavy_core', name: 'heavy core', category: 'Rare Items', module: 43, icon: ''},
-        {id: 'breeze_rod', name: 'breeze rod', category: 'Rare Items', module: 43, icon: ''},
+        {id: 'wind_charge', name: 'wind charge', category: 'Tools & Gear', module: 42, icon: 'assets/mc-invicons/wind_charge.png'},
+        {id: 'trial_key', name: 'trial key', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/trial_key.png'},
+        {id: 'ominous_trial_key', name: 'ominous trial key', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/ominous_trial_key.png'},
+        {id: 'heavy_core', name: 'heavy core', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/heavy_core.png'},
+        {id: 'breeze_rod', name: 'breeze rod', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/breeze_rod.png'},
         {id: 'echo_shard', name: 'echo shard', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/echo_shard.png'},
         {id: 'disc_fragment_5', name: 'disc fragment 5', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/disc_fragment_5.png'},
-        {id: 'music_disc_13', name: 'music disc 13', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_13.png'},
-        {id: 'music_disc_cat', name: 'music disc cat', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_cat.png'},
-        {id: 'music_disc_blocks', name: 'music disc blocks', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_blocks.png'},
-        {id: 'music_disc_chirp', name: 'music disc chirp', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_chirp.png'},
-        {id: 'music_disc_far', name: 'music disc far', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_far.png'},
-        {id: 'music_disc_mall', name: 'music disc mall', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_mall.png'},
-        {id: 'music_disc_mellohi', name: 'music disc mellohi', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_mellohi.png'},
-        {id: 'music_disc_stal', name: 'music disc stal', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_stal.png'},
-        {id: 'music_disc_strad', name: 'music disc strad', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_strad.png'},
-        {id: 'music_disc_ward', name: 'music disc ward', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_ward.png'},
-        {id: 'music_disc_11', name: 'music disc 11', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_11.png'},
-        {id: 'music_disc_wait', name: 'music disc wait', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_wait.png'},
-        {id: 'music_disc_otherside', name: 'music disc otherside', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_otherside.png'},
-        {id: 'music_disc_5', name: 'music disc 5', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_5.png'},
-        {id: 'music_disc_pigstep', name: 'music disc pigstep', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_pigstep.png'},
-        {id: 'music_disc_relic', name: 'music disc relic', category: 'Rare Items', module: 43, icon: 'assets/mc-invicons/music_disc_relic.png'},
-        {id: 'music_disc_creator', name: 'music disc creator', category: 'Rare Items', module: 43, icon: ''},
-        {id: 'music_disc_creator_music_box', name: 'music disc creator music box', category: 'Rare Items', module: 43, icon: ''},
-        {id: 'music_disc_precipice', name: 'music disc precipice', category: 'Rare Items', module: 43, icon: ''},
-        {id: 'totem_of_undying', name: 'totem of undying', category: 'Rare Items', module: 44, icon: 'assets/mc-invicons/totem_of_undying.png'},
         {id: 'nether_star', name: 'nether star', category: 'Rare Items', module: 44, icon: 'assets/mc-invicons/nether_star.png'},
-        {id: 'white_bundle', name: 'white bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'orange_bundle', name: 'orange bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'magenta_bundle', name: 'magenta bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'light_blue_bundle', name: 'light blue bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'yellow_bundle', name: 'yellow bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'lime_bundle', name: 'lime bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'pink_bundle', name: 'pink bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'gray_bundle', name: 'gray bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'light_gray_bundle', name: 'light gray bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'cyan_bundle', name: 'cyan bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'purple_bundle', name: 'purple bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'blue_bundle', name: 'blue bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'brown_bundle', name: 'brown bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'green_bundle', name: 'green bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'red_bundle', name: 'red bundle', category: 'Rare Items', module: 45, icon: ''},
-        {id: 'black_bundle', name: 'black bundle', category: 'Rare Items', module: 45, icon: ''},
+        {id: 'elytra', name: 'elytra', category: 'Rare Items', module: 44, icon: 'assets/mc-invicons/elytra.png'},
         {id: 'suspicious_sand', name: 'suspicious sand', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/suspicious_sand.png'},
         {id: 'suspicious_gravel', name: 'suspicious gravel', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/suspicious_gravel.png'},
         {id: 'decorated_pot', name: 'decorated pot', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/decorated_pot.png'},
@@ -888,9 +742,9 @@
         {id: 'burn_pottery_sherd', name: 'burn pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/burn_pottery_sherd.png'},
         {id: 'danger_pottery_sherd', name: 'danger pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/danger_pottery_sherd.png'},
         {id: 'explorer_pottery_sherd', name: 'explorer pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/explorer_pottery_sherd.png'},
-        {id: 'flow_pottery_sherd', name: 'flow pottery sherd', category: 'Rare Items', module: 45, icon: ''},
+        {id: 'flow_pottery_sherd', name: 'flow pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/flow_pottery_sherd.png'},
         {id: 'friend_pottery_sherd', name: 'friend pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/friend_pottery_sherd.png'},
-        {id: 'guster_pottery_sherd', name: 'guster pottery sherd', category: 'Rare Items', module: 45, icon: ''},
+        {id: 'guster_pottery_sherd', name: 'guster pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/guster_pottery_sherd.png'},
         {id: 'heart_pottery_sherd', name: 'heart pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/heart_pottery_sherd.png'},
         {id: 'heartbreak_pottery_sherd', name: 'heartbreak pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/heartbreak_pottery_sherd.png'},
         {id: 'howl_pottery_sherd', name: 'howl pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/howl_pottery_sherd.png'},
@@ -898,20 +752,18 @@
         {id: 'mourner_pottery_sherd', name: 'mourner pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/mourner_pottery_sherd.png'},
         {id: 'plenty_pottery_sherd', name: 'plenty pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/plenty_pottery_sherd.png'},
         {id: 'prize_pottery_sherd', name: 'prize pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/prize_pottery_sherd.png'},
-        {id: 'scrape_pottery_sherd', name: 'scrape pottery sherd', category: 'Rare Items', module: 45, icon: ''},
+        {id: 'scrape_pottery_sherd', name: 'scrape pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/scrape_pottery_sherd.png'},
         {id: 'sheaf_pottery_sherd', name: 'sheaf pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/sheaf_pottery_sherd.png'},
         {id: 'shelter_pottery_sherd', name: 'shelter pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/shelter_pottery_sherd.png'},
         {id: 'skull_pottery_sherd', name: 'skull pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/skull_pottery_sherd.png'},
         {id: 'snort_pottery_sherd', name: 'snort pottery sherd', category: 'Rare Items', module: 45, icon: 'assets/mc-invicons/snort_pottery_sherd.png'},
-        {id: 'experience_bottle', name: 'experience bottle', category: 'Enchanting', module: 46, icon: ''},
         {id: 'enchanting_table', name: 'enchanting table', category: 'Enchanting', module: 46, icon: 'assets/mc-invicons/enchanting_table.png'},
-        {id: 'enchanted_book', name: 'enchanted book', category: 'Enchanting', module: 46, icon: 'assets/mc-invicons/enchanted_book.png'},
         {id: 'netherite_upgrade_smithing_template', name: 'netherite upgrade smithing template', category: 'Enchanting', module: 47, icon: 'assets/mc-invicons/netherite_upgrade_smithing_template.png'},
-        {id: 'bolt_armor_trim_smithing_template', name: 'bolt armor trim smithing template', category: 'Enchanting', module: 47, icon: ''},
+        {id: 'bolt_armor_trim_smithing_template', name: 'bolt armor trim smithing template', category: 'Enchanting', module: 47, icon: 'assets/mc-invicons/bolt_armor_trim_smithing_template.png'},
         {id: 'coast_armor_trim_smithing_template', name: 'coast armor trim smithing template', category: 'Enchanting', module: 47, icon: 'assets/mc-invicons/coast_armor_trim_smithing_template.png'},
         {id: 'dune_armor_trim_smithing_template', name: 'dune armor trim smithing template', category: 'Enchanting', module: 47, icon: 'assets/mc-invicons/dune_armor_trim_smithing_template.png'},
         {id: 'eye_armor_trim_smithing_template', name: 'eye armor trim smithing template', category: 'Enchanting', module: 47, icon: 'assets/mc-invicons/eye_armor_trim_smithing_template.png'},
-        {id: 'flow_armor_trim_smithing_template', name: 'flow armor trim smithing template', category: 'Enchanting', module: 47, icon: ''},
+        {id: 'flow_armor_trim_smithing_template', name: 'flow armor trim smithing template', category: 'Enchanting', module: 47, icon: 'assets/mc-invicons/flow_armor_trim_smithing_template.png'},
         {id: 'host_armor_trim_smithing_template', name: 'host armor trim smithing template', category: 'Enchanting', module: 47, icon: 'assets/mc-invicons/host_armor_trim_smithing_template.png'},
         {id: 'raiser_armor_trim_smithing_template', name: 'raiser armor trim smithing template', category: 'Enchanting', module: 47, icon: 'assets/mc-invicons/raiser_armor_trim_smithing_template.png'},
         {id: 'rib_armor_trim_smithing_template', name: 'rib armor trim smithing template', category: 'Enchanting', module: 47, icon: 'assets/mc-invicons/rib_armor_trim_smithing_template.png'},
@@ -926,19 +778,11 @@
         {id: 'wayfinder_armor_trim_smithing_template', name: 'wayfinder armor trim smithing template', category: 'Enchanting', module: 47, icon: 'assets/mc-invicons/wayfinder_armor_trim_smithing_template.png'},
         {id: 'wild_armor_trim_smithing_template', name: 'wild armor trim smithing template', category: 'Enchanting', module: 47, icon: 'assets/mc-invicons/wild_armor_trim_smithing_template.png'},
         {id: 'enchanted_golden_apple', name: 'enchanted golden apple', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/enchanted_golden_apple.png'},
-        {id: 'ominous_bottle_(bad_omen_01-40-00)', name: 'ominous bottle (bad omen 01-40-00)', category: 'Enchanting', module: 48, icon: ''},
-        {id: 'ominous_bottle_(bad_omen_ii_01-40-00)', name: 'ominous bottle (bad omen ii 01-40-00)', category: 'Enchanting', module: 48, icon: ''},
-        {id: 'ominous_bottle_(bad_omen_iii_01-40-00)', name: 'ominous bottle (bad omen iii 01-40-00)', category: 'Enchanting', module: 48, icon: ''},
-        {id: 'ominous_bottle_(bad_omen_iv_01-40-00)', name: 'ominous bottle (bad omen iv 01-40-00)', category: 'Enchanting', module: 48, icon: ''},
-        {id: 'ominous_bottle_(bad_omen_v_01-40-00)', name: 'ominous bottle (bad omen v 01-40-00)', category: 'Enchanting', module: 48, icon: ''},
-        {id: 'lingering_water_bottle', name: 'lingering water bottle', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/lingering_water_bottle.png'},
-        {id: 'splash_water_bottle', name: 'splash water bottle', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/splash_water_bottle.png'},
-        {id: 'thick_lingering_potion', name: 'thick lingering potion', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/thick_lingering_potion.png'},
-        {id: 'thick_potion', name: 'thick potion', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/thick_potion.png'},
-        {id: 'thick_splash_potion', name: 'thick splash potion', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/thick_splash_potion.png'},
-        {id: 'mundane_lingering_potion', name: 'mundane lingering potion', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/mundane_lingering_potion.png'},
-        {id: 'mundane_potion', name: 'mundane potion', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/mundane_potion.png'},
-        {id: 'mundane_splash_potion', name: 'mundane splash potion', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/mundane_splash_potion.png'},
+        {id: 'ominous_bottle_i', name: 'ominous bottle i', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/ominous_bottle_i.png'},
+        {id: 'ominous_bottle_ii', name: 'ominous bottle ii', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/ominous_bottle_ii.png'},
+        {id: 'ominous_bottle_iii', name: 'ominous bottle iii', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/ominous_bottle_iii.png'},
+        {id: 'ominous_bottle_iv', name: 'ominous bottle iv', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/ominous_bottle_iv.png'},
+        {id: 'ominous_bottle_v', name: 'ominous bottle v', category: 'Enchanting', module: 48, icon: 'assets/mc-invicons/ominous_bottle_v.png'},
         {id: 'nether_bricks', name: 'nether bricks', category: 'Nether Items', module: 49, icon: 'assets/mc-invicons/nether_bricks.png'},
         {id: 'nether_brick_fence', name: 'nether brick fence', category: 'Nether Items', module: 49, icon: 'assets/mc-invicons/nether_brick_fence.png'},
         {id: 'nether_brick_slab', name: 'nether brick slab', category: 'Nether Items', module: 49, icon: 'assets/mc-invicons/nether_brick_slab.png'},
@@ -994,7 +838,7 @@
         {id: 'weeping_vines', name: 'weeping vines', category: 'Nether Items', module: 51, icon: 'assets/mc-invicons/weeping_vines.png'},
         {id: 'twisting_vines', name: 'twisting vines', category: 'Nether Items', module: 51, icon: 'assets/mc-invicons/twisting_vines.png'},
         {id: 'nether_quartz_ore', name: 'nether quartz ore', category: 'Nether Items', module: 51, icon: 'assets/mc-invicons/nether_quartz_ore.png'},
-        {id: 'quartz', name: 'quartz', category: 'Nether Items', module: 51, icon: ''},
+        {id: 'quartz', name: 'quartz', category: 'Nether Items', module: 51, icon: 'assets/mc-invicons/quartz.png'},
         {id: 'quartz_bricks', name: 'quartz bricks', category: 'Nether Items', module: 51, icon: 'assets/mc-invicons/quartz_bricks.png'},
         {id: 'block_of_quartz', name: 'block of quartz', category: 'Nether Items', module: 51, icon: 'assets/mc-invicons/block_of_quartz.png'},
         {id: 'chiseled_quartz_block', name: 'chiseled quartz block', category: 'Nether Items', module: 51, icon: 'assets/mc-invicons/chiseled_quartz_block.png'},
@@ -1120,17 +964,17 @@
         {id: 'mud_brick_slab', name: 'mud brick slab', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/mud_brick_slab.png'},
         {id: 'mud_brick_stairs', name: 'mud brick stairs', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/mud_brick_stairs.png'},
         {id: 'mud_brick_wall', name: 'mud brick wall', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/mud_brick_wall.png'},
-        {id: 'resin_bricks', name: 'resin bricks', category: 'Building Blocks B', module: 6, icon: ''},
-        {id: 'chiseled_resin_bricks', name: 'chiseled resin bricks', category: 'Building Blocks B', module: 6, icon: ''},
-        {id: 'resin_brick_slab', name: 'resin brick slab', category: 'Building Blocks B', module: 6, icon: ''},
-        {id: 'resin_brick_stairs', name: 'resin brick stairs', category: 'Building Blocks B', module: 6, icon: ''},
-        {id: 'resin_brick_wall', name: 'resin brick wall', category: 'Building Blocks B', module: 6, icon: ''},
-        {id: 'resin_brick', name: 'resin brick', category: 'Building Blocks B', module: 6, icon: ''},
-        {id: 'resin_clump', name: 'resin clump', category: 'Building Blocks B', module: 6, icon: ''},
-        {id: 'block_of_resin', name: 'block of resin', category: 'Building Blocks B', module: 6, icon: ''},
-        {id: 'prismarine', name: 'prismarine', category: 'Building Blocks B', module: 6, icon: ''},
-        {id: 'prismarine_slab', name: 'prismarine slab', category: 'Building Blocks B', module: 6, icon: ''},
-        {id: 'prismarine_stairs', name: 'prismarine stairs', category: 'Building Blocks B', module: 6, icon: ''},
+        {id: 'resin_bricks', name: 'resin bricks', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/resin_bricks.png'},
+        {id: 'chiseled_resin_bricks', name: 'chiseled resin bricks', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/chiseled_resin_bricks.png'},
+        {id: 'resin_brick_slab', name: 'resin brick slab', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/resin_brick_slab.png'},
+        {id: 'resin_brick_stairs', name: 'resin brick stairs', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/resin_brick_stairs.png'},
+        {id: 'resin_brick_wall', name: 'resin brick wall', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/resin_brick_wall.png'},
+        {id: 'resin_brick', name: 'resin brick', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/resin_brick.png'},
+        {id: 'resin_clump', name: 'resin clump', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/resin_clump.png'},
+        {id: 'block_of_resin', name: 'block of resin', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/block_of_resin.png'},
+        {id: 'prismarine', name: 'prismarine', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/prismarine.png'},
+        {id: 'prismarine_slab', name: 'prismarine slab', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/prismarine_slab.png'},
+        {id: 'prismarine_stairs', name: 'prismarine stairs', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/prismarine_stairs.png'},
         {id: 'prismarine_wall', name: 'prismarine wall', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/prismarine_wall.png'},
         {id: 'prismarine_bricks', name: 'prismarine bricks', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/prismarine_bricks.png'},
         {id: 'prismarine_brick_slab', name: 'prismarine brick slab', category: 'Building Blocks B', module: 6, icon: 'assets/mc-invicons/prismarine_brick_slab.png'},
@@ -1164,14 +1008,14 @@
         {id: 'big_dripleaf', name: 'big dripleaf', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/big_dripleaf.png'},
         {id: 'small_dripleaf', name: 'small dripleaf', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/small_dripleaf.png'},
         {id: 'hanging_roots', name: 'hanging roots', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/hanging_roots.png'},
-        {id: 'cave_vines', name: 'cave vines', category: 'Natural World A', module: 19, icon: ''},
+        {id: 'cave_vines', name: 'cave vines', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/cave_vines.png'},
         {id: 'glow_lichen', name: 'glow lichen', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/glow_lichen.png'},
         {id: 'dead_bush', name: 'dead bush', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/dead_bush.png'},
         {id: 'fern', name: 'fern', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/fern.png'},
         {id: 'large_fern', name: 'large fern', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/large_fern.png'},
-        {id: 'short_grass', name: 'short grass', category: 'Natural World A', module: 19, icon: ''},
+        {id: 'short_grass', name: 'short grass', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/short_grass.png'},
         {id: 'tall_grass', name: 'tall grass', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/tall_grass.png'},
-        {id: 'vine', name: 'vine', category: 'Natural World A', module: 19, icon: ''},
+        {id: 'vine', name: 'vine', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/vine.png'},
         {id: 'lily_pad', name: 'lily pad', category: 'Natural World A', module: 19, icon: 'assets/mc-invicons/lily_pad.png'},
         {id: 'brown_mushroom', name: 'brown mushroom', category: 'Natural World A', module: 20, icon: 'assets/mc-invicons/brown_mushroom.png'},
         {id: 'red_mushroom', name: 'red mushroom', category: 'Natural World A', module: 20, icon: 'assets/mc-invicons/red_mushroom.png'},
@@ -1213,10 +1057,10 @@
         {id: 'bee_nest', name: 'bee nest', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/bee_nest.png'},
         {id: 'beehive', name: 'beehive', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/beehive.png'},
         {id: 'honeycomb', name: 'honeycomb', category: 'Natural World A', module: 21, icon: 'assets/mc-invicons/honeycomb.png'},
-        {id: 'pale_hanging_moss', name: 'pale hanging moss', category: 'Natural World B', module: 24, icon: ''},
-        {id: 'creaking_heart', name: 'creaking heart', category: 'Natural World B', module: 24, icon: ''},
-        {id: 'closed_eyeblossom', name: 'closed eyeblossom', category: 'Natural World B', module: 24, icon: ''},
-        {id: 'open_eyeblossom', name: 'open eyeblossom', category: 'Natural World B', module: 24, icon: ''},
+        {id: 'pale_hanging_moss', name: 'pale hanging moss', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/pale_hanging_moss.png'},
+        {id: 'creaking_heart', name: 'creaking heart', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/creaking_heart.png'},
+        {id: 'closed_eyeblossom', name: 'closed eyeblossom', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/closed_eyeblossom.png'},
+        {id: 'open_eyeblossom', name: 'open eyeblossom', category: 'Natural World B', module: 24, icon: 'assets/mc-invicons/open_eyeblossom.png'},
         {id: 'clay_ball', name: 'clay ball', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/clay_ball.png'},
         {id: 'brick', name: 'brick', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/brick.png'},
         {id: 'flint', name: 'flint', category: 'Utility Items A', module: 31, icon: 'assets/mc-invicons/flint.png'},
@@ -1268,34 +1112,903 @@ let draggedType = null; // 'item', 'module', or 'section'
 let selectedItems = new Set(); // Track selected items
 let lastClickedItem = null; // For shift-click range selection
 let hasUnsavedChanges = false; // Track if there are unsaved changes
+let contextMenuVisible = false; // Track context menu state
+let contextMenuTargetItems = []; // Track items that triggered the context menu
+
+// === LZ-STRING COMPRESSION LIBRARY (Lightweight) ===
+const LZString = (function() {
+    const keyStrBase64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    const keyStrUriSafe = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-$";
+    
+    function _compress(uncompressed, bitsPerChar, getCharFromInt) {
+        if (uncompressed == null) return "";
+        let i, value, context_dictionary = {}, context_dictionaryToCreate = {},
+            context_c = "", context_wc = "", context_w = "", context_enlargeIn = 2,
+            context_dictSize = 3, context_numBits = 2, context_data = [],
+            context_data_val = 0, context_data_position = 0, ii;
+        
+        for (ii = 0; ii < uncompressed.length; ii += 1) {
+            context_c = uncompressed.charAt(ii);
+            if (!Object.prototype.hasOwnProperty.call(context_dictionary,context_c)) {
+                context_dictionary[context_c] = context_dictSize++;
+                context_dictionaryToCreate[context_c] = true;
+            }
+            
+            context_wc = context_w + context_c;
+            if (Object.prototype.hasOwnProperty.call(context_dictionary,context_wc)) {
+                context_w = context_wc;
+            } else {
+                if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate,context_w)) {
+                    if (context_w.charCodeAt(0)<256) {
+                        for (i=0 ; i<context_numBits ; i++) {
+                            context_data_val = (context_data_val << 1);
+                            if (context_data_position == bitsPerChar-1) {
+                                context_data_position = 0;
+                                context_data.push(getCharFromInt(context_data_val));
+                                context_data_val = 0;
+                            } else {
+                                context_data_position++;
+                            }
+                        }
+                        value = context_w.charCodeAt(0);
+                        for (i=0 ; i<8 ; i++) {
+                            context_data_val = (context_data_val << 1) | (value&1);
+                            if (context_data_position == bitsPerChar-1) {
+                                context_data_position = 0;
+                                context_data.push(getCharFromInt(context_data_val));
+                                context_data_val = 0;
+                            } else {
+                                context_data_position++;
+                            }
+                            value = value >> 1;
+                        }
+                    } else {
+                        value = 1;
+                        for (i=0 ; i<context_numBits ; i++) {
+                            context_data_val = (context_data_val << 1) | value;
+                            if (context_data_position ==bitsPerChar-1) {
+                                context_data_position = 0;
+                                context_data.push(getCharFromInt(context_data_val));
+                                context_data_val = 0;
+                            } else {
+                                context_data_position++;
+                            }
+                            value = 0;
+                        }
+                        value = context_w.charCodeAt(0);
+                        for (i=0 ; i<16 ; i++) {
+                            context_data_val = (context_data_val << 1) | (value&1);
+                            if (context_data_position == bitsPerChar-1) {
+                                context_data_position = 0;
+                                context_data.push(getCharFromInt(context_data_val));
+                                context_data_val = 0;
+                            } else {
+                                context_data_position++;
+                            }
+                            value = value >> 1;
+                        }
+                    }
+                    context_enlargeIn--;
+                    if (context_enlargeIn == 0) {
+                        context_enlargeIn = Math.pow(2, context_numBits);
+                        context_numBits++;
+                    }
+                    delete context_dictionaryToCreate[context_w];
+                } else {
+                    value = context_dictionary[context_w];
+                    for (i=0 ; i<context_numBits ; i++) {
+                        context_data_val = (context_data_val << 1) | (value&1);
+                        if (context_data_position == bitsPerChar-1) {
+                            context_data_position = 0;
+                            context_data.push(getCharFromInt(context_data_val));
+                            context_data_val = 0;
+                        } else {
+                            context_data_position++;
+                        }
+                        value = value >> 1;
+                    }
+                }
+                context_enlargeIn--;
+                if (context_enlargeIn == 0) {
+                    context_enlargeIn = Math.pow(2, context_numBits);
+                    context_numBits++;
+                }
+                context_dictionary[context_wc] = context_dictSize++;
+                context_w = String(context_c);
+            }
+        }
+        
+        if (context_w !== "") {
+            if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate,context_w)) {
+                if (context_w.charCodeAt(0)<256) {
+                    for (i=0 ; i<context_numBits ; i++) {
+                        context_data_val = (context_data_val << 1);
+                        if (context_data_position == bitsPerChar-1) {
+                            context_data_position = 0;
+                            context_data.push(getCharFromInt(context_data_val));
+                            context_data_val = 0;
+                        } else {
+                            context_data_position++;
+                        }
+                    }
+                    value = context_w.charCodeAt(0);
+                    for (i=0 ; i<8 ; i++) {
+                        context_data_val = (context_data_val << 1) | (value&1);
+                        if (context_data_position == bitsPerChar-1) {
+                            context_data_position = 0;
+                            context_data.push(getCharFromInt(context_data_val));
+                            context_data_val = 0;
+                        } else {
+                            context_data_position++;
+                        }
+                        value = value >> 1;
+                    }
+                } else {
+                    value = 1;
+                    for (i=0 ; i<context_numBits ; i++) {
+                        context_data_val = (context_data_val << 1) | value;
+                        if (context_data_position == bitsPerChar-1) {
+                            context_data_position = 0;
+                            context_data.push(getCharFromInt(context_data_val));
+                            context_data_val = 0;
+                        } else {
+                            context_data_position++;
+                        }
+                        value = 0;
+                    }
+                    value = context_w.charCodeAt(0);
+                    for (i=0 ; i<16 ; i++) {
+                        context_data_val = (context_data_val << 1) | (value&1);
+                        if (context_data_position == bitsPerChar-1) {
+                            context_data_position = 0;
+                            context_data.push(getCharFromInt(context_data_val));
+                            context_data_val = 0;
+                        } else {
+                            context_data_position++;
+                        }
+                        value = value >> 1;
+                    }
+                }
+                context_enlargeIn--;
+                if (context_enlargeIn == 0) {
+                    context_enlargeIn = Math.pow(2, context_numBits);
+                    context_numBits++;
+                }
+                delete context_dictionaryToCreate[context_w];
+            } else {
+                value = context_dictionary[context_w];
+                for (i=0 ; i<context_numBits ; i++) {
+                    context_data_val = (context_data_val << 1) | (value&1);
+                    if (context_data_position == bitsPerChar-1) {
+                        context_data_position = 0;
+                        context_data.push(getCharFromInt(context_data_val));
+                        context_data_val = 0;
+                    } else {
+                        context_data_position++;
+                    }
+                    value = value >> 1;
+                }
+            }
+            context_enlargeIn--;
+            if (context_enlargeIn == 0) {
+                context_enlargeIn = Math.pow(2, context_numBits);
+                context_numBits++;
+            }
+        }
+        
+        value = 2;
+        for (i=0 ; i<context_numBits ; i++) {
+            context_data_val = (context_data_val << 1) | (value&1);
+            if (context_data_position == bitsPerChar-1) {
+                context_data_position = 0;
+                context_data.push(getCharFromInt(context_data_val));
+                context_data_val = 0;
+            } else {
+                context_data_position++;
+            }
+            value = value >> 1;
+        }
+        
+        while (true) {
+            context_data_val = (context_data_val << 1);
+            if (context_data_position == bitsPerChar-1) {
+                context_data.push(getCharFromInt(context_data_val));
+                break;
+            }
+            else context_data_position++;
+        }
+        return context_data.join('');
+    }
+    
+    return {
+        compressToEncodedURIComponent: function(input) {
+            if (input == null) return "";
+            return _compress(input, 6, function(a){return keyStrUriSafe.charAt(a);});
+        },
+        
+        decompressFromEncodedURIComponent: function(input) {
+            if (input == null) return "";
+            if (input == "") return null;
+            input = input.replace(/ /g, "+");
+            return LZString._decompress(input.length, 32, function(index) { return keyStrUriSafe.indexOf(input.charAt(index)); });
+        },
+        
+        _decompress: function(length, resetValue, getNextValue) {
+            let dictionary = [], next, enlargeIn = 4, dictSize = 4, numBits = 3,
+                entry = "", result = [], i, w, bits, resb, maxpower, power,
+                c, data = {val:getNextValue(0), position:resetValue, index:1};
+            
+            for (i = 0; i < 3; i += 1) {
+                dictionary[i] = i;
+            }
+            
+            bits = 0;
+            maxpower = Math.pow(2,2);
+            power=1;
+            while (power!=maxpower) {
+                resb = data.val & data.position;
+                data.position >>= 1;
+                if (data.position == 0) {
+                    data.position = resetValue;
+                    data.val = getNextValue(data.index++);
+                }
+                bits |= (resb>0 ? 1 : 0) * power;
+                power <<= 1;
+            }
+            
+            switch (next = bits) {
+                case 0:
+                    bits = 0;
+                    maxpower = Math.pow(2,8);
+                    power=1;
+                    while (power!=maxpower) {
+                        resb = data.val & data.position;
+                        data.position >>= 1;
+                        if (data.position == 0) {
+                            data.position = resetValue;
+                            data.val = getNextValue(data.index++);
+                        }
+                        bits |= (resb>0 ? 1 : 0) * power;
+                        power <<= 1;
+                    }
+                    c = String.fromCharCode(bits);
+                    break;
+                case 1:
+                    bits = 0;
+                    maxpower = Math.pow(2,16);
+                    power=1;
+                    while (power!=maxpower) {
+                        resb = data.val & data.position;
+                        data.position >>= 1;
+                        if (data.position == 0) {
+                            data.position = resetValue;
+                            data.val = getNextValue(data.index++);
+                        }
+                        bits |= (resb>0 ? 1 : 0) * power;
+                        power <<= 1;
+                    }
+                    c = String.fromCharCode(bits);
+                    break;
+                case 2:
+                    return "";
+            }
+            dictionary[3] = c;
+            w = c;
+            result.push(c);
+            while (true) {
+                if (data.index > length) {
+                    return "";
+                }
+                
+                bits = 0;
+                maxpower = Math.pow(2,numBits);
+                power=1;
+                while (power!=maxpower) {
+                    resb = data.val & data.position;
+                    data.position >>= 1;
+                    if (data.position == 0) {
+                        data.position = resetValue;
+                        data.val = getNextValue(data.index++);
+                    }
+                    bits |= (resb>0 ? 1 : 0) * power;
+                    power <<= 1;
+                }
+                
+                switch (c = bits) {
+                    case 0:
+                        bits = 0;
+                        maxpower = Math.pow(2,8);
+                        power=1;
+                        while (power!=maxpower) {
+                            resb = data.val & data.position;
+                            data.position >>= 1;
+                            if (data.position == 0) {
+                                data.position = resetValue;
+                                data.val = getNextValue(data.index++);
+                            }
+                            bits |= (resb>0 ? 1 : 0) * power;
+                            power <<= 1;
+                        }
+                        
+                        dictionary[dictSize++] = String.fromCharCode(bits);
+                        c = dictSize-1;
+                        enlargeIn--;
+                        break;
+                    case 1:
+                        bits = 0;
+                        maxpower = Math.pow(2,16);
+                        power=1;
+                        while (power!=maxpower) {
+                            resb = data.val & data.position;
+                            data.position >>= 1;
+                            if (data.position == 0) {
+                                data.position = resetValue;
+                                data.val = getNextValue(data.index++);
+                            }
+                            bits |= (resb>0 ? 1 : 0) * power;
+                            power <<= 1;
+                        }
+                        dictionary[dictSize++] = String.fromCharCode(bits);
+                        c = dictSize-1;
+                        enlargeIn--;
+                        break;
+                    case 2:
+                        return result.join('');
+                }
+                
+                if (enlargeIn == 0) {
+                    enlargeIn = Math.pow(2, numBits);
+                    numBits++;
+                }
+                
+                if (dictionary[c]) {
+                    entry = dictionary[c];
+                } else {
+                    if (c === dictSize) {
+                        entry = w + w.charAt(0);
+                    } else {
+                        return null;
+                    }
+                }
+                result.push(entry);
+                
+                dictionary[dictSize++] = w + entry.charAt(0);
+                enlargeIn--;
+                
+                w = entry;
+                
+                if (enlargeIn == 0) {
+                    enlargeIn = Math.pow(2, numBits);
+                    numBits++;
+                }
+            }
+        }
+    };
+})();
+
+// === CONFIGURATION SHARING FUNCTIONS ===
+
+function encodeConfiguration() {
+    // Get the original default configuration (stored at initialization)
+    const originalDefault = window.originalDefaultConfig || storageData;
+    const defaultItems = originalDefault.items;
+    const defaultCategories = originalDefault.categories;
+    
+    const itemIndexMap = {};
+    defaultItems.forEach((item, index) => {
+        itemIndexMap[item.id] = index;
+    });
+    
+    // Only store what's different from default + essential structure
+    const ultraCompact = {
+        v: 2,  // version
+        d: []  // deltas (changes from default)
+    };
+    
+    // Track moved items (item index -> [category_index, module_number])
+    const movedItems = {};
+    const categoryNames = [];
+    const categoryModules = {};
+    const renamedModules = {};
+    const itemColors = {};
+    
+    // Build category mapping
+    storageData.categories.forEach((cat, catIndex) => {
+        categoryNames.push(cat.name);
+        categoryModules[catIndex] = [...cat.modules];
+    });
+    
+    // Find moved items and colors
+    storageData.items.forEach(item => {
+        const itemIndex = itemIndexMap[item.id];
+        if (itemIndex === undefined) return; // Skip unknown items
+        
+        const defaultItem = defaultItems[itemIndex];
+        const currentCatIndex = categoryNames.indexOf(item.category);
+        const defaultCatIndex = categoryNames.indexOf(defaultItem.category);
+        
+        // Check if item moved or has color
+        if (item.category !== defaultItem.category || item.module !== defaultItem.module) {
+            movedItems[itemIndex] = [currentCatIndex, item.module];
+        }
+        
+        if (item.color) {
+            itemColors[itemIndex] = item.color;
+        }
+        
+        // Check for custom module names
+        if (item.moduleName && item.moduleName !== ('Module ' + item.module)) {
+            const key = currentCatIndex + '_' + item.module;
+            renamedModules[key] = item.moduleName;
+        }
+    });
+    
+    // Only include non-empty deltas
+    if (Object.keys(movedItems).length > 0) ultraCompact.m = movedItems;
+    if (Object.keys(itemColors).length > 0) ultraCompact.cl = itemColors;
+    if (Object.keys(renamedModules).length > 0) ultraCompact.rn = renamedModules;
+    
+    // Check for category reordering
+    const defaultCategoryOrder = storageData.categories.map((cat, i) => i);
+    const currentCategoryOrder = storageData.categories.map(cat => cat.order || 0);
+    if (JSON.stringify(defaultCategoryOrder) !== JSON.stringify(currentCategoryOrder)) {
+        ultraCompact.co = currentCategoryOrder;
+    }
+    
+    // Check for renamed categories (only store if different from default)
+    const renamedCategories = {};
+    categoryNames.forEach((name, index) => {
+        // This is a simplified check - in real implementation you'd compare against default category names
+        if (name.includes('Custom') || name.includes('Renamed')) {
+            renamedCategories[index] = name;
+        }
+    });
+    if (Object.keys(renamedCategories).length > 0) ultraCompact.cn = renamedCategories;
+    
+    // If no changes, return minimal payload
+    if (Object.keys(ultraCompact).length === 1) { // Only version
+        ultraCompact.d = []; // Empty deltas
+    }
+    
+    // Convert to JSON, compress, and encode
+    const jsonString = JSON.stringify(ultraCompact);
+    const compressed = LZString.compressToEncodedURIComponent(jsonString);
+    
+    return 'lz2_' + compressed; // New ultra-compact format
+}
+
+function decodeConfiguration(encodedConfig) {
+    try {
+        let configData;
+        
+        if (encodedConfig.startsWith('lz2_')) {
+            // Ultra-compact format - reconstruct from deltas
+            const compressed = encodedConfig.substring(4);
+            const jsonString = LZString.decompressFromEncodedURIComponent(compressed);
+            
+            if (!jsonString) {
+                throw new Error('Failed to decompress configuration');
+            }
+            
+            const ultraCompact = JSON.parse(jsonString);
+            
+            // Start with a fresh copy of the default configuration
+            const reconstructed = {
+                version: ultraCompact.v,
+                timestamp: Date.now(), // Generate new timestamp
+                categories: JSON.parse(JSON.stringify(storageData.categories)), // Deep copy
+                items: JSON.parse(JSON.stringify(storageData.items)) // Deep copy
+            };
+            
+            // Apply moved items
+            if (ultraCompact.m) {
+                Object.keys(ultraCompact.m).forEach(itemIndexStr => {
+                    const itemIndex = parseInt(itemIndexStr);
+                    const [catIndex, moduleNum] = ultraCompact.m[itemIndex];
+                    
+                    if (reconstructed.items[itemIndex] && reconstructed.categories[catIndex]) {
+                        reconstructed.items[itemIndex].category = reconstructed.categories[catIndex].name;
+                        reconstructed.items[itemIndex].module = moduleNum;
+                    }
+                });
+            }
+            
+            // Apply item colors
+            if (ultraCompact.cl) {
+                Object.keys(ultraCompact.cl).forEach(itemIndexStr => {
+                    const itemIndex = parseInt(itemIndexStr);
+                    const color = ultraCompact.cl[itemIndex];
+                    
+                    if (reconstructed.items[itemIndex]) {
+                        reconstructed.items[itemIndex].color = color;
+                    }
+                });
+            }
+            
+            // Apply renamed modules
+            if (ultraCompact.rn) {
+                Object.keys(ultraCompact.rn).forEach(key => {
+                    const [catIndex, moduleNum] = key.split('_').map(Number);
+                    const moduleName = ultraCompact.rn[key];
+                    
+                    // Apply to all items in that category/module
+                    reconstructed.items.forEach(item => {
+                        if (reconstructed.categories[catIndex] && 
+                            item.category === reconstructed.categories[catIndex].name && 
+                            item.module === moduleNum) {
+                            item.moduleName = moduleName;
+                        }
+                    });
+                });
+            }
+            
+            // Apply category reordering
+            if (ultraCompact.co) {
+                ultraCompact.co.forEach((order, index) => {
+                    if (reconstructed.categories[index]) {
+                        reconstructed.categories[index].order = order;
+                    }
+                });
+            }
+            
+            // Apply renamed categories
+            if (ultraCompact.cn) {
+                Object.keys(ultraCompact.cn).forEach(catIndexStr => {
+                    const catIndex = parseInt(catIndexStr);
+                    const newName = ultraCompact.cn[catIndex];
+                    const oldName = reconstructed.categories[catIndex]?.name;
+                    
+                    if (oldName && newName) {
+                        reconstructed.categories[catIndex].name = newName;
+                        
+                        // Update all items in this category
+                        reconstructed.items.forEach(item => {
+                            if (item.category === oldName) {
+                                item.category = newName;
+                            }
+                        });
+                    }
+                });
+            }
+            
+            configData = reconstructed;
+            
+        } else if (encodedConfig.startsWith('lz1_')) {
+            // Previous compressed format
+            const compressed = encodedConfig.substring(4);
+            const jsonString = LZString.decompressFromEncodedURIComponent(compressed);
+            
+            if (!jsonString) {
+                throw new Error('Failed to decompress configuration');
+            }
+            
+            const optimizedData = JSON.parse(jsonString);
+            
+            // Convert back from optimized format to full format
+            configData = {
+                version: optimizedData.v,
+                timestamp: optimizedData.t,
+                categories: optimizedData.c.map(cat => ({
+                    name: cat.n,
+                    modules: [...cat.m],
+                    order: cat.o,
+                    isEmpty: cat.e
+                })),
+                items: optimizedData.i.map(item => {
+                    const fullItem = {
+                        id: item.id,
+                        name: item.n,
+                        category: item.c,
+                        module: item.m,
+                        icon: item.ic
+                    };
+                    
+                    // Add optional fields if they exist
+                    if (item.cl) fullItem.color = item.cl;
+                    if (item.mn) fullItem.moduleName = item.mn;
+                    
+                    return fullItem;
+                })
+            };
+        } else {
+            // Legacy format (Base64 JSON) - for backward compatibility
+            const jsonString = decodeURIComponent(atob(encodedConfig));
+            configData = JSON.parse(jsonString);
+        }
+        
+        // Validate the configuration structure
+        if (!configData.version || !configData.categories || !configData.items) {
+            throw new Error('Invalid configuration format');
+        }
+        
+        return configData;
+    } catch (error) {
+        console.error('Failed to decode configuration:', error);
+        return null;
+    }
+}
+
+function shareConfiguration() {
+    try {
+        const encodedConfig = encodeConfiguration();
+        const currentUrl = window.location.href.split('?')[0]; // Remove existing query params
+        const shareUrl = currentUrl + '?config=' + encodedConfig;
+        
+        // Calculate ultra-compression stats for user feedback
+        const originalSize = JSON.stringify(storageData).length;
+        const compressedSize = encodedConfig.length;
+        const urlLength = shareUrl.length;
+        const compressionRatio = Math.round((1 - compressedSize / originalSize) * 100);
+        
+        // Show different messages based on URL length
+        let compressionMessage = '';
+        if (urlLength < 150) {
+            compressionMessage = 'Ultra-short URL (' + urlLength + ' chars, ' + compressionRatio + '% compressed)';
+        } else if (urlLength < 300) {
+            compressionMessage = 'Short URL (' + urlLength + ' chars, ' + compressionRatio + '% compressed)';
+        } else {
+            compressionMessage = 'Compressed URL (' + urlLength + ' chars, ' + compressionRatio + '% smaller)';
+        }
+        
+        // Try to copy to clipboard
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(shareUrl).then(() => {
+                showShareSuccessNotification(shareUrl, compressionRatio, urlLength);
+            }).catch(() => {
+                showShareDialog(shareUrl, compressionRatio, urlLength);
+            });
+        } else {
+            // Fallback for non-secure contexts or older browsers
+            showShareDialog(shareUrl, compressionRatio, urlLength);
+        }
+    } catch (error) {
+        console.error('Failed to share configuration:', error);
+        showNotification('Error creating shareable link');
+    }
+}
+
+function showShareSuccessNotification(shareUrl, compressionRatio, urlLength) {
+    // Dynamic notification based on URL length
+    let notificationText = '';
+    if (urlLength < 150) {
+        notificationText = '🔗 Ultra-short URL copied! (' + urlLength + ' chars, ' + compressionRatio + '% compressed)';
+    } else if (urlLength < 300) {
+        notificationText = '🔗 Short URL copied! (' + urlLength + ' chars, ' + compressionRatio + '% compressed)';
+    } else {
+        notificationText = '🔗 Compressed URL copied! (' + urlLength + ' chars, ' + compressionRatio + '% smaller)';
+    }
+    
+    showNotification(notificationText);
+    
+    // Also show a modal with the URL for manual copying if needed
+    setTimeout(() => {
+        const overlay = document.createElement('div');
+        overlay.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 2000; display: flex; align-items: center; justify-content: center;';
+        
+        const dialog = document.createElement('div');
+        dialog.style.cssText = 'background: #333; color: white; padding: 20px; border-radius: 8px; max-width: 600px; text-align: center; border: 2px solid #2196F3;';
+        
+        let compressionInfo = '';
+        if (urlLength < 150) {
+            compressionInfo = '<p style="color: #00E676; font-size: 0.9em; margin: 5px 0;">⚡ Ultra-compact encoding! Only ' + urlLength + ' characters (saved ' + compressionRatio + '%)</p>';
+        } else if (urlLength < 300) {
+            compressionInfo = '<p style="color: #4CAF50; font-size: 0.9em; margin: 5px 0;">📦 Highly compressed! ' + urlLength + ' characters (saved ' + compressionRatio + '%)</p>';
+        } else {
+            compressionInfo = '<p style="color: #4CAF50; font-size: 0.9em; margin: 5px 0;">📦 Compressed by ' + compressionRatio + '% for shorter URLs!</p>';
+        }
+        
+        dialog.innerHTML = '<h3 style="margin-top: 0; color: #2196F3;">🔗 Configuration Shared Successfully!</h3>' +
+            '<p>The link has been copied to your clipboard. Share this URL with others:</p>' +
+            compressionInfo +
+            '<input type="text" value="' + shareUrl + '" readonly ' +
+                   'style="width: 100%; padding: 8px; margin: 10px 0; background: #222; color: white; border: 1px solid #555; border-radius: 4px; font-family: monospace; font-size: 12px;">' +
+            '<div style="margin-top: 15px;">' +
+                '<button onclick="copyShareUrl(\'' + shareUrl + '\')" ' +
+                        'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #2196F3; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
+                    '📋 Copy Again' +
+                '</button>' +
+                '<button onclick="closeShareDialog()" ' +
+                        'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #666; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
+                    'Close' +
+                '</button>' +
+            '</div>';
+        
+        overlay.appendChild(dialog);
+        document.body.appendChild(overlay);
+        
+        // Auto-select the URL text
+        const urlInput = dialog.querySelector('input');
+        urlInput.focus();
+        urlInput.select();
+        
+        // Store reference for closing
+        window.currentShareDialog = overlay;
+        
+        // Close on escape key
+        const escapeHandler = (e) => {
+            if (e.key === 'Escape') {
+                closeShareDialog();
+                document.removeEventListener('keydown', escapeHandler);
+            }
+        };
+        document.addEventListener('keydown', escapeHandler);
+        
+        // Close on overlay click
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                closeShareDialog();
+            }
+        });
+        
+    }, 500); // Show after the initial notification
+}
+
+function showShareDialog(shareUrl, compressionRatio, urlLength) {
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 2000; display: flex; align-items: center; justify-content: center;';
+    
+    const dialog = document.createElement('div');
+    dialog.style.cssText = 'background: #333; color: white; padding: 20px; border-radius: 8px; max-width: 600px; text-align: center; border: 2px solid #2196F3;';
+    
+    let compressionInfo = '';
+    if (urlLength < 150) {
+        compressionInfo = '<p style="color: #00E676; font-size: 0.9em; margin: 5px 0;">⚡ Ultra-compact encoding! Only ' + urlLength + ' characters (saved ' + compressionRatio + '%)</p>';
+    } else if (urlLength < 300) {
+        compressionInfo = '<p style="color: #4CAF50; font-size: 0.9em; margin: 5px 0;">📦 Highly compressed! ' + urlLength + ' characters (saved ' + compressionRatio + '%)</p>';
+    } else {
+        compressionInfo = '<p style="color: #4CAF50; font-size: 0.9em; margin: 5px 0;">📦 Compressed by ' + compressionRatio + '% for shorter URLs!</p>';
+    }
+    
+    dialog.innerHTML = '<h3 style="margin-top: 0; color: #2196F3;">🔗 Share Your Configuration</h3>' +
+        '<p>Copy this URL to share your current storage configuration:</p>' +
+        compressionInfo +
+        '<input type="text" value="' + shareUrl + '" readonly ' +
+               'style="width: 100%; padding: 8px; margin: 10px 0; background: #222; color: white; border: 1px solid #555; border-radius: 4px; font-family: monospace; font-size: 12px;">' +
+        '<div style="margin-top: 15px;">' +
+            '<button onclick="copyShareUrl(\'' + shareUrl + '\')" ' +
+                    'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #2196F3; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
+                '📋 Copy URL' +
+            '</button>' +
+            '<button onclick="closeShareDialog()" ' +
+                    'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #666; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
+                'Close' +
+            '</button>' +
+        '</div>';
+    
+    overlay.appendChild(dialog);
+    document.body.appendChild(overlay);
+    
+    // Auto-select the URL text
+    const urlInput = dialog.querySelector('input');
+    urlInput.focus();
+    urlInput.select();
+    
+    // Store reference for closing
+    window.currentShareDialog = overlay;
+}
+
+function copyShareUrl(url) {
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(url).then(() => {
+            showNotification('URL copied to clipboard!');
+        }).catch(() => {
+            fallbackCopyToClipboard(url);
+        });
+    } else {
+        fallbackCopyToClipboard(url);
+    }
+}
+
+function fallbackCopyToClipboard(text) {
+    // Fallback method for copying text
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        showNotification('URL copied to clipboard!');
+    } catch (err) {
+        showNotification('Unable to copy - please copy manually');
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+function closeShareDialog() {
+    if (window.currentShareDialog) {
+        document.body.removeChild(window.currentShareDialog);
+        window.currentShareDialog = null;
+    }
+}
+
+function loadSharedConfiguration() {
+    // Check URL parameters for shared configuration
+    const urlParams = new URLSearchParams(window.location.search);
+    const encodedConfig = urlParams.get('config');
+    
+    if (encodedConfig) {
+        const decodedConfig = decodeConfiguration(encodedConfig);
+        
+        if (decodedConfig) {
+            // Validate that this is a different configuration than what's currently saved
+            const currentConfigEncoded = encodeConfiguration();
+            
+            if (encodedConfig !== currentConfigEncoded) {
+                // Load the shared configuration
+                Object.assign(storageData, decodedConfig);
+                
+                // Don't save automatically - let user decide
+                hasUnsavedChanges = true;
+                
+                showNotification('📥 Loaded shared configuration! (Not auto-saved)');
+                
+                // Clean up the URL without reloading
+                const cleanUrl = window.location.href.split('?')[0];
+                window.history.replaceState({}, document.title, cleanUrl);
+                
+                return true; // Indicate that a shared config was loaded
+            } else {
+                showNotification('This shared configuration is the same as your current one');
+                
+                // Clean up the URL
+                const cleanUrl = window.location.href.split('?')[0];
+                window.history.replaceState({}, document.title, cleanUrl);
+            }
+        } else {
+            showNotification('⚠️ Invalid shared configuration link');
+            
+            // Clean up the invalid URL parameter
+            const cleanUrl = window.location.href.split('?')[0];
+            window.history.replaceState({}, document.title, cleanUrl);
+        }
+    }
+    
+    return false; // No shared config was loaded
+}
+
+// === END CONFIGURATION SHARING FUNCTIONS ===
 
 function initializeStorage() {
-    // Load saved configuration if exists
-    const saved = localStorage.getItem('minecraftStorageConfig');
-    if (!saved) {
-        // First time - save initial configuration
-        localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
-        showNotification('Welcome! Configuration auto-saved.');
-    } else {
-        try {
-            const savedData = JSON.parse(saved);
-            
-            // Check if saved configuration is outdated (version check)
-            const savedVersion = savedData.version || 1;
-            const currentVersion = storageData.version || 2;
-            
-            if (savedVersion < currentVersion) {
-                // Configuration is outdated - reset to new default
-                localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
-                showNotification('Updated to new configuration format with 18 sections!');
-            } else {
-                // Use saved configuration
-                Object.assign(storageData, savedData);
-                showNotification('Loaded saved configuration!');
-            }
-        } catch (e) {
+    // Store the original default configuration for comparison during encoding
+    window.originalDefaultConfig = JSON.parse(JSON.stringify(storageData));
+    
+    // First, check for shared configuration in URL
+    const sharedConfigLoaded = loadSharedConfiguration();
+    
+    if (!sharedConfigLoaded) {
+        // Load saved configuration if exists (only if no shared config was loaded)
+        const saved = localStorage.getItem('minecraftStorageConfig');
+        if (!saved) {
+            // First time - save initial configuration
             localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
-            showNotification('Reset to initial configuration.');
+            showNotification('Welcome! Configuration auto-saved.');
+        } else {
+            try {
+                const savedData = JSON.parse(saved);
+                
+                // Check if saved configuration is outdated (version check)
+                const savedVersion = savedData.version || 1;
+                const currentVersion = storageData.version || 2;
+                
+                if (savedVersion < currentVersion) {
+                    // Configuration is outdated - reset to new default
+                    localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
+                    showNotification('Updated to new configuration format with 18 sections!');
+                } else {
+                    // Use saved configuration
+                    Object.assign(storageData, savedData);
+                    showNotification('Loaded saved configuration!');
+                }
+            } catch (e) {
+                localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
+                showNotification('Reset to initial configuration.');
+            }
         }
     }
     
@@ -1385,7 +2098,7 @@ function renderGrid() {
             } else if (itemCount === 54) {
                 countSpan.style.color = '#ffaa00'; // Yellow
             } else {
-                countSpan.style.color = 'white'; // Default
+                countSpan.style.color = 'gray'; // Default
             }
             
             moduleTitle.textContent = titleText;
@@ -1473,6 +2186,12 @@ function createItemElement(item) {
     itemDiv.dataset.itemId = item.id;
     itemDiv.title = item.name; // Add tooltip
     
+    // Apply color class if item has a color
+    if (item.color) {
+        itemDiv.classList.add('color-' + item.color);
+        console.log('Applied color class color-' + item.color + ' to item:', item.name);
+    }
+    
     const iconHtml = item.icon ? 
         '<img src="' + item.icon + '" class="item-icon" alt="' + item.name + '">' :
         '<div class="no-icon">?</div>';
@@ -1485,6 +2204,11 @@ function createItemElement(item) {
         if (this && this.dataset && this.dataset.itemId) {
             handleItemSelection(this, e.ctrlKey || e.metaKey, e.shiftKey);
         }
+    });
+    
+    // Item right-click events for context menu
+    itemDiv.addEventListener('contextmenu', function(e) {
+        handleItemRightClick(e, this);
     });
     
     // Item drag events
@@ -1970,17 +2694,21 @@ function reorderSections(sourceCategoryName, targetCategoryName) {
     const targetIndex = storageData.categories.findIndex(c => c.name === targetCategoryName);
     
     if (sourceIndex !== -1 && targetIndex !== -1 && sourceIndex !== targetIndex) {
-        // Move source category to target position
-        const [sourceCategory] = storageData.categories.splice(sourceIndex, 1);
-        storageData.categories.splice(targetIndex, 0, sourceCategory);
+        // Swap the two sections in the array
+        const sourceCategory = storageData.categories[sourceIndex];
+        const targetCategory = storageData.categories[targetIndex];
         
-        // Update order numbers
+        // Swap their positions in the array
+        storageData.categories[sourceIndex] = targetCategory;
+        storageData.categories[targetIndex] = sourceCategory;
+        
+        // Update ALL order properties to match the new array positions
         storageData.categories.forEach((cat, index) => {
             cat.order = index;
         });
         
         renderGrid();
-        showNotification('Reordered sections');
+        showNotification('Swapped "' + sourceCategoryName + '" with "' + targetCategoryName + '"');
         markAsChanged();
     }
 }
@@ -2111,15 +2839,15 @@ function showSaveConfirmationDialog() {
         '<p>This will override your last saved configuration. Are you sure?</p>' +
         '<div style="margin-top: 15px;">' +
             '<button onclick="performSave(); closeSaveDialog()" ' +
-                    'style="background: #4CAF50; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
+                    'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #4CAF50; color: white; border: none; padding: 8px 8px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
                 'Override' +
             '</button>' +
             '<button onclick="resetToSaved(); closeSaveDialog()" ' +
-                    'style="background: #ff9800; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
+                    'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #ff9800; color: white; border: none; padding: 8px 8px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
                 'Reset to Last Save' +
             '</button>' +
             '<button onclick="closeSaveDialog()" ' +
-                    'style="background: #f44336; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
+                    'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #f44336; color: white; border: none; padding: 8px 8px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
                 'Cancel' +
             '</button>' +
         '</div>';
@@ -2235,8 +2963,230 @@ function updateSaveButtonState() {
     }
 }
 
+function showContextMenu(x, y, targetItemIds) {
+    const overlay = document.getElementById('contextMenuOverlay');
+    const menu = document.getElementById('contextMenu');
+    
+    // Store the target item IDs
+    contextMenuTargetItems = [...targetItemIds];
+    
+    // Get the actual item objects
+    const targetItems = targetItemIds.map(id => storageData.items.find(item => item.id === id)).filter(Boolean);
+    
+    // DEBUG: Log the target items and their colors
+    console.log('Target items for context menu:', targetItems.map(item => ({
+        name: item.name,
+        id: item.id,
+        color: item.color || 'no color'
+    })));
+    
+    // Determine current color state
+    const colors = targetItems.map(item => item.color || null);
+    const uniqueColors = [...new Set(colors)];
+    const hasNoColor = colors.includes(null);
+    const allSameColor = uniqueColors.length === 1 && !hasNoColor;
+    
+    // DEBUG: Log color analysis
+    console.log('Color analysis:', {
+        colors,
+        uniqueColors,
+        hasNoColor,
+        allSameColor,
+        detectedColor: allSameColor ? uniqueColors[0] : null
+    });
+    
+    // Configure context menu based on color state
+    configureContextMenu(allSameColor ? uniqueColors[0] : null);
+    
+    // Position the menu at the cursor
+    menu.style.left = x + 'px';
+    menu.style.top = y + 'px';
+    
+    // Ensure menu stays within viewport
+    const rect = menu.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    
+    if (x + rect.width > viewportWidth) {
+        menu.style.left = (viewportWidth - rect.width - 10) + 'px';
+    }
+    if (y + rect.height > viewportHeight) {
+        menu.style.top = (viewportHeight - rect.height - 10) + 'px';
+    }
+    
+    // Show the overlay and menu
+    overlay.style.display = 'block';
+    contextMenuVisible = true;
+    
+    // Debug notification
+    const itemCount = targetItems.length;
+    const message = itemCount === 1 ? 
+        'Color menu for: ' + targetItems[0].name : 
+        'Color menu for ' + itemCount + ' items';
+    showNotification(message);
+}
+
+function hideContextMenu() {
+    const overlay = document.getElementById('contextMenuOverlay');
+    overlay.style.display = 'none';
+    contextMenuVisible = false;
+    contextMenuTargetItems = [];
+    console.log('Context menu hidden');
+}
+
+function configureContextMenu(currentColor) {
+    const menuItems = document.querySelectorAll('.context-menu-item');
+    const colors = ['green', 'red', 'yellow', 'blue'];
+    
+    // DEBUG: Log what we're configuring
+    console.log('Configuring context menu with currentColor:', currentColor);
+    
+    // Clear all existing classes
+    menuItems.forEach(item => {
+        item.className = 'context-menu-item';
+        item.dataset.color = '';
+    });
+    
+    if (currentColor) {
+        // All selected items have the same color - show other colors + reset
+        const otherColors = colors.filter(color => color !== currentColor);
+        
+        console.log('Items have same color (' + currentColor + '), showing other colors:', otherColors);
+        
+        // Set the first 3 squares to the other colors
+        otherColors.forEach((color, index) => {
+            if (menuItems[index]) {
+                menuItems[index].classList.add('color-' + color);
+                menuItems[index].dataset.color = color;
+                console.log('Set menu item', index, 'to color', color);
+            }
+        });
+        
+        // Set the bottom-right square (index 3) as reset
+        if (menuItems[3]) {
+            menuItems[3].classList.add('color-reset');
+            menuItems[3].dataset.color = 'reset';
+            console.log('Set menu item 3 to reset');
+        }
+    } else {
+        // Mixed colors or no colors - show all 4 colors
+        console.log('No current color or mixed colors, showing all colors:', colors);
+        colors.forEach((color, index) => {
+            if (menuItems[index]) {
+                menuItems[index].classList.add('color-' + color);
+                menuItems[index].dataset.color = color;
+                console.log('Set menu item', index, 'to color', color);
+            }
+        });
+    }
+}
+
+function applyColorToItems(itemIds, color) {
+    let changedCount = 0;
+    const updatedItems = [];
+    
+    itemIds.forEach(itemId => {
+        const item = storageData.items.find(i => i.id === itemId);
+        if (item) {
+            if (color === 'reset') {
+                if (item.color) {
+                    delete item.color;
+                    changedCount++;
+                    updatedItems.push(item.name);
+                }
+            } else {
+                if (item.color !== color) {
+                    item.color = color;
+                    changedCount++;
+                    updatedItems.push(item.name);
+                }
+            }
+        }
+    });
+    
+    if (changedCount > 0) {
+        renderGrid();
+        markAsChanged();
+        
+        const action = color === 'reset' ? 'Reset color for' : 'Applied ' + color + ' color to';
+        const message = itemIds.length === 1 ? 
+            action + ' 1 item (' + updatedItems[0] + ')' : 
+            action + ' ' + itemIds.length + ' items';
+        showNotification(message);
+        
+        // Debug log to verify color application
+        console.log('Color applied:', { color, itemCount: changedCount, items: updatedItems });
+    } else {
+        showNotification('No changes made - items already have this color');
+    }
+}
+
+function handleItemRightClick(e, itemElement) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    if (!itemElement || !itemElement.dataset || !itemElement.dataset.itemId) return;
+    
+    const itemId = itemElement.dataset.itemId;
+    const item = storageData.items.find(i => i.id === itemId);
+    if (!item) return;
+    
+    let targetItemIds = [];
+    
+    // If the right-clicked item is part of the selection, use all selected items
+    if (selectedItems.has(itemId) && selectedItems.size > 1) {
+        targetItemIds = Array.from(selectedItems);
+    } else {
+        // Otherwise, just use the single right-clicked item
+        clearSelection();
+        selectItem(itemElement);
+        targetItemIds = [itemId];
+    }
+    
+    showContextMenu(e.clientX, e.clientY, targetItemIds);
+}
+
 // Initialize when page loads
-document.addEventListener('DOMContentLoaded', initializeStorage);
+document.addEventListener('DOMContentLoaded', function() {
+    initializeStorage();
+    
+    // Set up context menu event listeners after DOM is ready
+    setupContextMenuEventListeners();
+    setupOverlayEventListener();
+});
+
+function setupContextMenuEventListeners() {
+    console.log('Setting up context menu event listeners');
+    const contextMenu = document.getElementById('contextMenu');
+    
+    if (contextMenu) {
+        // Remove any existing listeners first
+        const newContextMenu = contextMenu.cloneNode(true);
+        contextMenu.parentNode.replaceChild(newContextMenu, contextMenu);
+        
+        // Add fresh event listener
+        newContextMenu.addEventListener('click', function(e) {
+            console.log('Context menu clicked:', e.target);
+            e.stopPropagation();
+            
+            if (e.target.classList.contains('context-menu-item')) {
+                const color = e.target.dataset.color;
+                console.log('Menu item clicked - Color:', color, 'Target items:', contextMenuTargetItems);
+                
+                if (color && contextMenuTargetItems.length > 0) {
+                    applyColorToItems(contextMenuTargetItems, color);
+                    hideContextMenu();
+                } else {
+                    console.log('No color or no target items');
+                }
+            }
+        });
+        
+        console.log('Context menu event listener attached');
+    } else {
+        console.error('Context menu element not found!');
+    }
+}
 
 // Handle page unload with unsaved changes warning
 window.addEventListener('beforeunload', function(e) {
@@ -2250,11 +3200,48 @@ window.addEventListener('beforeunload', function(e) {
 
 // Clear selection when clicking empty areas
 document.addEventListener('click', function(e) {
+    // Hide context menu if it's visible
+    if (contextMenuVisible) {
+        hideContextMenu();
+    }
+    
     // Only clear if clicking on empty areas (not items, modules, or controls)
     if (!e.target.closest('.item') && 
         !e.target.closest('.controls') && 
         !e.target.closest('.module-title') && 
         !e.target.closest('.section-title')) {
         clearSelection();
+    }
+});
+
+function setupOverlayEventListener() {
+    // Handle context menu overlay clicks
+    const overlay = document.getElementById('contextMenuOverlay');
+    if (overlay) {
+        overlay.addEventListener('click', function(e) {
+            console.log('Overlay clicked:', e.target, 'is overlay?', e.target === this);
+            // Hide context menu when clicking on the overlay (but not the menu itself)
+            if (e.target === this) {
+                hideContextMenu();
+            }
+        });
+        console.log('Overlay event listener attached');
+    }
+}
+
+// Note: Context menu event handlers are now set up in setupContextMenuEventListeners()
+
+// Prevent default context menu on the entire document
+document.addEventListener('contextmenu', function(e) {
+    // Only prevent default if we're not on an item (items handle their own context menu)
+    if (!e.target.closest('.item')) {
+        e.preventDefault();
+    }
+});
+
+// Hide context menu on escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && contextMenuVisible) {
+        hideContextMenu();
     }
 });
