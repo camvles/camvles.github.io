@@ -1,5 +1,5 @@
 ﻿const storageData = {
-    version: 2,
+    version: 11,
     items: [
         {id: 'acacia_planks', name: 'acacia planks', category: 'Placable Wood Blocks and Items', module: 7, icon: 'assets/mc-invicons/acacia_planks.png'},
         {id: 'acacia_log', name: 'acacia log', category: 'Placable Wood Blocks and Items', module: 7, icon: 'assets/mc-invicons/acacia_log.png'},
