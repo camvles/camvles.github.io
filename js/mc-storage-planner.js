@@ -1,5 +1,5 @@
 ﻿const storageData = {
-    version: 3,
+    version: 4,
     items: [
         {id: 'acacia_planks', name: 'acacia planks', category: 'Placable Wood Blocks and Items', module: 7, icon: 'assets/mc-invicons/acacia_planks.png'},
         {id: 'acacia_log', name: 'acacia log', category: 'Placable Wood Blocks and Items', module: 7, icon: 'assets/mc-invicons/acacia_log.png'},
@@ -1770,14 +1770,15 @@ function shareConfiguration() {
 function showShareSuccessNotification(shareUrl, compressionRatio, urlLength) {
     // Dynamic notification based on URL length
     let notificationText = '';
-    if (urlLength < 150) {
+    /*if (urlLength < 150) {
         notificationText = '🔗 Ultra-short URL copied! (' + urlLength + ' chars, ' + compressionRatio + '% compressed)';
     } else if (urlLength < 300) {
         notificationText = '🔗 Short URL copied! (' + urlLength + ' chars, ' + compressionRatio + '% compressed)';
     } else {
         notificationText = '🔗 Compressed URL copied! (' + urlLength + ' chars, ' + compressionRatio + '% smaller)';
-    }
+    }*/
     
+    notificationText = '🔗 Shareable link copied to clipboard!';
     showNotification(notificationText);
     
     // Also show a modal with the URL for manual copying if needed
@@ -1798,8 +1799,7 @@ function showShareSuccessNotification(shareUrl, compressionRatio, urlLength) {
         }
         
         dialog.innerHTML = '<h3 style="margin-top: 0; color: #2196F3;">🔗 Configuration Shared Successfully!</h3>' +
-            '<p>The link has been copied to your clipboard. Share this URL with others:</p>' +
-            compressionInfo +
+            '<p>The link has been copied to your clipboard.<br>Share this URL with others:</p>' +
             '<input type="text" value="' + shareUrl + '" readonly ' +
                    'style="width: 100%; padding: 8px; margin: 10px 0; background: #222; color: white; border: 1px solid #555; border-radius: 4px; font-family: monospace; font-size: 12px;">' +
             '<div style="margin-top: 15px;">' +
