@@ -1,5 +1,407 @@
-﻿const storageData = {
-    version: 4,
+﻿// LZString compression library
+var LZString = (function() {
+    var f = String.fromCharCode;
+    var keyStrBase64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    var keyStrUriSafe = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-$";
+    
+    var baseReverseDic = {};
+    
+    function getBaseValue(alphabet, character) {
+        if (!baseReverseDic[alphabet]) {
+            baseReverseDic[alphabet] = {};
+            for (var i = 0; i < alphabet.length; i++) {
+                baseReverseDic[alphabet][alphabet.charAt(i)] = i;
+            }
+        }
+        return baseReverseDic[alphabet][character];
+    }
+    
+    var LZString = {
+        compressToEncodedURIComponent: function(input) {
+            if (input == null) return "";
+            return LZString._compress(input, 6, function(a) { return keyStrUriSafe.charAt(a); });
+        },
+        
+        decompressFromEncodedURIComponent: function(input) {
+            if (input == null) return "";
+            if (input == "") return null;
+            input = input.replace(/ /g, "+");
+            return LZString._decompress(input.length, 32, function(index) { return getBaseValue(keyStrUriSafe, input.charAt(index)); });
+        },
+        
+        _compress: function(uncompressed, bitsPerChar, getCharFromInt) {
+            if (uncompressed == null) return "";
+            var i, value,
+                context_dictionary = {},
+                context_dictionaryToCreate = {},
+                context_c = "",
+                context_wc = "",
+                context_w = "",
+                context_enlargeIn = 2,
+                context_dictSize = 3,
+                context_numBits = 2,
+                context_data = [],
+                context_data_val = 0,
+                context_data_position = 0,
+                ii;
+            
+            for (ii = 0; ii < uncompressed.length; ii += 1) {
+                context_c = uncompressed.charAt(ii);
+                if (!Object.prototype.hasOwnProperty.call(context_dictionary, context_c)) {
+                    context_dictionary[context_c] = context_dictSize++;
+                    context_dictionaryToCreate[context_c] = true;
+                }
+                
+                context_wc = context_w + context_c;
+                if (Object.prototype.hasOwnProperty.call(context_dictionary, context_wc)) {
+                    context_w = context_wc;
+                } else {
+                    if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate, context_w)) {
+                        if (context_w.charCodeAt(0) < 256) {
+                            for (i = 0; i < context_numBits; i++) {
+                                context_data_val = (context_data_val << 1);
+                                if (context_data_position == bitsPerChar - 1) {
+                                    context_data_position = 0;
+                                    context_data.push(getCharFromInt(context_data_val));
+                                    context_data_val = 0;
+                                } else {
+                                    context_data_position++;
+                                }
+                            }
+                            value = context_w.charCodeAt(0);
+                            for (i = 0; i < 8; i++) {
+                                context_data_val = (context_data_val << 1) | (value & 1);
+                                if (context_data_position == bitsPerChar - 1) {
+                                    context_data_position = 0;
+                                    context_data.push(getCharFromInt(context_data_val));
+                                    context_data_val = 0;
+                                } else {
+                                    context_data_position++;
+                                }
+                                value = value >> 1;
+                            }
+                        } else {
+                            value = 1;
+                            for (i = 0; i < context_numBits; i++) {
+                                context_data_val = (context_data_val << 1) | value;
+                                if (context_data_position == bitsPerChar - 1) {
+                                    context_data_position = 0;
+                                    context_data.push(getCharFromInt(context_data_val));
+                                    context_data_val = 0;
+                                } else {
+                                    context_data_position++;
+                                }
+                                value = 0;
+                            }
+                            value = context_w.charCodeAt(0);
+                            for (i = 0; i < 16; i++) {
+                                context_data_val = (context_data_val << 1) | (value & 1);
+                                if (context_data_position == bitsPerChar - 1) {
+                                    context_data_position = 0;
+                                    context_data.push(getCharFromInt(context_data_val));
+                                    context_data_val = 0;
+                                } else {
+                                    context_data_position++;
+                                }
+                                value = value >> 1;
+                            }
+                        }
+                        context_enlargeIn--;
+                        if (context_enlargeIn == 0) {
+                            context_enlargeIn = Math.pow(2, context_numBits);
+                            context_numBits++;
+                        }
+                        delete context_dictionaryToCreate[context_w];
+                    } else {
+                        value = context_dictionary[context_w];
+                        for (i = 0; i < context_numBits; i++) {
+                            context_data_val = (context_data_val << 1) | (value & 1);
+                            if (context_data_position == bitsPerChar - 1) {
+                                context_data_position = 0;
+                                context_data.push(getCharFromInt(context_data_val));
+                                context_data_val = 0;
+                            } else {
+                                context_data_position++;
+                            }
+                            value = value >> 1;
+                        }
+                    }
+                    context_enlargeIn--;
+                    if (context_enlargeIn == 0) {
+                        context_enlargeIn = Math.pow(2, context_numBits);
+                        context_numBits++;
+                    }
+                    context_dictionary[context_wc] = context_dictSize++;
+                    context_w = String(context_c);
+                }
+            }
+            
+            if (context_w !== "") {
+                if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate, context_w)) {
+                    if (context_w.charCodeAt(0) < 256) {
+                        for (i = 0; i < context_numBits; i++) {
+                            context_data_val = (context_data_val << 1);
+                            if (context_data_position == bitsPerChar - 1) {
+                                context_data_position = 0;
+                                context_data.push(getCharFromInt(context_data_val));
+                                context_data_val = 0;
+                            } else {
+                                context_data_position++;
+                            }
+                        }
+                        value = context_w.charCodeAt(0);
+                        for (i = 0; i < 8; i++) {
+                            context_data_val = (context_data_val << 1) | (value & 1);
+                            if (context_data_position == bitsPerChar - 1) {
+                                context_data_position = 0;
+                                context_data.push(getCharFromInt(context_data_val));
+                                context_data_val = 0;
+                            } else {
+                                context_data_position++;
+                            }
+                            value = value >> 1;
+                        }
+                    } else {
+                        value = 1;
+                        for (i = 0; i < context_numBits; i++) {
+                            context_data_val = (context_data_val << 1) | value;
+                            if (context_data_position == bitsPerChar - 1) {
+                                context_data_position = 0;
+                                context_data.push(getCharFromInt(context_data_val));
+                                context_data_val = 0;
+                            } else {
+                                context_data_position++;
+                            }
+                            value = 0;
+                        }
+                        value = context_w.charCodeAt(0);
+                        for (i = 0; i < 16; i++) {
+                            context_data_val = (context_data_val << 1) | (value & 1);
+                            if (context_data_position == bitsPerChar - 1) {
+                                context_data_position = 0;
+                                context_data.push(getCharFromInt(context_data_val));
+                                context_data_val = 0;
+                            } else {
+                                context_data_position++;
+                            }
+                            value = value >> 1;
+                        }
+                    }
+                    context_enlargeIn--;
+                    if (context_enlargeIn == 0) {
+                        context_enlargeIn = Math.pow(2, context_numBits);
+                        context_numBits++;
+                    }
+                    delete context_dictionaryToCreate[context_w];
+                } else {
+                    value = context_dictionary[context_w];
+                    for (i = 0; i < context_numBits; i++) {
+                        context_data_val = (context_data_val << 1) | (value & 1);
+                        if (context_data_position == bitsPerChar - 1) {
+                            context_data_position = 0;
+                            context_data.push(getCharFromInt(context_data_val));
+                            context_data_val = 0;
+                        } else {
+                            context_data_position++;
+                        }
+                        value = value >> 1;
+                    }
+                }
+                context_enlargeIn--;
+                if (context_enlargeIn == 0) {
+                    context_enlargeIn = Math.pow(2, context_numBits);
+                    context_numBits++;
+                }
+            }
+            
+            value = 2;
+            for (i = 0; i < context_numBits; i++) {
+                context_data_val = (context_data_val << 1) | (value & 1);
+                if (context_data_position == bitsPerChar - 1) {
+                    context_data_position = 0;
+                    context_data.push(getCharFromInt(context_data_val));
+                    context_data_val = 0;
+                } else {
+                    context_data_position++;
+                }
+                value = value >> 1;
+            }
+            
+            while (true) {
+                context_data_val = (context_data_val << 1);
+                if (context_data_position == bitsPerChar - 1) {
+                    context_data.push(getCharFromInt(context_data_val));
+                    break;
+                } else context_data_position++;
+            }
+            return context_data.join('');
+        },
+        
+        _decompress: function(length, resetValue, getNextValue) {
+            var dictionary = [],
+                next,
+                enlargeIn = 4,
+                dictSize = 4,
+                numBits = 3,
+                entry = "",
+                result = [],
+                i,
+                w,
+                bits, resb, maxpower, power,
+                c,
+                data = { val: getNextValue(0), position: resetValue, index: 1 };
+            
+            for (i = 0; i < 3; i += 1) {
+                dictionary[i] = i;
+            }
+            
+            bits = 0;
+            maxpower = Math.pow(2, 2);
+            power = 1;
+            while (power != maxpower) {
+                resb = data.val & data.position;
+                data.position >>= 1;
+                if (data.position == 0) {
+                    data.position = resetValue;
+                    data.val = getNextValue(data.index++);
+                }
+                bits |= (resb > 0 ? 1 : 0) * power;
+                power <<= 1;
+            }
+            
+            switch (next = bits) {
+                case 0:
+                    bits = 0;
+                    maxpower = Math.pow(2, 8);
+                    power = 1;
+                    while (power != maxpower) {
+                        resb = data.val & data.position;
+                        data.position >>= 1;
+                        if (data.position == 0) {
+                            data.position = resetValue;
+                            data.val = getNextValue(data.index++);
+                        }
+                        bits |= (resb > 0 ? 1 : 0) * power;
+                        power <<= 1;
+                    }
+                    c = f(bits);
+                    break;
+                case 1:
+                    bits = 0;
+                    maxpower = Math.pow(2, 16);
+                    power = 1;
+                    while (power != maxpower) {
+                        resb = data.val & data.position;
+                        data.position >>= 1;
+                        if (data.position == 0) {
+                            data.position = resetValue;
+                            data.val = getNextValue(data.index++);
+                        }
+                        bits |= (resb > 0 ? 1 : 0) * power;
+                        power <<= 1;
+                    }
+                    c = f(bits);
+                    break;
+                case 2:
+                    return "";
+            }
+            dictionary[3] = c;
+            w = c;
+            result.push(c);
+            while (true) {
+                if (data.index > length) {
+                    return "";
+                }
+                
+                bits = 0;
+                maxpower = Math.pow(2, numBits);
+                power = 1;
+                while (power != maxpower) {
+                    resb = data.val & data.position;
+                    data.position >>= 1;
+                    if (data.position == 0) {
+                        data.position = resetValue;
+                        data.val = getNextValue(data.index++);
+                    }
+                    bits |= (resb > 0 ? 1 : 0) * power;
+                    power <<= 1;
+                }
+                
+                switch (c = bits) {
+                    case 0:
+                        bits = 0;
+                        maxpower = Math.pow(2, 8);
+                        power = 1;
+                        while (power != maxpower) {
+                            resb = data.val & data.position;
+                            data.position >>= 1;
+                            if (data.position == 0) {
+                                data.position = resetValue;
+                                data.val = getNextValue(data.index++);
+                            }
+                            bits |= (resb > 0 ? 1 : 0) * power;
+                            power <<= 1;
+                        }
+                        
+                        dictionary[dictSize++] = f(bits);
+                        c = dictSize - 1;
+                        enlargeIn--;
+                        break;
+                    case 1:
+                        bits = 0;
+                        maxpower = Math.pow(2, 16);
+                        power = 1;
+                        while (power != maxpower) {
+                            resb = data.val & data.position;
+                            data.position >>= 1;
+                            if (data.position == 0) {
+                                data.position = resetValue;
+                                data.val = getNextValue(data.index++);
+                            }
+                            bits |= (resb > 0 ? 1 : 0) * power;
+                            power <<= 1;
+                        }
+                        dictionary[dictSize++] = f(bits);
+                        c = dictSize - 1;
+                        enlargeIn--;
+                        break;
+                    case 2:
+                        return result.join('');
+                }
+                
+                if (enlargeIn == 0) {
+                    enlargeIn = Math.pow(2, numBits);
+                    numBits++;
+                }
+                
+                if (dictionary[c]) {
+                    entry = dictionary[c];
+                } else {
+                    if (c === dictSize) {
+                        entry = w + w.charAt(0);
+                    } else {
+                        return null;
+                    }
+                }
+                result.push(entry);
+                
+                dictionary[dictSize++] = w + entry.charAt(0);
+                enlargeIn--;
+                
+                w = entry;
+                
+                if (enlargeIn == 0) {
+                    enlargeIn = Math.pow(2, numBits);
+                    numBits++;
+                }
+            }
+        }
+    };
+    return LZString;
+})();
+
+const storageData = {
+    version: 10,
     items: [
         {id: 'acacia_planks', name: 'acacia planks', category: 'Placable Wood Blocks and Items', module: 7, icon: 'assets/mc-invicons/acacia_planks.png'},
         {id: 'acacia_log', name: 'acacia log', category: 'Placable Wood Blocks and Items', module: 7, icon: 'assets/mc-invicons/acacia_log.png'},
@@ -1106,7 +1508,6 @@
     ]
 };
 
-let editMode = false;
 let draggedElement = null;
 let draggedType = null; // 'item', 'module', or 'section'
 let selectedItems = new Set(); // Track selected items
@@ -1114,901 +1515,38 @@ let lastClickedItem = null; // For shift-click range selection
 let hasUnsavedChanges = false; // Track if there are unsaved changes
 let contextMenuVisible = false; // Track context menu state
 let contextMenuTargetItems = []; // Track items that triggered the context menu
-
-// === LZ-STRING COMPRESSION LIBRARY (Lightweight) ===
-const LZString = (function() {
-    const keyStrBase64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-    const keyStrUriSafe = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-$";
-    
-    function _compress(uncompressed, bitsPerChar, getCharFromInt) {
-        if (uncompressed == null) return "";
-        let i, value, context_dictionary = {}, context_dictionaryToCreate = {},
-            context_c = "", context_wc = "", context_w = "", context_enlargeIn = 2,
-            context_dictSize = 3, context_numBits = 2, context_data = [],
-            context_data_val = 0, context_data_position = 0, ii;
-        
-        for (ii = 0; ii < uncompressed.length; ii += 1) {
-            context_c = uncompressed.charAt(ii);
-            if (!Object.prototype.hasOwnProperty.call(context_dictionary,context_c)) {
-                context_dictionary[context_c] = context_dictSize++;
-                context_dictionaryToCreate[context_c] = true;
-            }
-            
-            context_wc = context_w + context_c;
-            if (Object.prototype.hasOwnProperty.call(context_dictionary,context_wc)) {
-                context_w = context_wc;
-            } else {
-                if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate,context_w)) {
-                    if (context_w.charCodeAt(0)<256) {
-                        for (i=0 ; i<context_numBits ; i++) {
-                            context_data_val = (context_data_val << 1);
-                            if (context_data_position == bitsPerChar-1) {
-                                context_data_position = 0;
-                                context_data.push(getCharFromInt(context_data_val));
-                                context_data_val = 0;
-                            } else {
-                                context_data_position++;
-                            }
-                        }
-                        value = context_w.charCodeAt(0);
-                        for (i=0 ; i<8 ; i++) {
-                            context_data_val = (context_data_val << 1) | (value&1);
-                            if (context_data_position == bitsPerChar-1) {
-                                context_data_position = 0;
-                                context_data.push(getCharFromInt(context_data_val));
-                                context_data_val = 0;
-                            } else {
-                                context_data_position++;
-                            }
-                            value = value >> 1;
-                        }
-                    } else {
-                        value = 1;
-                        for (i=0 ; i<context_numBits ; i++) {
-                            context_data_val = (context_data_val << 1) | value;
-                            if (context_data_position ==bitsPerChar-1) {
-                                context_data_position = 0;
-                                context_data.push(getCharFromInt(context_data_val));
-                                context_data_val = 0;
-                            } else {
-                                context_data_position++;
-                            }
-                            value = 0;
-                        }
-                        value = context_w.charCodeAt(0);
-                        for (i=0 ; i<16 ; i++) {
-                            context_data_val = (context_data_val << 1) | (value&1);
-                            if (context_data_position == bitsPerChar-1) {
-                                context_data_position = 0;
-                                context_data.push(getCharFromInt(context_data_val));
-                                context_data_val = 0;
-                            } else {
-                                context_data_position++;
-                            }
-                            value = value >> 1;
-                        }
-                    }
-                    context_enlargeIn--;
-                    if (context_enlargeIn == 0) {
-                        context_enlargeIn = Math.pow(2, context_numBits);
-                        context_numBits++;
-                    }
-                    delete context_dictionaryToCreate[context_w];
-                } else {
-                    value = context_dictionary[context_w];
-                    for (i=0 ; i<context_numBits ; i++) {
-                        context_data_val = (context_data_val << 1) | (value&1);
-                        if (context_data_position == bitsPerChar-1) {
-                            context_data_position = 0;
-                            context_data.push(getCharFromInt(context_data_val));
-                            context_data_val = 0;
-                        } else {
-                            context_data_position++;
-                        }
-                        value = value >> 1;
-                    }
-                }
-                context_enlargeIn--;
-                if (context_enlargeIn == 0) {
-                    context_enlargeIn = Math.pow(2, context_numBits);
-                    context_numBits++;
-                }
-                context_dictionary[context_wc] = context_dictSize++;
-                context_w = String(context_c);
-            }
-        }
-        
-        if (context_w !== "") {
-            if (Object.prototype.hasOwnProperty.call(context_dictionaryToCreate,context_w)) {
-                if (context_w.charCodeAt(0)<256) {
-                    for (i=0 ; i<context_numBits ; i++) {
-                        context_data_val = (context_data_val << 1);
-                        if (context_data_position == bitsPerChar-1) {
-                            context_data_position = 0;
-                            context_data.push(getCharFromInt(context_data_val));
-                            context_data_val = 0;
-                        } else {
-                            context_data_position++;
-                        }
-                    }
-                    value = context_w.charCodeAt(0);
-                    for (i=0 ; i<8 ; i++) {
-                        context_data_val = (context_data_val << 1) | (value&1);
-                        if (context_data_position == bitsPerChar-1) {
-                            context_data_position = 0;
-                            context_data.push(getCharFromInt(context_data_val));
-                            context_data_val = 0;
-                        } else {
-                            context_data_position++;
-                        }
-                        value = value >> 1;
-                    }
-                } else {
-                    value = 1;
-                    for (i=0 ; i<context_numBits ; i++) {
-                        context_data_val = (context_data_val << 1) | value;
-                        if (context_data_position == bitsPerChar-1) {
-                            context_data_position = 0;
-                            context_data.push(getCharFromInt(context_data_val));
-                            context_data_val = 0;
-                        } else {
-                            context_data_position++;
-                        }
-                        value = 0;
-                    }
-                    value = context_w.charCodeAt(0);
-                    for (i=0 ; i<16 ; i++) {
-                        context_data_val = (context_data_val << 1) | (value&1);
-                        if (context_data_position == bitsPerChar-1) {
-                            context_data_position = 0;
-                            context_data.push(getCharFromInt(context_data_val));
-                            context_data_val = 0;
-                        } else {
-                            context_data_position++;
-                        }
-                        value = value >> 1;
-                    }
-                }
-                context_enlargeIn--;
-                if (context_enlargeIn == 0) {
-                    context_enlargeIn = Math.pow(2, context_numBits);
-                    context_numBits++;
-                }
-                delete context_dictionaryToCreate[context_w];
-            } else {
-                value = context_dictionary[context_w];
-                for (i=0 ; i<context_numBits ; i++) {
-                    context_data_val = (context_data_val << 1) | (value&1);
-                    if (context_data_position == bitsPerChar-1) {
-                        context_data_position = 0;
-                        context_data.push(getCharFromInt(context_data_val));
-                        context_data_val = 0;
-                    } else {
-                        context_data_position++;
-                    }
-                    value = value >> 1;
-                }
-            }
-            context_enlargeIn--;
-            if (context_enlargeIn == 0) {
-                context_enlargeIn = Math.pow(2, context_numBits);
-                context_numBits++;
-            }
-        }
-        
-        value = 2;
-        for (i=0 ; i<context_numBits ; i++) {
-            context_data_val = (context_data_val << 1) | (value&1);
-            if (context_data_position == bitsPerChar-1) {
-                context_data_position = 0;
-                context_data.push(getCharFromInt(context_data_val));
-                context_data_val = 0;
-            } else {
-                context_data_position++;
-            }
-            value = value >> 1;
-        }
-        
-        while (true) {
-            context_data_val = (context_data_val << 1);
-            if (context_data_position == bitsPerChar-1) {
-                context_data.push(getCharFromInt(context_data_val));
-                break;
-            }
-            else context_data_position++;
-        }
-        return context_data.join('');
-    }
-    
-    return {
-        compressToEncodedURIComponent: function(input) {
-            if (input == null) return "";
-            return _compress(input, 6, function(a){return keyStrUriSafe.charAt(a);});
-        },
-        
-        decompressFromEncodedURIComponent: function(input) {
-            if (input == null) return "";
-            if (input == "") return null;
-            input = input.replace(/ /g, "+");
-            return LZString._decompress(input.length, 32, function(index) { return keyStrUriSafe.indexOf(input.charAt(index)); });
-        },
-        
-        _decompress: function(length, resetValue, getNextValue) {
-            let dictionary = [], next, enlargeIn = 4, dictSize = 4, numBits = 3,
-                entry = "", result = [], i, w, bits, resb, maxpower, power,
-                c, data = {val:getNextValue(0), position:resetValue, index:1};
-            
-            for (i = 0; i < 3; i += 1) {
-                dictionary[i] = i;
-            }
-            
-            bits = 0;
-            maxpower = Math.pow(2,2);
-            power=1;
-            while (power!=maxpower) {
-                resb = data.val & data.position;
-                data.position >>= 1;
-                if (data.position == 0) {
-                    data.position = resetValue;
-                    data.val = getNextValue(data.index++);
-                }
-                bits |= (resb>0 ? 1 : 0) * power;
-                power <<= 1;
-            }
-            
-            switch (next = bits) {
-                case 0:
-                    bits = 0;
-                    maxpower = Math.pow(2,8);
-                    power=1;
-                    while (power!=maxpower) {
-                        resb = data.val & data.position;
-                        data.position >>= 1;
-                        if (data.position == 0) {
-                            data.position = resetValue;
-                            data.val = getNextValue(data.index++);
-                        }
-                        bits |= (resb>0 ? 1 : 0) * power;
-                        power <<= 1;
-                    }
-                    c = String.fromCharCode(bits);
-                    break;
-                case 1:
-                    bits = 0;
-                    maxpower = Math.pow(2,16);
-                    power=1;
-                    while (power!=maxpower) {
-                        resb = data.val & data.position;
-                        data.position >>= 1;
-                        if (data.position == 0) {
-                            data.position = resetValue;
-                            data.val = getNextValue(data.index++);
-                        }
-                        bits |= (resb>0 ? 1 : 0) * power;
-                        power <<= 1;
-                    }
-                    c = String.fromCharCode(bits);
-                    break;
-                case 2:
-                    return "";
-            }
-            dictionary[3] = c;
-            w = c;
-            result.push(c);
-            while (true) {
-                if (data.index > length) {
-                    return "";
-                }
-                
-                bits = 0;
-                maxpower = Math.pow(2,numBits);
-                power=1;
-                while (power!=maxpower) {
-                    resb = data.val & data.position;
-                    data.position >>= 1;
-                    if (data.position == 0) {
-                        data.position = resetValue;
-                        data.val = getNextValue(data.index++);
-                    }
-                    bits |= (resb>0 ? 1 : 0) * power;
-                    power <<= 1;
-                }
-                
-                switch (c = bits) {
-                    case 0:
-                        bits = 0;
-                        maxpower = Math.pow(2,8);
-                        power=1;
-                        while (power!=maxpower) {
-                            resb = data.val & data.position;
-                            data.position >>= 1;
-                            if (data.position == 0) {
-                                data.position = resetValue;
-                                data.val = getNextValue(data.index++);
-                            }
-                            bits |= (resb>0 ? 1 : 0) * power;
-                            power <<= 1;
-                        }
-                        
-                        dictionary[dictSize++] = String.fromCharCode(bits);
-                        c = dictSize-1;
-                        enlargeIn--;
-                        break;
-                    case 1:
-                        bits = 0;
-                        maxpower = Math.pow(2,16);
-                        power=1;
-                        while (power!=maxpower) {
-                            resb = data.val & data.position;
-                            data.position >>= 1;
-                            if (data.position == 0) {
-                                data.position = resetValue;
-                                data.val = getNextValue(data.index++);
-                            }
-                            bits |= (resb>0 ? 1 : 0) * power;
-                            power <<= 1;
-                        }
-                        dictionary[dictSize++] = String.fromCharCode(bits);
-                        c = dictSize-1;
-                        enlargeIn--;
-                        break;
-                    case 2:
-                        return result.join('');
-                }
-                
-                if (enlargeIn == 0) {
-                    enlargeIn = Math.pow(2, numBits);
-                    numBits++;
-                }
-                
-                if (dictionary[c]) {
-                    entry = dictionary[c];
-                } else {
-                    if (c === dictSize) {
-                        entry = w + w.charAt(0);
-                    } else {
-                        return null;
-                    }
-                }
-                result.push(entry);
-                
-                dictionary[dictSize++] = w + entry.charAt(0);
-                enlargeIn--;
-                
-                w = entry;
-                
-                if (enlargeIn == 0) {
-                    enlargeIn = Math.pow(2, numBits);
-                    numBits++;
-                }
-            }
-        }
-    };
-})();
-
-// === CONFIGURATION SHARING FUNCTIONS ===
-
-function encodeConfiguration() {
-    // Get the original default configuration (stored at initialization)
-    const originalDefault = window.originalDefaultConfig || storageData;
-    const defaultItems = originalDefault.items;
-    const defaultCategories = originalDefault.categories;
-    
-    const itemIndexMap = {};
-    defaultItems.forEach((item, index) => {
-        itemIndexMap[item.id] = index;
-    });
-    
-    // Only store what's different from default + essential structure
-    const ultraCompact = {
-        v: 2,  // version
-        d: []  // deltas (changes from default)
-    };
-    
-    // Track moved items (item index -> [category_index, module_number])
-    const movedItems = {};
-    const categoryNames = [];
-    const categoryModules = {};
-    const renamedModules = {};
-    const itemColors = {};
-    
-    // Build category mapping
-    storageData.categories.forEach((cat, catIndex) => {
-        categoryNames.push(cat.name);
-        categoryModules[catIndex] = [...cat.modules];
-    });
-    
-    // Find moved items and colors
-    storageData.items.forEach(item => {
-        const itemIndex = itemIndexMap[item.id];
-        if (itemIndex === undefined) return; // Skip unknown items
-        
-        const defaultItem = defaultItems[itemIndex];
-        const currentCatIndex = categoryNames.indexOf(item.category);
-        const defaultCatIndex = categoryNames.indexOf(defaultItem.category);
-        
-        // Check if item moved or has color
-        if (item.category !== defaultItem.category || item.module !== defaultItem.module) {
-            movedItems[itemIndex] = [currentCatIndex, item.module];
-        }
-        
-        if (item.color) {
-            itemColors[itemIndex] = item.color;
-        }
-        
-        // Check for custom module names
-        if (item.moduleName && item.moduleName !== ('Module ' + item.module)) {
-            const key = currentCatIndex + '_' + item.module;
-            renamedModules[key] = item.moduleName;
-        }
-    });
-    
-    // Only include non-empty deltas
-    if (Object.keys(movedItems).length > 0) ultraCompact.m = movedItems;
-    if (Object.keys(itemColors).length > 0) ultraCompact.cl = itemColors;
-    if (Object.keys(renamedModules).length > 0) ultraCompact.rn = renamedModules;
-    
-    // Check for category reordering
-    const defaultCategoryOrder = storageData.categories.map((cat, i) => i);
-    const currentCategoryOrder = storageData.categories.map(cat => cat.order || 0);
-    if (JSON.stringify(defaultCategoryOrder) !== JSON.stringify(currentCategoryOrder)) {
-        ultraCompact.co = currentCategoryOrder;
-    }
-    
-    // Check for renamed categories (only store if different from default)
-    const renamedCategories = {};
-    categoryNames.forEach((name, index) => {
-        // This is a simplified check - in real implementation you'd compare against default category names
-        if (name.includes('Custom') || name.includes('Renamed')) {
-            renamedCategories[index] = name;
-        }
-    });
-    if (Object.keys(renamedCategories).length > 0) ultraCompact.cn = renamedCategories;
-    
-    // If no changes, return minimal payload
-    if (Object.keys(ultraCompact).length === 1) { // Only version
-        ultraCompact.d = []; // Empty deltas
-    }
-    
-    // Convert to JSON, compress, and encode
-    const jsonString = JSON.stringify(ultraCompact);
-    const compressed = LZString.compressToEncodedURIComponent(jsonString);
-    
-    return 'lz2_' + compressed; // New ultra-compact format
-}
-
-function decodeConfiguration(encodedConfig) {
-    try {
-        let configData;
-        
-        if (encodedConfig.startsWith('lz2_')) {
-            // Ultra-compact format - reconstruct from deltas
-            const compressed = encodedConfig.substring(4);
-            const jsonString = LZString.decompressFromEncodedURIComponent(compressed);
-            
-            if (!jsonString) {
-                throw new Error('Failed to decompress configuration');
-            }
-            
-            const ultraCompact = JSON.parse(jsonString);
-            
-            // Start with a fresh copy of the default configuration
-            const reconstructed = {
-                version: ultraCompact.v,
-                timestamp: Date.now(), // Generate new timestamp
-                categories: JSON.parse(JSON.stringify(storageData.categories)), // Deep copy
-                items: JSON.parse(JSON.stringify(storageData.items)) // Deep copy
-            };
-            
-            // Apply moved items
-            if (ultraCompact.m) {
-                Object.keys(ultraCompact.m).forEach(itemIndexStr => {
-                    const itemIndex = parseInt(itemIndexStr);
-                    const [catIndex, moduleNum] = ultraCompact.m[itemIndex];
-                    
-                    if (reconstructed.items[itemIndex] && reconstructed.categories[catIndex]) {
-                        reconstructed.items[itemIndex].category = reconstructed.categories[catIndex].name;
-                        reconstructed.items[itemIndex].module = moduleNum;
-                    }
-                });
-            }
-            
-            // Apply item colors
-            if (ultraCompact.cl) {
-                Object.keys(ultraCompact.cl).forEach(itemIndexStr => {
-                    const itemIndex = parseInt(itemIndexStr);
-                    const color = ultraCompact.cl[itemIndex];
-                    
-                    if (reconstructed.items[itemIndex]) {
-                        reconstructed.items[itemIndex].color = color;
-                    }
-                });
-            }
-            
-            // Apply renamed modules
-            if (ultraCompact.rn) {
-                Object.keys(ultraCompact.rn).forEach(key => {
-                    const [catIndex, moduleNum] = key.split('_').map(Number);
-                    const moduleName = ultraCompact.rn[key];
-                    
-                    // Apply to all items in that category/module
-                    reconstructed.items.forEach(item => {
-                        if (reconstructed.categories[catIndex] && 
-                            item.category === reconstructed.categories[catIndex].name && 
-                            item.module === moduleNum) {
-                            item.moduleName = moduleName;
-                        }
-                    });
-                });
-            }
-            
-            // Apply category reordering
-            if (ultraCompact.co) {
-                ultraCompact.co.forEach((order, index) => {
-                    if (reconstructed.categories[index]) {
-                        reconstructed.categories[index].order = order;
-                    }
-                });
-            }
-            
-            // Apply renamed categories
-            if (ultraCompact.cn) {
-                Object.keys(ultraCompact.cn).forEach(catIndexStr => {
-                    const catIndex = parseInt(catIndexStr);
-                    const newName = ultraCompact.cn[catIndex];
-                    const oldName = reconstructed.categories[catIndex]?.name;
-                    
-                    if (oldName && newName) {
-                        reconstructed.categories[catIndex].name = newName;
-                        
-                        // Update all items in this category
-                        reconstructed.items.forEach(item => {
-                            if (item.category === oldName) {
-                                item.category = newName;
-                            }
-                        });
-                    }
-                });
-            }
-            
-            configData = reconstructed;
-            
-        } else if (encodedConfig.startsWith('lz1_')) {
-            // Previous compressed format
-            const compressed = encodedConfig.substring(4);
-            const jsonString = LZString.decompressFromEncodedURIComponent(compressed);
-            
-            if (!jsonString) {
-                throw new Error('Failed to decompress configuration');
-            }
-            
-            const optimizedData = JSON.parse(jsonString);
-            
-            // Convert back from optimized format to full format
-            configData = {
-                version: optimizedData.v,
-                timestamp: optimizedData.t,
-                categories: optimizedData.c.map(cat => ({
-                    name: cat.n,
-                    modules: [...cat.m],
-                    order: cat.o,
-                    isEmpty: cat.e
-                })),
-                items: optimizedData.i.map(item => {
-                    const fullItem = {
-                        id: item.id,
-                        name: item.n,
-                        category: item.c,
-                        module: item.m,
-                        icon: item.ic
-                    };
-                    
-                    // Add optional fields if they exist
-                    if (item.cl) fullItem.color = item.cl;
-                    if (item.mn) fullItem.moduleName = item.mn;
-                    
-                    return fullItem;
-                })
-            };
-        } else {
-            // Legacy format (Base64 JSON) - for backward compatibility
-            const jsonString = decodeURIComponent(atob(encodedConfig));
-            configData = JSON.parse(jsonString);
-        }
-        
-        // Validate the configuration structure
-        if (!configData.version || !configData.categories || !configData.items) {
-            throw new Error('Invalid configuration format');
-        }
-        
-        return configData;
-    } catch (error) {
-        console.error('Failed to decode configuration:', error);
-        return null;
-    }
-}
-
-function shareConfiguration() {
-    try {
-        const encodedConfig = encodeConfiguration();
-        const currentUrl = window.location.href.split('?')[0]; // Remove existing query params
-        const shareUrl = currentUrl + '?config=' + encodedConfig;
-        
-        // Calculate ultra-compression stats for user feedback
-        const originalSize = JSON.stringify(storageData).length;
-        const compressedSize = encodedConfig.length;
-        const urlLength = shareUrl.length;
-        const compressionRatio = Math.round((1 - compressedSize / originalSize) * 100);
-        
-        // Show different messages based on URL length
-        let compressionMessage = '';
-        if (urlLength < 150) {
-            compressionMessage = 'Ultra-short URL (' + urlLength + ' chars, ' + compressionRatio + '% compressed)';
-        } else if (urlLength < 300) {
-            compressionMessage = 'Short URL (' + urlLength + ' chars, ' + compressionRatio + '% compressed)';
-        } else {
-            compressionMessage = 'Compressed URL (' + urlLength + ' chars, ' + compressionRatio + '% smaller)';
-        }
-        
-        // Try to copy to clipboard
-        if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard.writeText(shareUrl).then(() => {
-                showShareSuccessNotification(shareUrl, compressionRatio, urlLength);
-            }).catch(() => {
-                showShareDialog(shareUrl, compressionRatio, urlLength);
-            });
-        } else {
-            // Fallback for non-secure contexts or older browsers
-            showShareDialog(shareUrl, compressionRatio, urlLength);
-        }
-    } catch (error) {
-        console.error('Failed to share configuration:', error);
-        showNotification('Error creating shareable link');
-    }
-}
-
-function showShareSuccessNotification(shareUrl, compressionRatio, urlLength) {
-    // Dynamic notification based on URL length
-    let notificationText = '';
-    /*if (urlLength < 150) {
-        notificationText = '🔗 Ultra-short URL copied! (' + urlLength + ' chars, ' + compressionRatio + '% compressed)';
-    } else if (urlLength < 300) {
-        notificationText = '🔗 Short URL copied! (' + urlLength + ' chars, ' + compressionRatio + '% compressed)';
-    } else {
-        notificationText = '🔗 Compressed URL copied! (' + urlLength + ' chars, ' + compressionRatio + '% smaller)';
-    }*/
-    
-    notificationText = '🔗 Shareable link copied to clipboard!';
-    showNotification(notificationText);
-    
-    // Also show a modal with the URL for manual copying if needed
-    setTimeout(() => {
-        const overlay = document.createElement('div');
-        overlay.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 2000; display: flex; align-items: center; justify-content: center;';
-        
-        const dialog = document.createElement('div');
-        dialog.style.cssText = 'background: #333; color: white; padding: 20px; border-radius: 8px; max-width: 600px; text-align: center; border: 2px solid #2196F3;';
-        
-        let compressionInfo = '';
-        if (urlLength < 150) {
-            compressionInfo = '<p style="color: #00E676; font-size: 0.9em; margin: 5px 0;">⚡ Ultra-compact encoding! Only ' + urlLength + ' characters (saved ' + compressionRatio + '%)</p>';
-        } else if (urlLength < 300) {
-            compressionInfo = '<p style="color: #4CAF50; font-size: 0.9em; margin: 5px 0;">📦 Highly compressed! ' + urlLength + ' characters (saved ' + compressionRatio + '%)</p>';
-        } else {
-            compressionInfo = '<p style="color: #4CAF50; font-size: 0.9em; margin: 5px 0;">📦 Compressed by ' + compressionRatio + '% for shorter URLs!</p>';
-        }
-        
-        dialog.innerHTML = '<h3 style="margin-top: 0; color: #2196F3;">🔗 Configuration Shared Successfully!</h3>' +
-            '<p>The link has been copied to your clipboard.<br>Share this URL with others:</p>' +
-            '<input type="text" value="' + shareUrl + '" readonly ' +
-                   'style="width: 100%; padding: 8px; margin: 10px 0; background: #222; color: white; border: 1px solid #555; border-radius: 4px; font-family: monospace; font-size: 12px;">' +
-            '<div style="margin-top: 15px;">' +
-                '<button onclick="copyShareUrl(\'' + shareUrl + '\')" ' +
-                        'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #2196F3; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
-                    '📋 Copy Again' +
-                '</button>' +
-                '<button onclick="closeShareDialog()" ' +
-                        'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #666; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
-                    'Close' +
-                '</button>' +
-            '</div>';
-        
-        overlay.appendChild(dialog);
-        document.body.appendChild(overlay);
-        
-        // Auto-select the URL text
-        const urlInput = dialog.querySelector('input');
-        urlInput.focus();
-        urlInput.select();
-        
-        // Store reference for closing
-        window.currentShareDialog = overlay;
-        
-        // Close on escape key
-        const escapeHandler = (e) => {
-            if (e.key === 'Escape') {
-                closeShareDialog();
-                document.removeEventListener('keydown', escapeHandler);
-            }
-        };
-        document.addEventListener('keydown', escapeHandler);
-        
-        // Close on overlay click
-        overlay.addEventListener('click', (e) => {
-            if (e.target === overlay) {
-                closeShareDialog();
-            }
-        });
-        
-    }, 500); // Show after the initial notification
-}
-
-function showShareDialog(shareUrl, compressionRatio, urlLength) {
-    const overlay = document.createElement('div');
-    overlay.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 2000; display: flex; align-items: center; justify-content: center;';
-    
-    const dialog = document.createElement('div');
-    dialog.style.cssText = 'background: #333; color: white; padding: 20px; border-radius: 8px; max-width: 600px; text-align: center; border: 2px solid #2196F3;';
-    
-    let compressionInfo = '';
-    if (urlLength < 150) {
-        compressionInfo = '<p style="color: #00E676; font-size: 0.9em; margin: 5px 0;">⚡ Ultra-compact encoding! Only ' + urlLength + ' characters (saved ' + compressionRatio + '%)</p>';
-    } else if (urlLength < 300) {
-        compressionInfo = '<p style="color: #4CAF50; font-size: 0.9em; margin: 5px 0;">📦 Highly compressed! ' + urlLength + ' characters (saved ' + compressionRatio + '%)</p>';
-    } else {
-        compressionInfo = '<p style="color: #4CAF50; font-size: 0.9em; margin: 5px 0;">📦 Compressed by ' + compressionRatio + '% for shorter URLs!</p>';
-    }
-    
-    dialog.innerHTML = '<h3 style="margin-top: 0; color: #2196F3;">🔗 Share Your Configuration</h3>' +
-        '<p>Copy this URL to share your current storage configuration:</p>' +
-        compressionInfo +
-        '<input type="text" value="' + shareUrl + '" readonly ' +
-               'style="width: 100%; padding: 8px; margin: 10px 0; background: #222; color: white; border: 1px solid #555; border-radius: 4px; font-family: monospace; font-size: 12px;">' +
-        '<div style="margin-top: 15px;">' +
-            '<button onclick="copyShareUrl(\'' + shareUrl + '\')" ' +
-                    'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #2196F3; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
-                '📋 Copy URL' +
-            '</button>' +
-            '<button onclick="closeShareDialog()" ' +
-                    'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #666; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
-                'Close' +
-            '</button>' +
-        '</div>';
-    
-    overlay.appendChild(dialog);
-    document.body.appendChild(overlay);
-    
-    // Auto-select the URL text
-    const urlInput = dialog.querySelector('input');
-    urlInput.focus();
-    urlInput.select();
-    
-    // Store reference for closing
-    window.currentShareDialog = overlay;
-}
-
-function copyShareUrl(url) {
-    if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(url).then(() => {
-            showNotification('URL copied to clipboard!');
-        }).catch(() => {
-            fallbackCopyToClipboard(url);
-        });
-    } else {
-        fallbackCopyToClipboard(url);
-    }
-}
-
-function fallbackCopyToClipboard(text) {
-    // Fallback method for copying text
-    const textArea = document.createElement('textarea');
-    textArea.value = text;
-    textArea.style.position = 'fixed';
-    textArea.style.left = '-999999px';
-    textArea.style.top = '-999999px';
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    
-    try {
-        document.execCommand('copy');
-        showNotification('URL copied to clipboard!');
-    } catch (err) {
-        showNotification('Unable to copy - please copy manually');
-    }
-    
-    document.body.removeChild(textArea);
-}
-
-function closeShareDialog() {
-    if (window.currentShareDialog) {
-        document.body.removeChild(window.currentShareDialog);
-        window.currentShareDialog = null;
-    }
-}
-
-function loadSharedConfiguration() {
-    // Check URL parameters for shared configuration
-    const urlParams = new URLSearchParams(window.location.search);
-    const encodedConfig = urlParams.get('config');
-    
-    if (encodedConfig) {
-        const decodedConfig = decodeConfiguration(encodedConfig);
-        
-        if (decodedConfig) {
-            // Validate that this is a different configuration than what's currently saved
-            const currentConfigEncoded = encodeConfiguration();
-            
-            if (encodedConfig !== currentConfigEncoded) {
-                // Load the shared configuration
-                Object.assign(storageData, decodedConfig);
-                
-                // Don't save automatically - let user decide
-                hasUnsavedChanges = true;
-                
-                showNotification('📥 Loaded shared configuration! (Not auto-saved)');
-                
-                // Clean up the URL without reloading
-                const cleanUrl = window.location.href.split('?')[0];
-                window.history.replaceState({}, document.title, cleanUrl);
-                
-                return true; // Indicate that a shared config was loaded
-            } else {
-                showNotification('This shared configuration is the same as your current one');
-                
-                // Clean up the URL
-                const cleanUrl = window.location.href.split('?')[0];
-                window.history.replaceState({}, document.title, cleanUrl);
-            }
-        } else {
-            showNotification('⚠️ Invalid shared configuration link');
-            
-            // Clean up the invalid URL parameter
-            const cleanUrl = window.location.href.split('?')[0];
-            window.history.replaceState({}, document.title, cleanUrl);
-        }
-    }
-    
-    return false; // No shared config was loaded
-}
-
-// === END CONFIGURATION SHARING FUNCTIONS ===
+let originalDefaultConfig = null; // Store the original default configuration
 
 function initializeStorage() {
-    // Store the original default configuration for comparison during encoding
-    window.originalDefaultConfig = JSON.parse(JSON.stringify(storageData));
+    // Store the original default configuration for reset functionality
+    originalDefaultConfig = JSON.parse(JSON.stringify(storageData));
     
-    // First, check for shared configuration in URL
-    const sharedConfigLoaded = loadSharedConfiguration();
-    
-    if (!sharedConfigLoaded) {
-        // Load saved configuration if exists (only if no shared config was loaded)
-        const saved = localStorage.getItem('minecraftStorageConfig');
-        if (!saved) {
-            // First time - save initial configuration
-            localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
-            showNotification('Welcome! Configuration auto-saved.');
-        } else {
-            try {
-                const savedData = JSON.parse(saved);
-                
-                // Check if saved configuration is outdated (version check)
-                const savedVersion = savedData.version || 1;
-                const currentVersion = storageData.version || 2;
-                
-                if (savedVersion < currentVersion) {
-                    // Configuration is outdated - reset to new default
-                    localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
-                    showNotification('Updated to new configuration format with 18 sections!');
-                } else {
-                    // Use saved configuration
-                    Object.assign(storageData, savedData);
-                    showNotification('Loaded saved configuration!');
-                }
-            } catch (e) {
+    // Load saved configuration if exists
+    const saved = localStorage.getItem('minecraftStorageConfig');
+    if (!saved) {
+        // First time - save initial configuration
+        localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
+        showNotification('Welcome! Configuration auto-saved.');
+    } else {
+        try {
+            const savedData = JSON.parse(saved);
+            
+            // Check if saved configuration is outdated (version check)
+            const savedVersion = savedData.version || 1;
+            const currentVersion = storageData.version || 2;
+            
+            if (savedVersion < currentVersion) {
+                // Configuration is outdated - reset to new default
                 localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
-                showNotification('Reset to initial configuration.');
+                showNotification('Updated to new configuration format with 18 sections!');
+            } else {
+                // Use saved configuration
+                Object.assign(storageData, savedData);
+                showNotification('Loaded saved configuration!');
             }
+        } catch (e) {
+            localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
+            showNotification('Reset to initial configuration.');
         }
     }
     
@@ -2694,31 +2232,25 @@ function reorderSections(sourceCategoryName, targetCategoryName) {
     const targetIndex = storageData.categories.findIndex(c => c.name === targetCategoryName);
     
     if (sourceIndex !== -1 && targetIndex !== -1 && sourceIndex !== targetIndex) {
-        // Swap the two sections in the array
+        // Swap the positions of source and target categories
         const sourceCategory = storageData.categories[sourceIndex];
         const targetCategory = storageData.categories[targetIndex];
         
-        // Swap their positions in the array
         storageData.categories[sourceIndex] = targetCategory;
         storageData.categories[targetIndex] = sourceCategory;
         
-        // Update ALL order properties to match the new array positions
+        // Update order numbers
         storageData.categories.forEach((cat, index) => {
             cat.order = index;
         });
         
         renderGrid();
-        showNotification('Swapped "' + sourceCategoryName + '" with "' + targetCategoryName + '"');
+        showNotification('Swapped sections: ' + sourceCategoryName + ' ↔ ' + targetCategoryName);
         markAsChanged();
     }
 }
 
 function editSectionName(element) {
-    if (!editMode) {
-        showNotification('Enable Rename Mode first to rename');
-        return;
-    }
-    
     const currentName = element.textContent;
     const input = document.createElement('input');
     input.className = 'edit-input';
@@ -2764,15 +2296,13 @@ function editSectionName(element) {
 }
 
 function editModuleName(element) {
-    if (!editMode) {
-        showNotification('Enable Rename Mode first to rename');
-        return;
-    }
-    
     const moduleDiv = element.closest('.module');
     const moduleNum = parseInt(moduleDiv.dataset.module);
     const categoryName = moduleDiv.dataset.category;
-    const currentName = element.textContent;
+    
+    // Extract only the module name part (everything before the opening parenthesis)
+    const fullText = element.textContent;
+    const currentName = fullText.includes('(') ? fullText.substring(0, fullText.lastIndexOf('(')).trim() : fullText;
     
     const input = document.createElement('input');
     input.className = 'edit-input';
@@ -2788,7 +2318,8 @@ function editModuleName(element) {
             }
         });
         
-        element.textContent = newName;
+        // Rebuild the title with the new name and properly colored count
+        rebuildModuleTitle(element, newName, moduleNum, categoryName);
         input.replaceWith(element);
         
         if (newName !== currentName) {
@@ -2801,7 +2332,7 @@ function editModuleName(element) {
     input.addEventListener('keypress', e => {
         if (e.key === 'Enter') finishEdit();
         if (e.key === 'Escape') {
-            element.textContent = currentName;
+            rebuildModuleTitle(element, currentName, moduleNum, categoryName);
             input.replaceWith(element);
         }
     });
@@ -2811,13 +2342,35 @@ function editModuleName(element) {
     input.select();
 }
 
-function toggleEditMode() {
-    editMode = !editMode;
-    const btn = document.getElementById('editBtn');
-    btn.textContent = editMode ? '🔒 Exit Rename Mode' : '✏️ Rename Modules/Sections';
-    btn.className = editMode ? 'btn btn-danger' : 'btn btn-primary';
-    showNotification(editMode ? 'Rename Mode ON - Click names to rename' : 'Rename Mode OFF');
+function rebuildModuleTitle(titleElement, moduleName, moduleNum, categoryName) {
+    // Count items in this module
+    const moduleItems = storageData.items.filter(item => 
+        item.category === categoryName && item.module === moduleNum
+    );
+    const itemCount = moduleItems.length;
+    
+    // Clear the title element
+    titleElement.innerHTML = '';
+    titleElement.textContent = moduleName;
+    
+    // Create and append the count span with proper color
+    const countSpan = document.createElement('span');
+    countSpan.className = 'item-count';
+    countSpan.textContent = ' (' + itemCount + ')';
+    
+    // Apply color coding based on item count
+    if (itemCount > 54) {
+        countSpan.style.color = '#ff4444'; // Red
+    } else if (itemCount === 54) {
+        countSpan.style.color = '#ffaa00'; // Yellow
+    } else {
+        countSpan.style.color = 'gray'; // Default
+    }
+    
+    titleElement.appendChild(countSpan);
 }
+
+
 
 function saveConfiguration() {
     // Check if there are unsaved changes and show confirmation dialog
@@ -2842,9 +2395,9 @@ function showSaveConfirmationDialog() {
                     'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #4CAF50; color: white; border: none; padding: 8px 8px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
                 'Override' +
             '</button>' +
-            '<button onclick="resetToSaved(); closeSaveDialog()" ' +
+            '<button onclick="resetToDefault(); closeSaveDialog()" ' +
                     'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #ff9800; color: white; border: none; padding: 8px 8px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
-                'Reset to Last Save' +
+                'Reset to Default' +
             '</button>' +
             '<button onclick="closeSaveDialog()" ' +
                     'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #f44336; color: white; border: none; padding: 8px 8px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
@@ -2874,22 +2427,22 @@ function performSave() {
     updateSaveButtonState();
 }
 
-function resetToSaved() {
-    const saved = localStorage.getItem('minecraftStorageConfig');
-    if (saved && confirm('Reset to last saved configuration? Unsaved changes will be lost.')) {
+function resetToDefault() {
+    if (originalDefaultConfig && confirm('Reset to original default configuration? All changes will be lost.')) {
         try {
-            const savedData = JSON.parse(saved);
-            Object.assign(storageData, savedData);
+            // Reset to the original default configuration
+            Object.assign(storageData, JSON.parse(JSON.stringify(originalDefaultConfig)));
             renderGrid();
             updateStats();
-            hasUnsavedChanges = false;
+            hasUnsavedChanges = true; // Mark as changed since we're different from saved config
             updateSaveButtonState();
-            showNotification('Reset to saved configuration!');
+            clearSelection();
+            showNotification('Reset to original default configuration!');
         } catch (e) {
-            showNotification('Error loading saved configuration');
+            showNotification('Error resetting to default configuration');
         }
-    } else if (!saved) {
-        showNotification('No saved configuration found');
+    } else if (!originalDefaultConfig) {
+        showNotification('No default configuration available');
     }
 }
 
@@ -3146,9 +2699,254 @@ function handleItemRightClick(e, itemElement) {
     showContextMenu(e.clientX, e.clientY, targetItemIds);
 }
 
+// Configuration sharing functions
+function encodeConfiguration() {
+    try {
+        // Create a compact representation of the current configuration
+        const config = {
+            v: storageData.version, // version
+            c: [], // categories
+            i: []  // items
+        };
+        
+        // Encode categories with their order and custom names
+        storageData.categories.forEach((category, index) => {
+            const categoryData = {
+                n: category.name, // name
+                o: category.order || index, // order
+                m: category.modules || [] // modules
+            };
+            config.c.push(categoryData);
+        });
+        
+        // Encode items with their positions, colors, and custom module names
+        storageData.items.forEach(item => {
+            const itemData = {
+                id: item.id,
+                c: item.category, // category
+                m: item.module // module
+            };
+            
+            // Only include optional properties if they exist
+            if (item.color) itemData.cl = item.color;
+            if (item.moduleName) itemData.mn = item.moduleName;
+            
+            config.i.push(itemData);
+        });
+        
+        // Convert to JSON and compress
+        const jsonString = JSON.stringify(config);
+        const compressed = LZString.compressToEncodedURIComponent(jsonString);
+        
+        return compressed;
+    } catch (error) {
+        console.error('Error encoding configuration:', error);
+        return null;
+    }
+}
+
+function decodeConfiguration(encodedData) {
+    try {
+        // Decompress the data
+        const jsonString = LZString.decompressFromEncodedURIComponent(encodedData);
+        if (!jsonString) {
+            throw new Error('Failed to decompress data');
+        }
+        
+        const config = JSON.parse(jsonString);
+        
+        // Validate basic structure
+        if (!config.v || !config.c || !config.i) {
+            throw new Error('Invalid configuration format');
+        }
+        
+        // Create new storage data from decoded config
+        const newStorageData = {
+            version: config.v,
+            categories: [],
+            items: []
+        };
+        
+        // Reconstruct categories
+        config.c.forEach(catData => {
+            const category = {
+                name: catData.n,
+                modules: catData.m || [],
+                order: catData.o
+            };
+            newStorageData.categories.push(category);
+        });
+        
+        // Sort categories by order
+        newStorageData.categories.sort((a, b) => (a.order || 0) - (b.order || 0));
+        
+        // Reconstruct items
+        config.i.forEach(itemData => {
+            // Find the original item data by ID to get name and icon
+            const originalItem = originalDefaultConfig.items.find(item => item.id === itemData.id);
+            if (originalItem) {
+                const item = {
+                    id: itemData.id,
+                    name: originalItem.name,
+                    category: itemData.c,
+                    module: itemData.m,
+                    icon: originalItem.icon
+                };
+                
+                // Add optional properties
+                if (itemData.cl) item.color = itemData.cl;
+                if (itemData.mn) item.moduleName = itemData.mn;
+                
+                newStorageData.items.push(item);
+            }
+        });
+        
+        return newStorageData;
+    } catch (error) {
+        console.error('Error decoding configuration:', error);
+        return null;
+    }
+}
+
+function shareConfiguration() {
+    try {
+        const encodedData = encodeConfiguration();
+        if (!encodedData) {
+            showNotification('Error creating shareable link');
+            return;
+        }
+        
+        // Create the shareable URL
+        const baseUrl = window.location.origin + window.location.pathname;
+        const shareUrl = baseUrl + '?config=' + encodedData;
+        
+        // Copy to clipboard
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(shareUrl).then(() => {
+                showNotification('✅ Shareable link copied to clipboard!');
+            }).catch(() => {
+                // Fallback for clipboard API failure
+                showShareDialog(shareUrl);
+            });
+        } else {
+            // Fallback for browsers without clipboard API
+            showShareDialog(shareUrl);
+        }
+        
+        // Also show the URL in console for debugging
+        console.log('Shareable URL:', shareUrl);
+        console.log('Encoded data length:', encodedData.length);
+        
+    } catch (error) {
+        console.error('Error sharing configuration:', error);
+        showNotification('Error creating shareable link');
+    }
+}
+
+function showShareDialog(shareUrl) {
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 2000; display: flex; align-items: center; justify-content: center;';
+    
+    const dialog = document.createElement('div');
+    dialog.style.cssText = 'background: #333; color: white; padding: 20px; border-radius: 8px; max-width: 600px; text-align: center; border: 2px solid #8B4513;';
+    
+    const textArea = document.createElement('textarea');
+    textArea.value = shareUrl;
+    textArea.style.cssText = 'width: 100%; height: 100px; background: #222; color: white; border: 1px solid #555; border-radius: 4px; padding: 8px; font-family: monospace; font-size: 12px; resize: none;';
+    textArea.readOnly = true;
+    
+    dialog.innerHTML = '<h3 style="margin-top: 0; color: #CD853F;">🔗 Shareable Configuration Link</h3>' +
+        '<p>Copy this link to share your configuration:</p>';
+    
+    dialog.appendChild(textArea);
+    
+    const buttonContainer = document.createElement('div');
+    buttonContainer.style.cssText = 'margin-top: 15px;';
+    buttonContainer.innerHTML = 
+        '<button onclick="copyShareUrl(); closeShareDialog()" ' +
+                'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #4CAF50; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
+            'Copy Link' +
+        '</button>' +
+        '<button onclick="closeShareDialog()" ' +
+                'style="font-family: \'macs Extended Minecraft\', Arial, sans-serif; background: #f44336; color: white; border: none; padding: 8px 16px; margin: 0 5px; border-radius: 3px; cursor: pointer;">' +
+            'Close' +
+        '</button>';
+    
+    dialog.appendChild(buttonContainer);
+    overlay.appendChild(dialog);
+    document.body.appendChild(overlay);
+    
+    // Store reference and select text
+    window.currentShareDialog = overlay;
+    window.shareUrlTextArea = textArea;
+    textArea.select();
+    textArea.focus();
+}
+
+function copyShareUrl() {
+    if (window.shareUrlTextArea) {
+        window.shareUrlTextArea.select();
+        try {
+            document.execCommand('copy');
+            showNotification('✅ Link copied to clipboard!');
+        } catch (e) {
+            console.error('Copy failed:', e);
+            showNotification('Please copy the link manually');
+        }
+    }
+}
+
+function closeShareDialog() {
+    if (window.currentShareDialog) {
+        document.body.removeChild(window.currentShareDialog);
+        window.currentShareDialog = null;
+        window.shareUrlTextArea = null;
+    }
+}
+
+function loadConfigurationFromUrl() {
+    try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const configParam = urlParams.get('config');
+        
+        if (configParam) {
+            const decodedConfig = decodeConfiguration(configParam);
+            if (decodedConfig) {
+                // Replace current configuration with decoded one
+                Object.assign(storageData, decodedConfig);
+                renderGrid();
+                updateStats();
+                clearSelection();
+                hasUnsavedChanges = true; // Mark as changed since it's different from saved config
+                updateSaveButtonState();
+                showNotification('🔗 Loaded shared configuration!');
+                
+                // Remove config parameter from URL without refreshing page
+                const newUrl = window.location.origin + window.location.pathname;
+                window.history.replaceState({}, document.title, newUrl);
+                
+                return true;
+            } else {
+                showNotification('❌ Invalid shared configuration link');
+                return false;
+            }
+        }
+        return false;
+    } catch (error) {
+        console.error('Error loading configuration from URL:', error);
+        showNotification('❌ Error loading shared configuration');
+        return false;
+    }
+}
+
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
     initializeStorage();
+    
+    // Check for shared configuration in URL
+    if (!loadConfigurationFromUrl()) {
+        // Only proceed with normal initialization if no shared config was loaded
+    }
     
     // Set up context menu event listeners after DOM is ready
     setupContextMenuEventListeners();

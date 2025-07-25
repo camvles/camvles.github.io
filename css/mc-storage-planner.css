@@ -243,7 +243,7 @@ body {
 
 .item:hover { 
     background: rgba(255,255,255,0.2); 
-    border-color: #8B4513; 
+    border-color: #d0d0d0; 
 }
 
 .item:active { 
@@ -283,9 +283,10 @@ body {
 }
 
 .item.selected { 
-    background: rgba(205,133,63,0.3) !important; 
-    border-color: #CD853F !important; 
-    box-shadow: 0 0 3px rgba(205,133,63,0.6); 
+    border: 1px solid #c8c8c8 !important; 
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8), inset 0 0 8px rgba(207, 207, 207, 0.3) !important; 
+    outline: 2px solid #c8c8c8 !important;
+    outline-offset: -1px !important;
 }
 
 .item.selected.dragging { 
@@ -391,49 +392,30 @@ body {
 
 /* Item Color Overlays - Higher specificity to override other styles */
 .item.color-green,
-.item.color-green:hover,
-.item.color-green.selected {
+.item.color-green:hover {
     background: rgba(76, 175, 80, 0.6) !important;
     border-color: #4CAF50 !important;
 }
 
 .item.color-red,
-.item.color-red:hover,
-.item.color-red.selected {
+.item.color-red:hover {
     background: rgba(244, 67, 54, 0.6) !important;
     border-color: #f44336 !important;
 }
 
 .item.color-yellow,
-.item.color-yellow:hover,
-.item.color-yellow.selected {
+.item.color-yellow:hover {
     background: rgba(255, 193, 7, 0.6) !important;
     border-color: #FFC107 !important;
 }
 
 .item.color-blue,
-.item.color-blue:hover,
-.item.color-blue.selected {
+.item.color-blue:hover {
     background: rgba(33, 150, 243, 0.6) !important;
     border-color: #2196F3 !important;
 }
 
-/* Ensure colored items maintain their color even when selected */
-.item.color-green.selected {
-    box-shadow: 0 0 3px rgba(76, 175, 80, 0.8) !important;
-}
-
-.item.color-red.selected {
-    box-shadow: 0 0 3px rgba(244, 67, 54, 0.8) !important;
-}
-
-.item.color-yellow.selected {
-    box-shadow: 0 0 3px rgba(255, 193, 7, 0.8) !important;
-}
-
-.item.color-blue.selected {
-    box-shadow: 0 0 3px rgba(33, 150, 243, 0.8) !important;
-}
+/* Colored items use the same selection indicator as regular items */
 
 /* Context Menu Color Items */
 .context-menu-item.color-green {
