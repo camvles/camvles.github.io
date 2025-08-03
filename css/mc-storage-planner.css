@@ -84,8 +84,25 @@ body {
     color: white;
 }
 
+.btn-undo {
+    font-family: 'macs Extended Minecraft', Arial, sans-serif;
+    background: #607D8B;
+    color: white;
+}
+
+.btn-redo {
+    font-family: 'macs Extended Minecraft', Arial, sans-serif;
+    background: #546E7A;
+    color: white;
+}
+
 .btn:hover { 
     opacity: 0.8; 
+}
+
+.btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
 }
 
 .search-box {

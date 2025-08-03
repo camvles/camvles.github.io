@@ -1,5 +1,5 @@
 ﻿const storageData = {
-    version: 11,
+    version: 12,
     items: [
         {id: 'acacia_planks', name: 'acacia planks', category: 'Placable Wood Blocks and Items', module: 7, icon: 'assets/mc-invicons/acacia_planks.png'},
         {id: 'acacia_log', name: 'acacia log', category: 'Placable Wood Blocks and Items', module: 7, icon: 'assets/mc-invicons/acacia_log.png'},
@@ -1115,6 +1115,12 @@ let contextMenuVisible = false; // Track context menu state
 let contextMenuTargetItems = []; // Track items that triggered the context menu
 let originalDefaultConfig = null; // Store the original default configuration
 
+// Undo/Redo system
+let actionHistory = []; // Stack of previous states
+let historyIndex = -1; // Current position in history (-1 means no history)
+let maxHistorySize = 50; // Maximum number of actions to remember
+let isPerformingUndoRedo = false; // Flag to prevent recording during undo/redo operations
+
 function initializeStorage() {
     // Store the original default configuration for reset functionality
     originalDefaultConfig = JSON.parse(JSON.stringify(storageData));
@@ -1122,7 +1128,8 @@ function initializeStorage() {
     // Load saved configuration if exists
     const saved = localStorage.getItem('minecraftStorageConfig');
     if (!saved) {
-        // First time - save initial configuration
+        // First time - ensure section names are unique before saving
+        ensureAllSectionNamesUnique();
         localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
         showNotification('Welcome! Configuration auto-saved.');
     } else {
@@ -1135,14 +1142,17 @@ function initializeStorage() {
             
             if (savedVersion < currentVersion) {
                 // Configuration is outdated - reset to new default
+                ensureAllSectionNamesUnique();
                 localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
                 showNotification('Updated to new configuration format with 18 sections!');
             } else {
-                // Use saved configuration
+                // Use saved configuration and ensure names are unique
                 Object.assign(storageData, savedData);
+                ensureAllSectionNamesUnique();
                 showNotification('Loaded saved configuration!');
             }
         } catch (e) {
+            ensureAllSectionNamesUnique();
             localStorage.setItem('minecraftStorageConfig', JSON.stringify(storageData));
             showNotification('Reset to initial configuration.');
         }
@@ -1153,6 +1163,10 @@ function initializeStorage() {
     renderGrid();
     updateStats();
     updateSaveButtonState();
+    
+    // Initialize undo/redo system
+    clearHistory();
+    updateUndoRedoButtons();
 }
 
 function renderGrid() {
@@ -1416,9 +1430,23 @@ function setupModuleDragAndDrop(moduleDiv) {
                 const itemIds = JSON.parse(dataText);
                 const movedItems = [];
                 
+                // Save state before moving items
+                const itemNames = itemIds.map(id => {
+                    const item = storageData.items.find(i => i.id === id);
+                    return item ? item.name : 'Unknown item';
+                });
+                const description = itemIds.length === 1 ? 
+                    'Move ' + itemNames[0] + ' to ' + targetCategory + ' Module ' + targetModule :
+                    'Move ' + itemIds.length + ' items to ' + targetCategory + ' Module ' + targetModule;
+                saveStateToHistory(description);
+                
                 itemIds.forEach(itemId => {
                     const item = storageData.items.find(i => i.id === itemId);
                     if (item) {
+                        // Clear module name if moving to a different module or category
+                        if (item.module !== targetModule || item.category !== targetCategory) {
+                            delete item.moduleName;
+                        }
                         item.module = targetModule;
                         item.category = targetCategory;
                         movedItems.push(item.name);
@@ -1440,6 +1468,13 @@ function setupModuleDragAndDrop(moduleDiv) {
                 // Fallback for old single-item format
                 const item = storageData.items.find(i => i.id === dataText);
                 if (item) {
+                    // Save state before moving item
+                    saveStateToHistory('Move ' + item.name + ' to ' + targetCategory + ' Module ' + targetModule);
+                    
+                    // Clear module name if moving to a different module or category
+                    if (item.module !== targetModule || item.category !== targetCategory) {
+                        delete item.moduleName;
+                    }
                     item.module = targetModule;
                     item.category = targetCategory;
                     renderGrid();
@@ -1566,6 +1601,9 @@ function moveModuleToSection(moduleNum, sourceCategory, targetCategory, specific
     
     if (moduleItems.length === 0) return;
     
+    // Save state before moving module
+    saveStateToHistory('Move module from ' + sourceCategory + ' to ' + targetCategory);
+    
     const targetCategoryData = storageData.categories.find(c => c.name === targetCategory);
     const sourceCategoryData = storageData.categories.find(c => c.name === sourceCategory);
     
@@ -1588,12 +1626,16 @@ function moveModuleToSection(moduleNum, sourceCategory, targetCategory, specific
         moduleItems.forEach(item => {
             item.category = targetCategory;
             item.module = targetModuleNum;
+            // Clear module name when moving to a different module
+            delete item.moduleName;
         });
         
         // Move target module items to source
         targetModuleItems.forEach(item => {
             item.category = sourceCategory;
             item.module = moduleNum;
+            // Clear module name when moving to a different module
+            delete item.moduleName;
         });
         
         showNotification('Swapped Module ' + moduleNum + ' (' + sourceCategory + ') with Module ' + targetModuleNum + ' (' + targetCategory + ')');
@@ -1606,6 +1648,8 @@ function moveModuleToSection(moduleNum, sourceCategory, targetCategory, specific
         moduleItems.forEach(item => {
             item.category = targetCategory;
             item.module = nextModuleNum;
+            // Clear module name when moving to a different module
+            delete item.moduleName;
         });
         
         // Update category modules
@@ -1623,6 +1667,9 @@ function moveModuleToSection(moduleNum, sourceCategory, targetCategory, specific
 function swapModulesWithinSection(sourceModuleNum, targetModuleNum, categoryName) {
     if (sourceModuleNum === targetModuleNum) return;
     
+    // Save state before swapping modules
+    saveStateToHistory('Swap modules ' + sourceModuleNum + ' and ' + targetModuleNum + ' in ' + categoryName);
+    
     const sourceItems = storageData.items.filter(item => 
         item.category === categoryName && item.module === sourceModuleNum
     );
@@ -1631,13 +1678,27 @@ function swapModulesWithinSection(sourceModuleNum, targetModuleNum, categoryName
         item.category === categoryName && item.module === targetModuleNum
     );
     
-    // Swap the module numbers
+    // Get the module names before swapping
+    const sourceModuleName = sourceItems.length > 0 ? sourceItems[0].moduleName : undefined;
+    const targetModuleName = targetItems.length > 0 ? targetItems[0].moduleName : undefined;
+    
+    // Swap the module numbers and names
     sourceItems.forEach(item => {
         item.module = targetModuleNum;
+        if (targetModuleName !== undefined) {
+            item.moduleName = targetModuleName;
+        } else {
+            delete item.moduleName;
+        }
     });
     
     targetItems.forEach(item => {
         item.module = sourceModuleNum;
+        if (sourceModuleName !== undefined) {
+            item.moduleName = sourceModuleName;
+        } else {
+            delete item.moduleName;
+        }
     });
     
     renderGrid();
@@ -1830,6 +1891,8 @@ function reorderSections(sourceCategoryName, targetCategoryName) {
     const targetIndex = storageData.categories.findIndex(c => c.name === targetCategoryName);
     
     if (sourceIndex !== -1 && targetIndex !== -1 && sourceIndex !== targetIndex) {
+        // Save state before reordering sections
+        saveStateToHistory('Swap sections ' + sourceCategoryName + ' and ' + targetCategoryName);
         // Swap the positions of source and target categories
         const sourceCategory = storageData.categories[sourceIndex];
         const targetCategory = storageData.categories[targetIndex];
@@ -1848,6 +1911,70 @@ function reorderSections(sourceCategoryName, targetCategoryName) {
     }
 }
 
+function ensureUniqueSectionName(proposedName, currentName) {
+    // If the proposed name is the same as current name, it's always valid
+    if (proposedName === currentName) {
+        return proposedName;
+    }
+    
+    // Check if the proposed name already exists in other sections
+    const existingNames = storageData.categories
+        .filter(c => c.name !== currentName)  // Exclude the current section being renamed
+        .map(c => c.name);
+    
+    if (!existingNames.includes(proposedName)) {
+        return proposedName;  // Name is unique, use as-is
+    }
+    
+    // Name conflicts, find a unique variant with (1), (2), etc.
+    let counter = 1;
+    let uniqueName;
+    
+    do {
+        uniqueName = proposedName + ' (' + counter + ')';
+        counter++;
+    } while (existingNames.includes(uniqueName));
+    
+    return uniqueName;
+}
+
+function ensureAllSectionNamesUnique() {
+    const usedNames = new Set();
+    let duplicatesFixed = 0;
+    
+    storageData.categories.forEach(category => {
+        let originalName = category.name;
+        let uniqueName = originalName;
+        let counter = 1;
+        
+        // If this name is already used, find a unique variant
+        while (usedNames.has(uniqueName)) {
+            uniqueName = originalName + ' (' + counter + ')';
+            counter++;
+        }
+        
+        // If we had to change the name, update the category and all its items
+        if (uniqueName !== originalName) {
+            category.name = uniqueName;
+            
+            // Update all items that belong to this category
+            storageData.items.forEach(item => {
+                if (item.category === originalName) {
+                    item.category = uniqueName;
+                }
+            });
+            
+            duplicatesFixed++;
+        }
+        
+        usedNames.add(uniqueName);
+    });
+    
+    if (duplicatesFixed > 0) {
+        console.log('Fixed ' + duplicatesFixed + ' duplicate section names during initialization');
+    }
+}
+
 function editSectionName(element) {
     const currentName = element.textContent;
     const input = document.createElement('input');
@@ -1855,7 +1982,15 @@ function editSectionName(element) {
     input.value = currentName;
     
     function finishEdit() {
-        const newName = input.value.trim() || currentName;
+        let newName = input.value.trim() || currentName;
+        
+        // Ensure unique section name
+        newName = ensureUniqueSectionName(newName, currentName);
+        
+        // Save state before renaming (only if name actually changed)
+        if (newName !== currentName) {
+            saveStateToHistory('Rename section from "' + currentName + '" to "' + newName + '"');
+        }
         
         const category = storageData.categories.find(c => c.name === currentName);
         if (category) {
@@ -1873,7 +2008,12 @@ function editSectionName(element) {
         input.replaceWith(element);
         
         if (newName !== currentName) {
-            showNotification('Renamed section to: ' + newName);
+            const originalInput = input.value.trim() || currentName;
+            if (newName !== originalInput) {
+                showNotification('Renamed section to: ' + newName + ' (made unique)');
+            } else {
+                showNotification('Renamed section to: ' + newName);
+            }
             renderGrid();
             markAsChanged();
         }
@@ -1908,6 +2048,11 @@ function editModuleName(element) {
     
     function finishEdit() {
         const newName = input.value.trim() || currentName;
+        
+        // Save state before renaming (only if name actually changed)
+        if (newName !== currentName) {
+            saveStateToHistory('Rename module from "' + currentName + '" to "' + newName + '" in ' + categoryName);
+        }
         
         // Update module name for all items in this module
         storageData.items.forEach(item => {
@@ -2035,6 +2180,11 @@ function resetToDefault() {
             hasUnsavedChanges = true; // Mark as changed since we're different from saved config
             updateSaveButtonState();
             clearSelection();
+            
+            // Clear undo/redo history after reset
+            clearHistory();
+            updateUndoRedoButtons();
+            
             showNotification('Reset to original default configuration!');
         } catch (e) {
             showNotification('Error resetting to default configuration');
@@ -2102,6 +2252,136 @@ function markAsChanged() {
     hasUnsavedChanges = true;
     updateSaveButtonState();
 }
+
+// === UNDO/REDO SYSTEM ===
+
+function saveStateToHistory(actionDescription) {
+    // Don't record history during undo/redo operations
+    if (isPerformingUndoRedo) return;
+    
+    // Create a deep copy of the current state
+    const currentState = {
+        categories: JSON.parse(JSON.stringify(storageData.categories)),
+        items: JSON.parse(JSON.stringify(storageData.items)),
+        version: storageData.version,
+        actionDescription: actionDescription,
+        timestamp: Date.now()
+    };
+    
+    // If we're not at the end of history, remove everything after current position
+    if (historyIndex < actionHistory.length - 1) {
+        actionHistory = actionHistory.slice(0, historyIndex + 1);
+    }
+    
+    // Add the new state
+    actionHistory.push(currentState);
+    historyIndex = actionHistory.length - 1;
+    
+    // Limit history size
+    if (actionHistory.length > maxHistorySize) {
+        actionHistory = actionHistory.slice(-maxHistorySize);
+        historyIndex = actionHistory.length - 1;
+    }
+    
+    updateUndoRedoButtons();
+    console.log('Saved state to history:', actionDescription, 'History index:', historyIndex);
+}
+
+function performUndo() {
+    if (historyIndex <= 0) {
+        showNotification('Nothing to undo');
+        return;
+    }
+    
+    console.log('Performing undo, current historyIndex:', historyIndex);
+    
+    // If this is the first undo, save current state first
+    if (historyIndex === actionHistory.length - 1) {
+        const currentState = {
+            categories: JSON.parse(JSON.stringify(storageData.categories)),
+            items: JSON.parse(JSON.stringify(storageData.items)),
+            version: storageData.version,
+            actionDescription: 'Current state before undo',
+            timestamp: Date.now()
+        };
+        actionHistory.push(currentState);
+    }
+    
+    // Move to previous state
+    historyIndex--;
+    const stateToRestore = actionHistory[historyIndex];
+    
+    // Restore the state
+    isPerformingUndoRedo = true;
+    storageData.categories = JSON.parse(JSON.stringify(stateToRestore.categories));
+    storageData.items = JSON.parse(JSON.stringify(stateToRestore.items));
+    storageData.version = stateToRestore.version;
+    
+    // Re-render and update UI
+    renderGrid();
+    updateStats();
+    clearSelection();
+    markAsChanged();
+    isPerformingUndoRedo = false;
+    
+    updateUndoRedoButtons();
+    showNotification('Undid: ' + (stateToRestore.actionDescription || 'Unknown action'));
+    console.log('Undo completed, new historyIndex:', historyIndex);
+}
+
+function performRedo() {
+    if (historyIndex >= actionHistory.length - 1) {
+        showNotification('Nothing to redo');
+        return;
+    }
+    
+    console.log('Performing redo, current historyIndex:', historyIndex);
+    
+    // Move to next state
+    historyIndex++;
+    const stateToRestore = actionHistory[historyIndex];
+    
+    // Restore the state
+    isPerformingUndoRedo = true;
+    storageData.categories = JSON.parse(JSON.stringify(stateToRestore.categories));
+    storageData.items = JSON.parse(JSON.stringify(stateToRestore.items));
+    storageData.version = stateToRestore.version;
+    
+    // Re-render and update UI
+    renderGrid();
+    updateStats();
+    clearSelection();
+    markAsChanged();
+    isPerformingUndoRedo = false;
+    
+    updateUndoRedoButtons();
+    showNotification('Redid: ' + (stateToRestore.actionDescription || 'Unknown action'));
+    console.log('Redo completed, new historyIndex:', historyIndex);
+}
+
+function updateUndoRedoButtons() {
+    const undoBtn = document.getElementById('undoBtn');
+    const redoBtn = document.getElementById('redoBtn');
+    
+    if (undoBtn) {
+        undoBtn.disabled = historyIndex <= 0;
+        undoBtn.title = historyIndex > 0 ? 'Undo: ' + (actionHistory[historyIndex - 1]?.actionDescription || 'Unknown action') : 'Nothing to undo';
+    }
+    
+    if (redoBtn) {
+        redoBtn.disabled = historyIndex >= actionHistory.length - 1;
+        redoBtn.title = historyIndex < actionHistory.length - 1 ? 'Redo: ' + (actionHistory[historyIndex + 1]?.actionDescription || 'Unknown action') : 'Nothing to redo';
+    }
+}
+
+function clearHistory() {
+    actionHistory = [];
+    historyIndex = -1;
+    updateUndoRedoButtons();
+    console.log('History cleared');
+}
+
+// === END UNDO/REDO SYSTEM ===
 
 function updateSaveButtonState() {
     const saveBtn = document.querySelector('.btn-success');
@@ -2235,6 +2515,16 @@ function configureContextMenu(currentColor) {
 function applyColorToItems(itemIds, color) {
     let changedCount = 0;
     const updatedItems = [];
+    
+    // Save state before applying colors
+    const itemNames = itemIds.map(id => {
+        const item = storageData.items.find(i => i.id === id);
+        return item ? item.name : 'Unknown item';
+    });
+    const description = color === 'reset' ? 
+        (itemIds.length === 1 ? 'Reset color for ' + itemNames[0] : 'Reset color for ' + itemIds.length + ' items') :
+        (itemIds.length === 1 ? 'Apply ' + color + ' color to ' + itemNames[0] : 'Apply ' + color + ' color to ' + itemIds.length + ' items');
+    saveStateToHistory(description);
     
     itemIds.forEach(itemId => {
         const item = storageData.items.find(i => i.id === itemId);
@@ -2533,6 +2823,24 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+// Keyboard shortcuts for undo/redo
+document.addEventListener('keydown', function(e) {
+    // Check for Ctrl+Z (or Cmd+Z on Mac)
+    if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) {
+        e.preventDefault();
+        performUndo();
+        return;
+    }
+    
+    // Check for Ctrl+Y (or Cmd+Y on Mac) or Ctrl+Shift+Z for redo
+    if (((e.ctrlKey || e.metaKey) && e.key === 'y') || 
+        ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'z')) {
+        e.preventDefault();
+        performRedo();
+        return;
+    }
+});
+
 // Binary compression utilities
 function stringToBytes(str) {
     const bytes = new Uint8Array(str.length);
@@ -2760,12 +3068,19 @@ function importConfigFromFile(fileData, fileName) {
         storageData.categories = configData.categories;
         storageData.items = configData.items;
         
+        // Ensure section names are unique in the imported configuration
+        ensureAllSectionNamesUnique();
+        
         // Re-render everything
         renderGrid();
         updateStats();
         clearSelection();
         hasUnsavedChanges = true;
         updateSaveButtonState();
+        
+        // Clear undo/redo history after import
+        clearHistory();
+        updateUndoRedoButtons();
         
         showNotification('Configuration imported successfully!');
         

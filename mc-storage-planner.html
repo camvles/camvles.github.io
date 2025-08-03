@@ -9,6 +9,8 @@
 <body>
     <div class="header">
         <div class="controls">
+            <button class="btn btn-undo" id="undoBtn" onclick="performUndo()" disabled>↶ Undo</button>
+            <button class="btn btn-redo" id="redoBtn" onclick="performRedo()" disabled>↷ Redo</button>
             <button class="btn btn-success" onclick="saveConfiguration()">💾 Save Current Configuration</button>
             <button class="btn btn-primary" onclick="resetToDefault()">🔄 Reset to Default Configuration</button>
             <button class="btn btn-file" onclick="exportConfigFile()">📁 Export Configuration</button>
