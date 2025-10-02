@@ -56,15 +56,19 @@ async function discoverProjects() {
         // Try to discover projects by attempting to fetch content.json files
         // We'll try a range of project numbers to find all existing projects
         // Any folder starting with 'project-' in the projects directory will be detected
-        const maxProjects = 20; // Reasonable upper limit
+        const maxProjects = 2; // Start with fewer projects to debug
         const projectPromises = [];
         
         // Create promises for all potential project folders
         for (let i = 1; i <= maxProjects; i++) {
             const projectId = `project-${i}`;
+            const url = `portfolio/projects/${projectId}/content.json?t=${Date.now()}`;
+            console.log(`Attempting to fetch: ${url}`);
+            
             projectPromises.push(
-                fetch(`portfolio/projects/${projectId}/content.json`)
+                fetch(url)
                     .then(response => {
+                        console.log(`Response for ${projectId}: ${response.status}`);
                         if (response.ok) {
                             return response.json().then(projectData => ({
                                 id: projectId,
@@ -74,7 +78,10 @@ async function discoverProjects() {
                         }
                         return null;
                     })
-                    .catch(() => null) // Project doesn't exist, return null
+                    .catch(error => {
+                        console.log(`Error fetching ${projectId}:`, error);
+                        return null;
+                    })
             );
         }
         
@@ -108,7 +115,9 @@ async function discoverProjects() {
 
 async function loadProject(projectId) {
     try {
-        const response = await fetch(`portfolio/projects/${projectId}/content.json`);
+        const url = `portfolio/projects/${projectId}/content.json?t=${Date.now()}`;
+        console.log(`Loading project: ${url}`);
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`Failed to load project: ${response.status}`);
         }
