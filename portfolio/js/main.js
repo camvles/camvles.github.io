@@ -2,6 +2,7 @@
 
 let currentProject = null;
 let currentThumbnail = null;
+let availableProjects = [];
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize portfolio functionality
@@ -10,8 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function initializePortfolio() {
     try {
-        // Load the default project
-        await loadProject('project-1');
+        // Discover available projects first
+        await discoverProjects();
+        
+        // Load the first available project
+        if (availableProjects.length > 0) {
+            await loadProject(availableProjects[0].id);
+        }
         
         // Get all thumbnail buttons
         const thumbnailButtons = document.querySelectorAll('.thumbnail-btn');
@@ -43,9 +49,66 @@ async function initializePortfolio() {
     }
 }
 
+async function discoverProjects() {
+    try {
+        availableProjects = [];
+        
+        // Try to discover projects by attempting to fetch content.json files
+        // We'll try a range of project numbers to find all existing projects
+        // Any folder starting with 'project-' in the projects directory will be detected
+        const maxProjects = 20; // Reasonable upper limit
+        const projectPromises = [];
+        
+        // Create promises for all potential project folders
+        for (let i = 1; i <= maxProjects; i++) {
+            const projectId = `project-${i}`;
+            projectPromises.push(
+                fetch(`portfolio/projects/${projectId}/content.json`)
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json().then(projectData => ({
+                                id: projectId,
+                                title: projectData.title,
+                                order: projectData.order || 999
+                            }));
+                        }
+                        return null;
+                    })
+                    .catch(() => null) // Project doesn't exist, return null
+            );
+        }
+        
+        // Wait for all promises to resolve
+        const results = await Promise.all(projectPromises);
+        
+        // Filter out null results (non-existent projects)
+        availableProjects = results.filter(project => project !== null);
+        
+        // Sort projects by order (lower order numbers first)
+        availableProjects.sort((a, b) => a.order - b.order);
+        
+        console.log('Discovered projects:', availableProjects.map(p => `${p.id}: ${p.title}`).join(', '));
+        
+        // If no projects found, show error
+        if (availableProjects.length === 0) {
+            console.error('No projects found! Please ensure project folders starting with "project-" exist with content.json files.');
+            availableProjects = [
+                { id: 'project-1', title: 'No Projects Found', order: 1 }
+            ];
+        }
+    } catch (error) {
+        console.error('Error discovering projects:', error);
+        // Fallback to default projects if discovery fails
+        availableProjects = [
+            { id: 'project-1', title: 'Project 1', order: 1 },
+            { id: 'project-2', title: 'Project 2', order: 2 }
+        ];
+    }
+}
+
 async function loadProject(projectId) {
     try {
-        const response = await fetch(`portfolio/projects/${projectId}/config.json`);
+        const response = await fetch(`portfolio/projects/${projectId}/content.json`);
         if (!response.ok) {
             throw new Error(`Failed to load project: ${response.status}`);
         }
@@ -66,34 +129,21 @@ function updateProjectDisplay() {
         projectTitle.textContent = currentProject.title;
     }
     
-    // Update project switcher button labels
-    updateProjectSwitcherLabels();
-    
     // Update tags
     updateProjectTags();
     
-    // Update main display image
-    updateMainDisplayImage();
+    // Set initial display media (will be handled by first thumbnail click)
     
     // Update thumbnails
     updateThumbnails();
     
-    // Set initial thumbnail content
-    const firstThumbnail = document.querySelector('.thumbnail-btn[data-name="thumbnail-cover"]');
-    if (firstThumbnail) {
-        handleThumbnailClick(firstThumbnail, document.querySelectorAll('.thumbnail-btn'), document.querySelector('.displayed-media img'));
+    // Set initial thumbnail content (cover thumbnail will be activated)
+    const coverThumbnail = document.querySelector('.thumbnail-btn[data-name="thumbnail-cover"]');
+    if (coverThumbnail) {
+        handleThumbnailClick(coverThumbnail, document.querySelectorAll('.thumbnail-btn'), document.querySelector('.displayed-media img'));
     }
 }
 
-function updateProjectSwitcherLabels() {
-    const projectButtons = document.querySelectorAll('.project-btn');
-    projectButtons.forEach(button => {
-        const projectId = button.getAttribute('data-project');
-        if (projectId === currentProject.projectId) {
-            button.textContent = currentProject.title;
-        }
-    });
-}
 
 function updateProjectTags() {
     const tagsContainer = document.querySelector('.tags');
@@ -101,40 +151,92 @@ function updateProjectTags() {
     
     tagsContainer.innerHTML = '';
     
-    currentProject.tags.forEach(tag => {
+    currentProject.tags.forEach(tagId => {
         const tagElement = document.createElement('div');
-        tagElement.className = 'tag';
-        tagElement.innerHTML = `<span class="tag-text">${tag}</span>`;
+        
+        // Get tag configuration from centralized config
+        const tagConfig = getTagConfig(tagId);
+        
+        // Apply CSS class and display text from config
+        tagElement.className = `tag ${tagId}`;
+        
+        // Apply inline styles for colors
+        tagElement.style.backgroundColor = tagConfig.backgroundColor;
+        
+        const tagTextElement = document.createElement('span');
+        tagTextElement.className = 'tag-text';
+        tagTextElement.textContent = tagConfig.displayText;
+        tagTextElement.style.color = tagConfig.textColor;
+        
+        tagElement.appendChild(tagTextElement);
         tagsContainer.appendChild(tagElement);
     });
 }
 
-function updateMainDisplayImage() {
+function updateDisplayedMedia(thumbnailData) {
     const displayedMedia = document.querySelector('.displayed-media img');
-    if (displayedMedia && currentProject.mainDisplay) {
-        displayedMedia.src = `portfolio/projects/${currentProject.projectId}/assets/${currentProject.mainDisplay.image}`;
-        displayedMedia.alt = currentProject.mainDisplay.altText || 'Project main display';
+    if (displayedMedia && thumbnailData && thumbnailData.displayedMedia) {
+        // Add a subtle transition effect
+        displayedMedia.style.transition = 'opacity 0.3s ease';
+        displayedMedia.style.opacity = '0.7';
+        
+        setTimeout(() => {
+            displayedMedia.src = `portfolio/projects/${currentProject.projectId}/assets/${thumbnailData.displayedMedia.image}`;
+            displayedMedia.alt = thumbnailData.displayedMedia.altText || 'Project display';
+            displayedMedia.style.opacity = '1';
+        }, 150);
     }
 }
 
 function updateThumbnails() {
-    if (!currentProject.thumbnails) return;
+    if (!currentProject) return;
     
-    currentProject.thumbnails.forEach((thumbnail, index) => {
-        const thumbnailButton = document.querySelector(`.thumbnail-btn[data-name="thumbnail-${thumbnail.id}"]`);
-        if (thumbnailButton) {
-            const thumbnailImage = thumbnailButton.querySelector('.thumbnail-image img');
+    // Update cover thumbnail
+    if (currentProject.cover) {
+        const coverButton = document.querySelector('.thumbnail-btn[data-name="thumbnail-cover"]');
+        if (coverButton) {
+            const thumbnailImage = coverButton.querySelector('.thumbnail-image img');
+            const thumbnailText = coverButton.querySelector('.thumbnail-text');
+            
             if (thumbnailImage) {
-                thumbnailImage.src = `portfolio/projects/${currentProject.projectId}/assets/${thumbnail.image}`;
-                thumbnailImage.alt = thumbnail.name;
+                thumbnailImage.src = `portfolio/projects/${currentProject.projectId}/assets/${currentProject.cover.thumbnailImage}`;
+                thumbnailImage.alt = currentProject.cover.thumbnailLabel;
             }
             
-            const thumbnailText = thumbnailButton.querySelector('.thumbnail-text');
             if (thumbnailText) {
-                thumbnailText.textContent = thumbnail.name;
+                thumbnailText.textContent = currentProject.cover.thumbnailLabel;
             }
         }
-    });
+    }
+    
+    // Update detail thumbnails
+    if (currentProject.details && currentProject.details.length > 0) {
+        currentProject.details.forEach((detail, index) => {
+            const detailButton = document.querySelector(`.thumbnail-btn[data-name="thumbnail-detail${index + 1}"]`);
+            if (detailButton) {
+                const thumbnailImage = detailButton.querySelector('.thumbnail-image img');
+                const thumbnailText = detailButton.querySelector('.thumbnail-text');
+                
+                if (thumbnailImage) {
+                    thumbnailImage.src = `portfolio/projects/${currentProject.projectId}/assets/${detail.thumbnailImage}`;
+                    thumbnailImage.alt = detail.thumbnailLabel;
+                }
+                
+                if (thumbnailText) {
+                    thumbnailText.textContent = detail.thumbnailLabel;
+                }
+            }
+        });
+    }
+    
+    // Hide unused detail thumbnails
+    for (let i = 1; i <= 3; i++) {
+        const detailButton = document.querySelector(`.thumbnail-btn[data-name="thumbnail-detail${i}"]`);
+        if (detailButton) {
+            const hasDetail = currentProject.details && currentProject.details.length >= i;
+            detailButton.style.display = hasDetail ? 'block' : 'none';
+        }
+    }
 }
 
 function handleThumbnailClick(clickedButton, allButtons, displayedMedia) {
@@ -154,7 +256,7 @@ function handleThumbnailClick(clickedButton, allButtons, displayedMedia) {
         }
     });
     
-    // Add active class to clicked thumbnail
+    // Add active class to clicked thumbnail (this will apply the elevated styling)
     clickedButton.classList.add('active');
     const activeOverlay = clickedButton.querySelector('.thumbnail-overlay');
     const activeText = clickedButton.querySelector('.thumbnail-text');
@@ -169,7 +271,17 @@ function handleThumbnailClick(clickedButton, allButtons, displayedMedia) {
     }
     
     // Update displayed media based on clicked thumbnail
-    updateDisplayedMedia(clickedButton, displayedMedia);
+    const thumbnailName = clickedButton.getAttribute('data-name');
+    let thumbnailData = null;
+    
+    if (thumbnailName === 'thumbnail-cover') {
+        thumbnailData = currentProject.cover;
+    } else if (thumbnailName.startsWith('thumbnail-detail')) {
+        const detailIndex = parseInt(thumbnailName.replace('thumbnail-detail', '')) - 1;
+        thumbnailData = currentProject.details && currentProject.details[detailIndex];
+    }
+    
+    updateDisplayedMedia(thumbnailData);
     
     // Update info content based on clicked thumbnail
     updateInfoContent(clickedButton);
@@ -194,47 +306,32 @@ function handleThumbnailHover(button, isHovering) {
     }
 }
 
-function updateDisplayedMedia(activeButton, displayedMedia) {
-    // Get the image source from the active thumbnail
-    const thumbnailImage = activeButton.querySelector('.thumbnail-image img');
-    
-    if (thumbnailImage && displayedMedia) {
-        // In a real implementation, you would have different images for each thumbnail
-        // For now, we'll use the same placeholder but you can extend this
-        const imageSrc = thumbnailImage.src;
-        displayedMedia.src = imageSrc;
-        
-        // Add a subtle transition effect
-        displayedMedia.style.transition = 'opacity 0.3s ease';
-        displayedMedia.style.opacity = '0.7';
-        
-        setTimeout(() => {
-            displayedMedia.style.opacity = '1';
-        }, 150);
-    }
-}
 
 function updateInfoContent(activeButton) {
     // Get the thumbnail name to determine which content to show
     const thumbnailName = activeButton.getAttribute('data-name');
-    const thumbnailId = thumbnailName.replace('thumbnail-', '');
+    let thumbnailData = null;
     
-    // Find the thumbnail data from current project
-    const thumbnailData = currentProject?.thumbnails?.find(t => t.id === thumbnailId);
+    if (thumbnailName === 'thumbnail-cover') {
+        thumbnailData = currentProject.cover;
+    } else if (thumbnailName.startsWith('thumbnail-detail')) {
+        const detailIndex = parseInt(thumbnailName.replace('thumbnail-detail', '')) - 1;
+        thumbnailData = currentProject.details && currentProject.details[detailIndex];
+    }
     
-    if (!thumbnailData || !thumbnailData.contentBlocks) {
-        console.warn('No content blocks found for thumbnail:', thumbnailId);
+    if (!thumbnailData || !thumbnailData.textBlocks) {
+        console.warn('No text blocks found for thumbnail:', thumbnailName);
         return;
     }
     
-    // Clear existing content blocks
+    // Clear existing text blocks
     const infoBlocks = document.querySelector('.info-blocks');
     if (!infoBlocks) return;
     
     infoBlocks.innerHTML = '';
     
-    // Create new content blocks based on the thumbnail data
-    thumbnailData.contentBlocks.forEach(block => {
+    // Create new text blocks based on the thumbnail data
+    thumbnailData.textBlocks.forEach(block => {
         const blockElement = createTextBlock(block.type, block.text);
         infoBlocks.appendChild(blockElement);
     });
@@ -278,7 +375,7 @@ function createTextBlock(type, text) {
 
 function updateThumbnailStates(thumbnailButtons) {
     // Set initial active state for the cover thumbnail
-    const coverThumbnail = document.querySelector('.thumbnail-cover');
+    const coverThumbnail = document.querySelector('.thumbnail-btn[data-name="thumbnail-cover"]');
     if (coverThumbnail) {
         handleThumbnailClick(coverThumbnail, thumbnailButtons, document.querySelector('.displayed-media img'));
     }
@@ -333,17 +430,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Project Switcher Functions
 function initializeProjectSwitcher() {
-    const projectButtons = document.querySelectorAll('.project-btn');
+    const projectSwitcher = document.querySelector('.project-switcher');
+    if (!projectSwitcher) return;
     
-    projectButtons.forEach(button => {
+    // Clear existing buttons
+    projectSwitcher.innerHTML = '';
+    
+    // Generate buttons for each available project
+    availableProjects.forEach((project, index) => {
+        const button = document.createElement('button');
+        button.className = `project-btn ${index === 0 ? 'active' : ''}`;
+        button.setAttribute('data-project', project.id);
+        button.textContent = project.title;
+        
         button.addEventListener('click', function() {
             const projectId = this.getAttribute('data-project');
             switchProject(projectId);
             
             // Update active state
-            projectButtons.forEach(btn => btn.classList.remove('active'));
+            projectSwitcher.querySelectorAll('.project-btn').forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
         });
+        
+        projectSwitcher.appendChild(button);
     });
 }
 

@@ -1,50 +1,48 @@
 {
   "projectId": "project-2",
   "title": "Mobile App Design",
-  "tags": ["Mobile", "UI/UX", "iOS"],
+  "tags": ["mobile", "ui-ux", "ios"],
   "order": 2,
-  "status": "published",
   "date": "2024-02-01",
-  "category": "UI/UX",
-  "technologies": ["Figma", "Sketch", "Principle"],
-  "externalLinks": {
-    "liveDemo": "",
-    "github": "",
-    "caseStudy": ""
-  },
-  "thumbnails": [
-    {
-      "id": "cover",
-      "name": "Cover",
-      "image": "thumbnail-cover.jpg",
-      "contentBlocks": [
-        {
-          "type": "header",
-          "text": "Mobile App Overview"
-        },
-        {
-          "type": "subtitle",
-          "text": "A modern mobile application design with focus on user experience."
-        },
-        {
-          "type": "paragraph",
-          "text": "This project showcases a complete mobile app design from wireframes to final UI implementation."
-        },
-        {
-          "type": "bulletPoint",
-          "text": "Clean and intuitive user interface design"
-        },
-        {
-          "type": "bulletPoint",
-          "text": "Responsive design principles applied throughout"
-        }
-      ]
+  "cover": {
+    "thumbnailImage": "thumbnail-cover.jpg",
+    "thumbnailLabel": "Cover",
+    "displayedMedia": {
+      "image": "display-cover.jpg",
+      "altText": "Mobile app design cover view"
     },
+    "textBlocks": [
+      {
+        "type": "header",
+        "text": "Mobile App Overview"
+      },
+      {
+        "type": "subtitle",
+        "text": "A modern mobile application design with focus on user experience."
+      },
+      {
+        "type": "paragraph",
+        "text": "This project showcases a complete mobile app design from wireframes to final UI implementation."
+      },
+      {
+        "type": "bulletPoint",
+        "text": "Clean and intuitive user interface design"
+      },
+      {
+        "type": "bulletPoint",
+        "text": "Responsive design principles applied throughout"
+      }
+    ]
+  },
+  "details": [
     {
-      "id": "detail1",
-      "name": "Detail1",
-      "image": "thumbnail-detail1.jpg",
-      "contentBlocks": [
+      "thumbnailImage": "thumbnail-detail1.jpg",
+      "thumbnailLabel": "Detail1",
+      "displayedMedia": {
+        "image": "display-detail1.jpg",
+        "altText": "Mobile app design detail 1 view"
+      },
+      "textBlocks": [
         {
           "type": "header",
           "text": "User Interface Design"
@@ -64,10 +62,13 @@
       ]
     },
     {
-      "id": "detail2",
-      "name": "Detail2",
-      "image": "thumbnail-detail2.jpg",
-      "contentBlocks": [
+      "thumbnailImage": "thumbnail-detail2.jpg",
+      "thumbnailLabel": "Detail2",
+      "displayedMedia": {
+        "image": "display-detail2.jpg",
+        "altText": "Mobile app design detail 2 view"
+      },
+      "textBlocks": [
         {
           "type": "header",
           "text": "User Experience Flow"
@@ -83,10 +84,13 @@
       ]
     },
     {
-      "id": "detail3",
-      "name": "Detail3",
-      "image": "thumbnail-detail3.jpg",
-      "contentBlocks": [
+      "thumbnailImage": "thumbnail-detail3.jpg",
+      "thumbnailLabel": "Detail3",
+      "displayedMedia": {
+        "image": "display-detail3.jpg",
+        "altText": "Mobile app design detail 3 view"
+      },
+      "textBlocks": [
         {
           "type": "header",
           "text": "Final Implementation"
@@ -109,9 +113,5 @@
         }
       ]
     }
-  ],
-  "mainDisplay": {
-    "image": "main-display.jpg",
-    "altText": "Mobile app design main view"
-  }
+  ]
 }

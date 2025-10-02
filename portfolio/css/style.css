@@ -141,27 +141,7 @@ body {
   flex-shrink: 0;
 }
 
-/* Tag */
-.tag {
-  background-color: var(--ui-color-tag-background);
-  border-radius: 10px;
-  padding: 0 10px;
-  display: flex;
-  gap: 2px;
-  align-items: center;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.tag-text {
-  font-family: var(--font-baloo-2);
-  font-weight: var(--text-weight-regular);
-  font-size: var(--text-size-tag);
-  line-height: 1.32;
-  color: var(--text-color-default);
-  text-align: center;
-  white-space: nowrap;
-}
+/* Tag styling moved to tags.css */
 
 /* Content Container */
 .content-container {
@@ -273,14 +253,13 @@ body {
   border-radius: 10px;
   top: 0;
   bottom: 0;
+  transition: all 0.3s ease;
 }
 
-.thumbnail-btn.thumbnail-cover .thumbnail-image {
+/* Active thumbnail styling (applied to currently selected thumbnail) */
+.thumbnail-btn.active .thumbnail-image {
   top: -6.49%;
   bottom: 6.49%;
-}
-
-.thumbnail-btn.thumbnail-cover .thumbnail-image {
   border-radius: 0 0 10px 10px;
 }
 
