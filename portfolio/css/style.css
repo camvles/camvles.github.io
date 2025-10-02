@@ -1,4 +1,4 @@
-/* Portfolio Styles */
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,27 +7,353 @@
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
+    overflow-x: hidden;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
+/* Project Showcase Container */
+.project-showcase {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-h1 {
-    font-size: clamp(2rem, 8vw, 4rem);
-    margin-bottom: 2rem;
-    color: #2c3e50;
+/* Main Container */
+.main-container {
+    position: absolute;
+    display: flex;
+    gap: 176px; /* 44 * 4 = 176px */
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    padding: 0 75px 0 0;
+    overflow: hidden;
 }
 
-/* Responsive font sizing based on container width */
+/* Project Container */
+.project-container {
+    display: flex;
+    gap: 28px; /* 7 * 4 = 28px */
+    height: 577.083px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 1195.61px;
+    flex-shrink: 0;
+}
+
+/* Media Section */
+.media-section {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    min-height: 1px;
+    min-width: 1px;
+    position: relative;
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+/* Displayed Media */
+.displayed-media {
+    aspect-ratio: 1920/1080;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+    flex-shrink: 0;
+    width: 100%;
+    height: 451.68px;
+    transition: background-image 0.3s ease;
+}
+
+/* Thumbnails */
+.thumbnails {
+    display: flex;
+    gap: 18px;
+    height: 103.41px;
+    align-items: center;
+    justify-content: center;
+    min-height: 1px;
+    min-width: 1px;
+    position: relative;
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 0;
+    width: 100%;
+}
+
+.left-section {
+    display: flex;
+    gap: 15px;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 1px;
+    min-width: 1px;
+    position: relative;
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 0;
+    cursor: pointer;
+}
+
+.right-section {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: 1px;
+    min-width: 1px;
+    position: relative;
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+/* Thumbnail Buttons */
+.thumbnail-btn {
+    aspect-ratio: 206/154;
+    height: 100%;
+    overflow: visible;
+    position: relative;
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.thumbnail-btn:hover {
+    transform: scale(1.05);
+}
+
+.thumbnail-btn.selected .thumbnail-overlay {
+    background-color: #373737;
+    mix-blend-mode: normal;
+}
+
+.thumbnail-btn.selected .thumbnail-image {
+    box-shadow: 0 0 0 3px #373737;
+}
+
+.thumbnail-image {
+    position: absolute;
+    aspect-ratio: 160/120;
+    bottom: 0;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    overflow: hidden;
+    border-radius: 10px;
+    width: 138.32px;
+    height: 103.41px;
+    transition: box-shadow 0.2s ease;
+}
+
+.thumbnail-fond {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.thumbnail-overlay {
+    position: absolute;
+    background-color: #ffffff;
+    inset: 0;
+    mix-blend-mode: multiply;
+    transition: background-color 0.2s ease;
+}
+
+/* Right section thumbnail special styling */
+.right-section .thumbnail-image {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Text Section */
+.text-section {
+    aspect-ratio: 472/747;
+    background: linear-gradient(to bottom, #d9d9d999, #d9d9d900);
+    height: 100%;
+    border-top-right-radius: 12px;
+    flex-shrink: 0;
+    width: 364.64px;
+}
+
+/* Projects Hotbar */
+.projects-hotbar {
+    position: absolute;
+    height: 842px;
+    right: -75px;
+    width: 175px;
+    top: calc(50% + 346px);
+    transform: translateY(-50%);
+}
+
+.hotbar-position {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+}
+
+.project-button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    flex-shrink: 0;
+    width: 150px;
+    padding: 0 75px 0 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.project-button:hover:not(.current) {
+    opacity: 0.8;
+}
+
+.project-button.current {
+    padding: 0 75px 0 0;
+}
+
+.button-inner {
+    background-color: #d9d9d9;
+    border-radius: 8px;
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    transition: all 0.2s ease;
+}
+
+.project-button.current .button-inner {
+    border: 4px solid #cccccc;
+    border-style: solid;
+}
+
+.project-button:hover .button-inner {
+    background-color: #e0e0e0;
+}
+
+/* About Button */
+.about-button {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    width: 125px;
+    height: 125px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.about-button:hover {
+    transform: scale(1.05);
+}
+
+.about-button .button-inner {
+    position: absolute;
+    height: 125px;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 125px;
+    height: 125px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .project-container {
+        width: 90vw;
+        gap: 20px;
+    }
+    
+    .main-container {
+        gap: 100px;
+        padding: 0 50px 0 0;
+    }
+}
+
 @media (max-width: 768px) {
-    .container {
-        padding: 1rem;
+    .project-container {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+    
+    .media-section {
+        width: 100%;
+    }
+    
+    .text-section {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .projects-hotbar {
+        position: relative;
+        right: 0;
+        top: 0;
+        transform: none;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+    
+    .hotbar-position {
+        flex-direction: row;
+        justify-content: center;
+        right: 0;
+        top: 0;
+        transform: none;
+        width: 100%;
+    }
+    
+    .about-button {
+        position: relative;
+        left: 0;
+        top: 0;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .thumbnails {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+    }
+    
+    .left-section,
+    .right-section {
+        justify-content: center;
+    }
+    
+    .thumbnail-image {
+        width: 100px;
+        height: 75px;
     }
 }

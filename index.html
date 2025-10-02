@@ -8,8 +8,73 @@
     <link rel="stylesheet" href="portfolio/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Portfolio</h1>
+    <div class="project-showcase">
+        <div class="main-container">
+            <div class="project-container">
+                <div class="media-section">
+                    <div class="displayed-media" id="mainImage">
+                        <!-- Main project image will be set via JavaScript -->
+                    </div>
+                    <div class="thumbnails">
+                        <div class="left-section">
+                            <button class="thumbnail-btn" data-image="detail1" data-node-id="11:1140">
+                                <div class="thumbnail-image">
+                                    <div class="thumbnail-fond" id="detail1-fond"></div>
+                                    <div class="thumbnail-overlay"></div>
+                                </div>
+                            </button>
+                            <button class="thumbnail-btn" data-image="detail2" data-node-id="11:1139">
+                                <div class="thumbnail-image">
+                                    <div class="thumbnail-fond" id="detail2-fond"></div>
+                                    <div class="thumbnail-overlay"></div>
+                                </div>
+                            </button>
+                            <button class="thumbnail-btn" data-image="detail3" data-node-id="11:1138">
+                                <div class="thumbnail-image">
+                                    <div class="thumbnail-fond" id="detail3-fond"></div>
+                                    <div class="thumbnail-overlay"></div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="right-section">
+                            <button class="thumbnail-btn" data-image="cover" data-node-id="11:1137">
+                                <div class="thumbnail-image">
+                                    <div class="thumbnail-fond" id="cover-fond"></div>
+                                    <div class="thumbnail-overlay"></div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-section">
+                    <!-- Text content will be added here -->
+                </div>
+            </div>
+            <div class="projects-hotbar">
+                <div class="hotbar-position">
+                    <div class="project-button current" data-project="1">
+                        <div class="button-inner"></div>
+                    </div>
+                    <div class="project-button" data-project="2">
+                        <div class="button-inner"></div>
+                    </div>
+                    <div class="project-button" data-project="3">
+                        <div class="button-inner"></div>
+                    </div>
+                    <div class="project-button" data-project="4">
+                        <div class="button-inner"></div>
+                    </div>
+                    <div class="project-button" data-project="5">
+                        <div class="button-inner"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-button">
+                <div class="button-inner">
+                    <!-- About button image will be set via JavaScript -->
+                </div>
+            </div>
+        </div>
     </div>
     <script src="portfolio/js/main.js"></script>
 </body>
