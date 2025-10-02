@@ -3,79 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Portfolio - Camvles</title>
     <link rel="stylesheet" href="portfolio/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="project-showcase">
-        <div class="main-container">
-            <div class="project-container">
-                <div class="media-section">
-                    <div class="displayed-media" id="mainImage">
-                        <!-- Main project image will be set via JavaScript -->
-                    </div>
-                    <div class="thumbnails">
-                        <div class="left-section">
-                            <button class="thumbnail-btn" data-image="detail1" data-node-id="11:1140">
-                                <div class="thumbnail-image">
-                                    <div class="thumbnail-fond" id="detail1-fond"></div>
-                                    <div class="thumbnail-overlay"></div>
-                                </div>
-                            </button>
-                            <button class="thumbnail-btn" data-image="detail2" data-node-id="11:1139">
-                                <div class="thumbnail-image">
-                                    <div class="thumbnail-fond" id="detail2-fond"></div>
-                                    <div class="thumbnail-overlay"></div>
-                                </div>
-                            </button>
-                            <button class="thumbnail-btn" data-image="detail3" data-node-id="11:1138">
-                                <div class="thumbnail-image">
-                                    <div class="thumbnail-fond" id="detail3-fond"></div>
-                                    <div class="thumbnail-overlay"></div>
-                                </div>
-                            </button>
-                        </div>
-                        <div class="right-section">
-                            <button class="thumbnail-btn" data-image="cover" data-node-id="11:1137">
-                                <div class="thumbnail-image">
-                                    <div class="thumbnail-fond" id="cover-fond"></div>
-                                    <div class="thumbnail-overlay"></div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-section">
-                    <!-- Text content will be added here -->
+    <div class="portfolio-container">
+        <!-- Project Switcher -->
+        <div class="project-switcher">
+            <button class="project-btn active" data-project="project-1">Project 1</button>
+            <button class="project-btn" data-project="project-2">Project 2</button>
+        </div>
+        
+        <!-- Project Container -->
+        <div class="project-container" data-name="project-container" data-node-id="64:176">
+            <!-- Header Container -->
+            <div class="header-container" data-name="header-container" data-node-id="64:177">
+                <h1 class="project-title" data-node-id="64:178">Loading...</h1>
+                <div class="tags" data-name="tags" data-node-id="64:179">
+                    <!-- Tags will be dynamically generated here -->
                 </div>
             </div>
-            <div class="projects-hotbar">
-                <div class="hotbar-position">
-                    <div class="project-button current" data-project="1">
-                        <div class="button-inner"></div>
+
+            <!-- Content Container -->
+            <div class="content-container" data-name="content-container" data-node-id="64:181">
+                <!-- Media Section -->
+                <div class="media-section" data-name="media-section" data-node-id="64:182">
+                    <div class="displayed-media" data-name="displayedMedia-project1" data-node-id="64:183">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNFRUUiLz48L3N2Zz4=" alt="Project 1 Main Display">
                     </div>
-                    <div class="project-button" data-project="2">
-                        <div class="button-inner"></div>
-                    </div>
-                    <div class="project-button" data-project="3">
-                        <div class="button-inner"></div>
-                    </div>
-                    <div class="project-button" data-project="4">
-                        <div class="button-inner"></div>
-                    </div>
-                    <div class="project-button" data-project="5">
-                        <div class="button-inner"></div>
+                    
+                    <!-- Thumbnails Container -->
+                    <div class="thumbnails-container" data-name="thumbnails-container" data-node-id="64:184">
+                        <div class="thumbnails-left" data-name="thumbnails-left" data-node-id="64:185">
+                            <button class="thumbnail-btn thumbnail-cover active" data-name="thumbnail-cover" data-node-id="64:190">
+                                <div class="thumbnail-image">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNFRUUiLz48L3N2Zz4=" alt="Cover">
+                                    <div class="thumbnail-overlay selected"></div>
+                                </div>
+                                <span class="thumbnail-text">Cover</span>
+                            </button>
+                        </div>
+                        
+                        <div class="thumbnails-right" data-name="thumbnails-right" data-node-id="64:189">
+                            <button class="thumbnail-btn thumbnail-detail1" data-name="thumbnail-detail1" data-node-id="64:357">
+                                <div class="thumbnail-image">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNFRUUiLz48L3N2Zz4=" alt="Detail 1">
+                                    <div class="thumbnail-overlay"></div>
+                                </div>
+                                <span class="thumbnail-text">Detail1</span>
+                            </button>
+                            
+                            <button class="thumbnail-btn thumbnail-detail2" data-name="thumbnail-detail2" data-node-id="64:358">
+                                <div class="thumbnail-image">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNFRUUiLz48L3N2Zz4=" alt="Detail 2">
+                                    <div class="thumbnail-overlay"></div>
+                                </div>
+                                <span class="thumbnail-text">Detail2</span>
+                            </button>
+                            
+                            <button class="thumbnail-btn thumbnail-detail3" data-name="thumbnail-detail3" data-node-id="64:359">
+                                <div class="thumbnail-image">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiNFRUUiLz48L3N2Zz4=" alt="Detail 3">
+                                    <div class="thumbnail-overlay"></div>
+                                </div>
+                                <span class="thumbnail-text">Detail3</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="about-button">
-                <div class="button-inner">
-                    <!-- About button image will be set via JavaScript -->
+
+                <!-- Info Section -->
+                <div class="info-section" data-name="info-section" data-node-id="64:191">
+                    <div class="info-container" data-name="info-container" data-node-id="64:192">
+                        <div class="info-blocks">
+                            <!-- Content blocks will be dynamically generated here -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="portfolio/js/main.js"></script>
 </body>
 </html>

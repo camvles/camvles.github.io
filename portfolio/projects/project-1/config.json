@@ -1,0 +1,125 @@
+{
+  "projectId": "project-1",
+  "title": "3D Isometric Game Environment",
+  "tags": ["UX/UI", "3D Design", "Game Design"],
+  "order": 1,
+  "status": "published",
+  "date": "2024-01-15",
+  "category": "UX/UI",
+  "technologies": ["Figma", "Blender", "Photoshop"],
+  "externalLinks": {
+    "liveDemo": "https://example.com/demo",
+    "github": "https://github.com/user/project",
+    "caseStudy": "https://example.com/case-study"
+  },
+  "thumbnails": [
+    {
+      "id": "cover",
+      "name": "Cover",
+      "image": "thumbnail-cover.jpg",
+      "contentBlocks": [
+        {
+          "type": "header",
+          "text": "Cover header"
+        },
+        {
+          "type": "subtitle",
+          "text": "Main project overview and key features."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is the main cover view of the project showing the overall design and concept."
+        },
+        {
+          "type": "bulletPoint",
+          "text": "Key features and benefits of the project are highlighted here."
+        }
+      ]
+    },
+    {
+      "id": "detail1",
+      "name": "Detail1",
+      "image": "thumbnail-detail1.jpg",
+      "contentBlocks": [
+        {
+          "type": "header",
+          "text": "Detail 1 header"
+        },
+        {
+          "type": "subtitle",
+          "text": "Detailed view of the first feature."
+        },
+        {
+          "type": "paragraph",
+          "text": "Detail view 1 focuses on specific functionality and user interaction."
+        },
+        {
+          "type": "paragraph",
+          "text": "Technical implementation details and design decisions are explained."
+        },
+        {
+          "type": "bulletPoint",
+          "text": "Key technical specifications and requirements."
+        }
+      ]
+    },
+    {
+      "id": "detail2",
+      "name": "Detail2",
+      "image": "thumbnail-detail2.jpg",
+      "contentBlocks": [
+        {
+          "type": "header",
+          "text": "Detail 2 header"
+        },
+        {
+          "type": "subtitle",
+          "text": "Detailed view of the second feature."
+        },
+        {
+          "type": "paragraph",
+          "text": "Detail view 2 showcases the responsive design and mobile experience."
+        },
+        {
+          "type": "bulletPoint",
+          "text": "Cross-platform compatibility features."
+        },
+        {
+          "type": "bulletPoint",
+          "text": "Accessibility considerations and implementation."
+        }
+      ]
+    },
+    {
+      "id": "detail3",
+      "name": "Detail3",
+      "image": "thumbnail-detail3.jpg",
+      "contentBlocks": [
+        {
+          "type": "header",
+          "text": "Detail 3 header"
+        },
+        {
+          "type": "subtitle",
+          "text": "Detailed view of the third feature."
+        },
+        {
+          "type": "paragraph",
+          "text": "Detail view 3 demonstrates the final implementation and results."
+        },
+        {
+          "type": "paragraph",
+          "text": "Performance metrics and user feedback are presented here."
+        },
+        {
+          "type": "bulletPoint",
+          "text": "Quantitative results and success metrics."
+        }
+      ]
+    }
+  ],
+  "mainDisplay": {
+    "image": "main-display.jpg",
+    "altText": "3D isometric game environment main view"
+  }
+}

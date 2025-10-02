@@ -1,0 +1,113 @@
+{
+  "projectId": "project-template",
+  "title": "Project Title",
+  "tags": ["Tag1", "Tag2", "Tag3"],
+  "order": 999,
+  "status": "draft",
+  "date": "2024-01-01",
+  "category": "Category",
+  "technologies": ["Technology1", "Technology2"],
+  "externalLinks": {
+    "liveDemo": "",
+    "github": "",
+    "caseStudy": ""
+  },
+  "thumbnails": [
+    {
+      "id": "cover",
+      "name": "Cover",
+      "image": "thumbnail-cover.jpg",
+      "contentBlocks": [
+        {
+          "type": "header",
+          "text": "Project Header"
+        },
+        {
+          "type": "subtitle",
+          "text": "Project subtitle or brief description."
+        },
+        {
+          "type": "paragraph",
+          "text": "First paragraph describing the project overview."
+        },
+        {
+          "type": "bulletPoint",
+          "text": "Key feature or benefit point."
+        }
+      ]
+    },
+    {
+      "id": "detail1",
+      "name": "Detail1",
+      "image": "thumbnail-detail1.jpg",
+      "contentBlocks": [
+        {
+          "type": "header",
+          "text": "Detail 1 Header"
+        },
+        {
+          "type": "subtitle",
+          "text": "Detail 1 subtitle."
+        },
+        {
+          "type": "paragraph",
+          "text": "Detail 1 description."
+        },
+        {
+          "type": "bulletPoint",
+          "text": "Detail 1 key point."
+        }
+      ]
+    },
+    {
+      "id": "detail2",
+      "name": "Detail2",
+      "image": "thumbnail-detail2.jpg",
+      "contentBlocks": [
+        {
+          "type": "header",
+          "text": "Detail 2 Header"
+        },
+        {
+          "type": "subtitle",
+          "text": "Detail 2 subtitle."
+        },
+        {
+          "type": "paragraph",
+          "text": "Detail 2 description."
+        },
+        {
+          "type": "bulletPoint",
+          "text": "Detail 2 key point."
+        }
+      ]
+    },
+    {
+      "id": "detail3",
+      "name": "Detail3",
+      "image": "thumbnail-detail3.jpg",
+      "contentBlocks": [
+        {
+          "type": "header",
+          "text": "Detail 3 Header"
+        },
+        {
+          "type": "subtitle",
+          "text": "Detail 3 subtitle."
+        },
+        {
+          "type": "paragraph",
+          "text": "Detail 3 description."
+        },
+        {
+          "type": "bulletPoint",
+          "text": "Detail 3 key point."
+        }
+      ]
+    }
+  ],
+  "mainDisplay": {
+    "image": "main-display.jpg",
+    "altText": "Main project display image"
+  }
+}
