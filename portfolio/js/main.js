@@ -511,7 +511,15 @@ async function initializeHotbar() {
         // Add click event
         button.addEventListener('click', function() {
             const projectId = this.getAttribute('data-project');
-            switchProject(projectId);
+            const clickedIndex = parseInt(this.parentElement.getAttribute('data-index'));
+            
+            // Get current active index
+            const activeContainer = document.querySelector('.hotbar-button-container.active');
+            const currentIndex = activeContainer ? parseInt(activeContainer.getAttribute('data-index')) : 0;
+            
+            // Determine direction based on index comparison
+            const direction = clickedIndex > currentIndex ? 'down' : 'up';
+            switchProject(projectId, direction);
         });
         
         buttonContainer.appendChild(button);
@@ -541,15 +549,37 @@ function updateHotbarActiveState(activeIndex) {
     });
 }
 
-async function switchProject(projectId) {
+async function switchProject(projectId, direction = 'down') {
     try {
-        await loadProject(projectId);
+        const projectContainer = document.querySelector('.project-container');
+        if (!projectContainer) return;
         
         // Find the index of the switched project
         const projectIndex = availableProjects.findIndex(p => p.id === projectId);
-        if (projectIndex !== -1) {
-            updateHotbarActiveState(projectIndex);
+        if (projectIndex === -1) return;
+        
+        // Get current active index
+        const activeContainer = document.querySelector('.hotbar-button-container.active');
+        const currentIndex = activeContainer ? parseInt(activeContainer.getAttribute('data-index')) : 0;
+        
+        // Determine animation direction
+        const isMovingUp = projectIndex > currentIndex;
+        
+        // Add exit animation
+        if (isMovingUp) {
+            projectContainer.classList.add('slide-up-out');
+        } else {
+            projectContainer.classList.add('slide-down-out');
         }
+        
+        // Wait for exit animation to complete
+        await new Promise(resolve => setTimeout(resolve, 300));
+        
+        // Load new project content
+        await loadProject(projectId);
+        
+        // Update hotbar active state
+        updateHotbarActiveState(projectIndex);
         
         // Reset thumbnail states
         const thumbnailButtons = document.querySelectorAll('.thumbnail-btn');
@@ -557,6 +587,20 @@ async function switchProject(projectId) {
         if (firstThumbnail) {
             handleThumbnailClick(firstThumbnail, thumbnailButtons, document.querySelector('.displayed-media img'));
         }
+        
+        // Add entrance animation
+        projectContainer.classList.remove('slide-up-out', 'slide-down-out');
+        if (isMovingUp) {
+            projectContainer.classList.add('slide-up-in');
+        } else {
+            projectContainer.classList.add('slide-down-in');
+        }
+        
+        // Clean up animation classes after animation completes
+        setTimeout(() => {
+            projectContainer.classList.remove('slide-up-in', 'slide-down-in');
+        }, 300);
+        
     } catch (error) {
         console.error('Failed to switch project:', error);
     }
@@ -624,5 +668,6 @@ function handleScrollNavigation(deltaY) {
     
     // Switch to the new project
     const newProject = availableProjects[newIndex];
-    switchProject(newProject.id);
+    const direction = newIndex > activeIndex ? 'down' : 'up';
+    switchProject(newProject.id, direction);
 }
