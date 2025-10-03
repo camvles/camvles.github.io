@@ -3,7 +3,9 @@
   "title": "3D Isometric Game Environment",
   "tags": ["ux-ui", "three-d-design", "game-design"],
   "order": 1,
-  "date": "2024-01-15",
+  "date": "2025",
+  "hotbarTitle": "Game Env",
+  "hotbarImage": "hotbar-image.jpg",
   "cover": {
     "thumbnailImage": "thumbnail-cover.jpg",
     "thumbnailLabel": "Cover",

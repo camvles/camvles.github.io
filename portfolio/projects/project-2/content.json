@@ -3,7 +3,9 @@
   "title": "Mobile App Design",
   "tags": ["mobile", "ui-ux", "ios"],
   "order": 2,
-  "date": "2024-02-01",
+  "date": "2024",
+  "hotbarTitle": "Mobile App",
+  "hotbarImage": "hotbar-image.jpg",
   "cover": {
     "thumbnailImage": "thumbnail-cover.jpg",
     "thumbnailLabel": "Cover",

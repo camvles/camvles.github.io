@@ -42,8 +42,11 @@ async function initializePortfolio() {
         // Set initial state
         updateThumbnailStates(thumbnailButtons);
         
-        // Initialize project switcher
-        initializeProjectSwitcher();
+        // Initialize hotbar
+        initializeHotbar();
+        
+        // Initialize scroll navigation
+        initializeScrollNavigation();
     } catch (error) {
         console.error('Failed to initialize portfolio:', error);
     }
@@ -437,37 +440,116 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAccessibility();
 });
 
-// Project Switcher Functions
-function initializeProjectSwitcher() {
-    const projectSwitcher = document.querySelector('.project-switcher');
-    if (!projectSwitcher) return;
+// Hotbar Functions
+async function initializeHotbar() {
+    const hotbarContainer = document.querySelector('.hotbar-container');
+    const hotbarPosition = document.querySelector('.hotbar-position');
+    if (!hotbarContainer || !hotbarPosition) return;
     
     // Clear existing buttons
-    projectSwitcher.innerHTML = '';
+    hotbarPosition.innerHTML = '';
     
-    // Generate buttons for each available project
-    availableProjects.forEach((project, index) => {
-        const button = document.createElement('button');
-        button.className = `project-btn ${index === 0 ? 'active' : ''}`;
-        button.setAttribute('data-project', project.id);
-        button.textContent = project.title;
+    // Load hotbar data for each project
+    const hotbarData = [];
+    for (const project of availableProjects) {
+        try {
+            const url = `portfolio/projects/${project.id}/content.json?t=${Date.now()}`;
+            const response = await fetch(url);
+            if (response.ok) {
+                const projectData = await response.json();
+                hotbarData.push({
+                    id: project.id,
+                    date: projectData.date,
+                    hotbarTitle: projectData.hotbarTitle || project.title,
+                    hotbarImage: projectData.hotbarImage || 'display-cover.jpg',
+                    order: projectData.order || 999
+                });
+            }
+        } catch (error) {
+            console.error(`Error loading hotbar data for ${project.id}:`, error);
+        }
+    }
+    
+    // Sort by order
+    hotbarData.sort((a, b) => a.order - b.order);
+    
+    // Generate hotbar buttons
+    hotbarData.forEach((project, index) => {
+        const buttonContainer = document.createElement('div');
+        buttonContainer.className = 'hotbar-button-container';
+        buttonContainer.setAttribute('data-index', index);
         
+        const button = document.createElement('button');
+        button.className = 'hotbar-button';
+        button.setAttribute('data-project', project.id);
+        
+        // Create image element
+        const image = document.createElement('img');
+        image.src = `portfolio/projects/${project.id}/assets/${project.hotbarImage}`;
+        image.alt = project.hotbarTitle;
+        
+        // Create overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'hotbar-button-overlay';
+        
+        // Create date text
+        const dateText = document.createElement('div');
+        dateText.className = 'hotbar-button-date';
+        dateText.textContent = project.date;
+        
+        // Create title text
+        const titleText = document.createElement('div');
+        titleText.className = 'hotbar-button-title';
+        titleText.textContent = project.hotbarTitle;
+        
+        // Assemble button
+        button.appendChild(image);
+        button.appendChild(overlay);
+        button.appendChild(dateText);
+        button.appendChild(titleText);
+        
+        // Add click event
         button.addEventListener('click', function() {
             const projectId = this.getAttribute('data-project');
             switchProject(projectId);
-            
-            // Update active state
-            projectSwitcher.querySelectorAll('.project-btn').forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
         });
         
-        projectSwitcher.appendChild(button);
+        buttonContainer.appendChild(button);
+        hotbarPosition.appendChild(buttonContainer);
+    });
+    
+    // Set initial active state
+    updateHotbarActiveState(0);
+}
+
+function updateHotbarActiveState(activeIndex) {
+    const hotbarContainer = document.querySelector('.hotbar-container');
+    const hotbarButtonContainers = document.querySelectorAll('.hotbar-button-container');
+    
+    // Update container data attribute for positioning
+    if (hotbarContainer) {
+        hotbarContainer.setAttribute('data-active-index', activeIndex);
+    }
+    
+    // Update button container states
+    hotbarButtonContainers.forEach((container, index) => {
+        if (index === activeIndex) {
+            container.classList.add('active');
+        } else {
+            container.classList.remove('active');
+        }
     });
 }
 
 async function switchProject(projectId) {
     try {
         await loadProject(projectId);
+        
+        // Find the index of the switched project
+        const projectIndex = availableProjects.findIndex(p => p.id === projectId);
+        if (projectIndex !== -1) {
+            updateHotbarActiveState(projectIndex);
+        }
         
         // Reset thumbnail states
         const thumbnailButtons = document.querySelectorAll('.thumbnail-btn');
@@ -478,4 +560,69 @@ async function switchProject(projectId) {
     } catch (error) {
         console.error('Failed to switch project:', error);
     }
+}
+
+// Scroll Navigation Functions
+function initializeScrollNavigation() {
+    let scrollTimeout = null;
+    
+    // Add wheel event listener to the document
+    document.addEventListener('wheel', function(event) {
+        // Clear existing timeout
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        
+        // Check if we should handle this scroll immediately
+        const shouldHandle = checkScrollNavigation(event.deltaY);
+        
+        if (shouldHandle) {
+            // Prevent default scroll behavior
+            event.preventDefault();
+            
+            // Set a timeout to prevent rapid scrolling
+            scrollTimeout = setTimeout(() => {
+                handleScrollNavigation(event.deltaY);
+            }, 100);
+        }
+    }, { passive: false });
+}
+
+function checkScrollNavigation(deltaY) {
+    // Find current active project index
+    const activeContainer = document.querySelector('.hotbar-button-container.active');
+    if (!activeContainer) return false;
+    
+    const activeIndex = parseInt(activeContainer.getAttribute('data-index'));
+    
+    // Check if we can navigate in the scroll direction
+    if (deltaY > 0) {
+        // Scrolling down - can we go to next project (higher index)?
+        return activeIndex < availableProjects.length - 1;
+    } else {
+        // Scrolling up - can we go to previous project (lower index)?
+        return activeIndex > 0;
+    }
+}
+
+function handleScrollNavigation(deltaY) {
+    // Find current active project index
+    const activeContainer = document.querySelector('.hotbar-button-container.active');
+    if (!activeContainer) return;
+    
+    const activeIndex = parseInt(activeContainer.getAttribute('data-index'));
+    let newIndex = activeIndex;
+    
+    // Determine scroll direction and new index
+    if (deltaY > 0) {
+        // Scrolling down - go to next project (higher index)
+        newIndex = activeIndex + 1;
+    } else {
+        // Scrolling up - go to previous project (lower index)
+        newIndex = activeIndex - 1;
+    }
+    
+    // Switch to the new project
+    const newProject = availableProjects[newIndex];
+    switchProject(newProject.id);
 }

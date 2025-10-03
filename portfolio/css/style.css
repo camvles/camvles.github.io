@@ -60,34 +60,144 @@ body {
   gap: 20px;
 }
 
-/* Project Switcher */
-.project-switcher {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+/* Hotbar Container */
+.hotbar-container {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 175px;
+  height: 842px;
+  z-index: 1000;
+  pointer-events: none;
 }
 
-.project-btn {
-  padding: 8px 16px;
-  border: 2px solid var(--ui-color-thumbnail-overlay-selected);
-  background-color: transparent;
-  color: var(--text-color-default);
-  font-family: var(--font-baloo-2);
-  font-weight: var(--text-weight-medium);
-  font-size: 14px;
+.hotbar-position {
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  align-items: flex-end;
+  pointer-events: auto;
+}
+
+/* Hotbar Button Container */
+.hotbar-button-container {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  transition: transform 0.3s ease, padding 0.3s ease;
+  padding-right: 0;
+}
+
+/* Hotbar Button */
+.hotbar-button {
+  width: 150px;
+  height: 150px;
   border-radius: 8px;
+  overflow: hidden;
+  position: relative;
   cursor: pointer;
+  border: none;
+  background: #c4c4c4;
   transition: all 0.3s ease;
 }
 
-.project-btn:hover {
-  background-color: var(--ui-color-thumbnail-overlay-selected);
-  color: var(--text-color-thumbnail);
+.hotbar-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 8px;
 }
 
-.project-btn.active {
-  background-color: var(--ui-color-thumbnail-overlay-selected);
-  color: var(--text-color-thumbnail);
+/* Hotbar Button Overlay */
+.hotbar-button-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #828282;
+  mix-blend-mode: multiply;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hotbar-button-container:hover .hotbar-button-overlay,
+.hotbar-button-container.active .hotbar-button-overlay {
+  opacity: 1;
+}
+
+/* Hotbar Text Elements */
+.hotbar-button-date,
+.hotbar-button-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.32;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show date when project container is active */
+.hotbar-button-container.active .hotbar-button-date {
+  opacity: 1;
+}
+
+/* Show title on hover (except for active project container) */
+.hotbar-button-container:hover:not(.active) .hotbar-button-title {
+  opacity: 1;
+}
+
+/* Hotbar Positioning States */
+/* Default state: all buttons aligned, almost halfway out of screen (75px visible, 75px hidden) */
+.hotbar-button-container {
+  transform: translateX(75px);
+  transition: transform 0.3s ease;
+}
+
+/* Active project button ALWAYS stays recessed (fully visible) */
+.hotbar-button-container.active {
+  transform: translateX(0px) !important;
+}
+
+/* Hover state: ALL buttons get recessed to the left (fully visible) */
+.hotbar-container:hover .hotbar-button-container {
+  transform: translateX(0px);
+}
+
+/* Vertical positioning based on active project */
+.hotbar-container[data-active-index="0"] .hotbar-position {
+  transform: translateY(-50%);
+}
+
+.hotbar-container[data-active-index="1"] .hotbar-position {
+  transform: translateY(calc(-50% - 173px));
+}
+
+.hotbar-container[data-active-index="2"] .hotbar-position {
+  transform: translateY(calc(-50% - 346px));
+}
+
+.hotbar-container[data-active-index="3"] .hotbar-position {
+  transform: translateY(calc(-50% - 519px));
+}
+
+.hotbar-container[data-active-index="4"] .hotbar-position {
+  transform: translateY(calc(-50% - 692px));
 }
 
 /* Project Container - Main Layout */
