@@ -1,0 +1,119 @@
+{
+  "projectId": "project-3",
+  "title": "Mobile App Design",
+  "tags": ["mobile", "ui-ux", "ios"],
+  "order": 3,
+  "date": "2023",
+  "hotbarTitle": "Mobile App",
+  "hotbarImage": "hotbar-image.jpg",
+  "cover": {
+    "thumbnailImage": "thumbnail-cover.jpg",
+    "thumbnailLabel": "Cover",
+    "displayedMedia": {
+      "image": "display-cover.jpg",
+      "altText": "Mobile app design cover view"
+    },
+    "textBlocks": [
+      {
+        "type": "header",
+        "text": "Mobile App Overview"
+      },
+      {
+        "type": "subtitle",
+        "text": "A modern mobile application design with focus on user experience."
+      },
+      {
+        "type": "paragraph",
+        "text": "This project showcases a complete mobile app design from wireframes to final UI implementation."
+      },
+      {
+        "type": "bulletPoint",
+        "text": "Clean and intuitive user interface design"
+      },
+      {
+        "type": "bulletPoint",
+        "text": "Responsive design principles applied throughout"
+      }
+    ]
+  },
+  "details": [
+    {
+      "thumbnailImage": "thumbnail-detail1.jpg",
+      "thumbnailLabel": "Detail1",
+      "displayedMedia": {
+        "image": "display-detail1.jpg",
+        "altText": "Mobile app design detail 1 view"
+      },
+      "textBlocks": [
+        {
+          "type": "header",
+          "text": "User Interface Design"
+        },
+        {
+          "type": "subtitle",
+          "text": "Focus on clean aesthetics and usability."
+        },
+        {
+          "type": "paragraph",
+          "text": "The interface design emphasizes clarity and ease of use, following modern design principles."
+        },
+        {
+          "type": "bulletPoint",
+          "text": "Consistent color palette and typography"
+        }
+      ]
+    },
+    {
+      "thumbnailImage": "thumbnail-detail2.jpg",
+      "thumbnailLabel": "Detail2",
+      "displayedMedia": {
+        "image": "display-detail2.jpg",
+        "altText": "Mobile app design detail 2 view"
+      },
+      "textBlocks": [
+        {
+          "type": "header",
+          "text": "User Experience Flow"
+        },
+        {
+          "type": "subtitle",
+          "text": "Optimized user journey and interaction patterns."
+        },
+        {
+          "type": "paragraph",
+          "text": "Careful attention was paid to creating a smooth and intuitive user experience flow."
+        }
+      ]
+    },
+    {
+      "thumbnailImage": "thumbnail-detail3.jpg",
+      "thumbnailLabel": "Detail3",
+      "displayedMedia": {
+        "image": "display-detail3.jpg",
+        "altText": "Mobile app design detail 3 view"
+      },
+      "textBlocks": [
+        {
+          "type": "header",
+          "text": "Final Implementation"
+        },
+        {
+          "type": "subtitle",
+          "text": "Ready-to-develop design system and components."
+        },
+        {
+          "type": "paragraph",
+          "text": "The final design includes a comprehensive design system with reusable components."
+        },
+        {
+          "type": "bulletPoint",
+          "text": "Complete component library"
+        },
+        {
+          "type": "bulletPoint",
+          "text": "Design specifications and guidelines"
+        }
+      ]
+    }
+  ]
+}

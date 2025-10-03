@@ -59,7 +59,7 @@ async function discoverProjects() {
         // Try to discover projects by attempting to fetch content.json files
         // We'll try a range of project numbers to find all existing projects
         // Any folder starting with 'project-' in the projects directory will be detected
-        const maxProjects = 2; // Start with fewer projects to debug
+        const maxProjects = 3; // Start with fewer projects to debug
         const projectPromises = [];
         
         // Create promises for all potential project folders
@@ -573,7 +573,7 @@ async function switchProject(projectId, direction = 'down') {
         }
         
         // Wait for exit animation to complete
-        await new Promise(resolve => setTimeout(resolve, 300));
+        await new Promise(resolve => setTimeout(resolve, 150));
         
         // Load new project content
         await loadProject(projectId);
